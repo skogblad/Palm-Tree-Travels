@@ -1,21 +1,28 @@
 import { Link, NavLink } from "react-router"
+import styles from "./Navigation.module.scss"
 
 export const Navigation = () => {
   return (
     <>
-      <Link to={"/"}>
-        Palm Tree Travels
-      </Link>
+      <nav className={styles.Navigation}>
+        <Link to={"/"}>
+          <h1>Palm Tree Travels</h1>
+        </Link>
 
-      <ul>
-        <li>
-          <NavLink to={"/"}>Hem</NavLink>
-        </li>
+        <ul>
+          <li>
+            <NavLink to={"/"}>Hem</NavLink>
+          </li>
 
-        <li>
-          <NavLink to={"/sida2"}>Sida 2</NavLink>
-        </li>
-      </ul>
+          <li>
+            <NavLink to={"/search-destination"}>Sök destination</NavLink>
+          </li>
+
+          <li>
+            <NavLink to={"/favorites"}>Favoriter</NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }
