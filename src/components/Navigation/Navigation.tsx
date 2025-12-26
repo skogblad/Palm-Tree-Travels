@@ -9,11 +9,9 @@ export const Navigation = () => {
           <h1>Palm Tree Travels</h1>
         </Link>
 
-        <ul>
-          <li>
-            <NavLink to={"/"}>Hem</NavLink>
-          </li>
+        <p>Upptäck varma, inspirerande destinationer baserade på upplevelser, inte bara platser</p>
 
+        <ul>
           <li>
             <NavLink to={"/search-destination"}>Sök destination</NavLink>
           </li>
