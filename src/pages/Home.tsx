@@ -1,5 +1,7 @@
+import { HomePresentation } from "../components/HomePresentation/HomePresentation"
+
 export const Home = () => {
   return (
-    <h2>Hej</h2>
+    <HomePresentation />
   )
 }
