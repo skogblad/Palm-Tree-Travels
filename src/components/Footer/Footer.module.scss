@@ -1,9 +1,28 @@
-footer {
-  background-color: lightgrey;
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 150px;
+  background-color: rgb(242, 242, 242);
   padding-block: 30px;
+  text-align: left;
 
-  span {
-    margin-inline: 10px;
+  .logoSection {
+    margin-left: 80px;
+    
+    p {
+      width: 380px;
+    }
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 10px;
     font-size: 1rem;
+    color: black;
   }
 }
