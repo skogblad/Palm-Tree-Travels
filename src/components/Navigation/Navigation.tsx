@@ -16,11 +16,15 @@ export const Navigation = () => {
 
       <ul>
         <li>
-          <NavLink to={"/search-destination"}>{isHomePage ? "Sök destination" : <Search/>}</NavLink>
+          <NavLink to={"/search-destination"} aria-label="Sök destination">
+            {isHomePage ? "Sök destination" : <Search/>}
+          </NavLink>
         </li>
 
         <li>
-          <NavLink to={"/favorites"}>{isHomePage ? "Favoriter" : <Heart/>}</NavLink>
+          <NavLink to={"/favorites"} aria-label="Favoriter">
+            {isHomePage ? "Favoriter" : <Heart/>}
+          </NavLink>
         </li>
       </ul>
     </nav>

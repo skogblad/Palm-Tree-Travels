@@ -207,6 +207,11 @@
 
   @media screen and (max-width: 425px) {
     height: 280px;
+
+    &::after {
+      height: 100px;
+    }
+  
     
     h1 {
       font-size: 2.5rem;
