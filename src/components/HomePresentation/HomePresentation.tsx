@@ -8,7 +8,7 @@ export const HomePresentation = () => {
   return (
     <>
       <section className={styles.howItWorksContainer}>
-        <h2>Hur det fungerar</h2>
+        <h2>Hitta enkelt din drömresa</h2>
         <p className={styles.subText}>Palm Tree Travels hjälper dig att upptäcka destinationer baserat på önskade upplevelser, med hjälp av väderdata och utvalda preferenser.</p>
 
         <CardCarousel className={styles.cardsCarousel}>
