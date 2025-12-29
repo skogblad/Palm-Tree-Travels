@@ -1,8 +1,10 @@
+@import "/src/styles/variables";
+
 .footerContainer {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 150px;
-  background-color: rgb(242, 242, 242);
+  background-color: $footerBlue;
   padding-block: 30px;
   text-align: left;
 
@@ -11,11 +13,12 @@
     
     p {
       width: 380px;
+      font-size: 1rem;
     }
   }
 
-  h5 {
-    font-size: 1.3rem;
+  h2 {
+    font-size: 1.4rem;
     margin-top: 0;
   }
 
@@ -24,5 +27,43 @@
     margin-bottom: 10px;
     font-size: 1rem;
     color: black;
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 80px;
+    
+    .logoSection {
+      margin-left: 50px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    gap: 20px;
+
+    .logoSection {
+      margin-left: 15px;
+      margin-top: 50px;
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .logoSection {
+      grid-column: 1 / -1;
+      margin-top: 0;
+      justify-self: center;
+    }
+
+    .navContainer {
+      margin-left: 30px;
+      margin-top: 10px;
+    }
   }
 }

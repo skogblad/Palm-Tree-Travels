@@ -4,7 +4,7 @@ import styles from "./Navigation.module.scss"
 export const Navigation = () => {
   return (
     <>
-      <nav className={styles.Navigation}>
+      <nav className={styles.navigationContainer} aria-label="Huvudnavigation">
         <Link to={"/"}>
           <h1>Palm Tree Travels</h1>
         </Link>

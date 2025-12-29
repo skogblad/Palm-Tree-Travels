@@ -14,7 +14,7 @@ export const InfoCard = ({ title, infoText, Icon, iconWrapper, iconClassName }: 
   return (
     <article className={styles.articleContainer}>
       <span className={iconWrapper}>
-        <Icon className={iconClassName} />
+        <Icon className={iconClassName} aria-hidden="true" />
       </span>
       <h3>{title}</h3>
       <p>{infoText}</p>
