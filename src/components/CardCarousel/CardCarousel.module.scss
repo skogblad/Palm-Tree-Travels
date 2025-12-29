@@ -1,0 +1,67 @@
+@import "/src/styles/variables";
+
+.carousel, 
+.desktopView {
+  display: contents;
+}
+
+.mobileView {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .desktopView {
+    display: none;
+  }
+
+  .mobileView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / -1;
+  }
+
+  .cardWithArrows {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .arrowButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: $mediumBlue;
+    transition: color 0.2s ease;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d1d5db;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .active {
+    background-color: $darkBlue;
+  }
+}
