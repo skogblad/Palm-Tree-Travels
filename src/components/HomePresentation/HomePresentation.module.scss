@@ -1,22 +1,37 @@
+@import "/src/styles/variables";
+
 .howItWorksContainer {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 20px;
   justify-content: center;
   margin-block: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     rgb(250, 251, 252) 50%
   );
+  font-size: 1rem;
+  
 
   h2 {
     grid-column: 1 / -1;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    font-weight: 600;
   }
 
-  p {
+  .subText {
     grid-column: 1 / -1;
+    font-size: 1.2rem;
+    width: 800px;
+    justify-self: center;
+    margin-bottom: 50px;
+  }
+
+  .cardsCarousel {
+    display: contents;
   }
 
   .iconWrapper {
@@ -30,17 +45,17 @@
 
   .thermometerWrapper {
     @extend .iconWrapper;
-    background-color: rgb(253, 224, 237);
+    background-color: $superLightPink;
   }
 
   .palmTreeWrapper {
     @extend .iconWrapper;
-    background-color: rgb(226, 243, 221);
+    background-color: $superLightGreen;
   }
 
   .sparklesWrapper {
     @extend .iconWrapper;
-    background-color: rgb(247, 245, 208);
+    background-color: $lightYellow;
   }
 
   .iconSize {
@@ -55,21 +70,107 @@
 
   .palmTreeIcon {
     @extend .iconSize;
-    color: rgb(14, 142, 53);
+    color: $palmTreeGreen;
   }
 
   .sparklesIcon {
     @extend .iconSize;
-    color: rgb(169, 167, 22);
+    color: $darkYellow;
   }
 
   .finalPunchArticle {
-    background-color: rgb(226, 243, 221);
-    width: 500px;
+    background-color: $superLightGreen;
+    width: 650px;
     grid-column: 1 / -1;
     border-radius: 10px;
     justify-self: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1.3rem;
+
+    h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-block: 40px;
+
+    h2 {
+      font-size: 2.1rem;
+    }
+    
+    .subText {
+      width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .iconWrapper {
+      padding: 10px 15px;
+      margin-top: 20px;
+      margin-inline: 15px;
+    }
+
+    .iconSize {
+      width: 25px;
+      height: 25px;
+    }
+
+    .finalPunchArticle {
+      width: 580px;
+      padding-block: 10px;
+      font-size: 1.2rem;
+      margin-top: 40px;
+
+      h4 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 35px;
+    padding-bottom: 55px;
+
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .subText {
+      width: 380px;
+      margin-top: 0;
+    }
+    
+    .finalPunchArticle {
+      width: 360px;
+      font-size: 1.1rem;
+
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    h2 {
+      font-size: 1.7rem;
+    }
+    
+    .subText {
+      width: 280px;
+      font-size: 1.1rem;
+    }
+    
+    .finalPunchArticle {
+      width: 280px;
+      font-size: 1rem;
+
+      h4 {
+        font-size: 1.1rem;
+      }
+    }
   }
 }
 
@@ -82,9 +183,48 @@
 
   h2 {
     grid-column: 1 / -1;
+    font-size: 2.5rem;
+    margin-block: 0;
+    font-weight: 600;
   }
 
-  p {
+  .subText2 {
     grid-column: 1 / -1;
+    font-size: 1.2rem;
+    justify-self: center;
+  }
+
+  .cardsCarousel {
+    display: contents;
+  }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 2.1rem;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .subText2 {
+      width: 380px;
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    h2 {
+      font-size: 1.7rem;
+    }
+    
+    .subText2 {
+      width: 280px;
+      font-size: 1.1rem;
+    }
   }
 }
