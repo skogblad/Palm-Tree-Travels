@@ -79,13 +79,14 @@
   }
 
   .finalPunchArticle {
-    background-color: $superLightGreen;
+    background-color: $darkBlue;
     width: 650px;
     grid-column: 1 / -1;
     justify-self: center;
     margin-top: 50px;
-    padding: 20px;
+    padding: 25px;
     font-size: 1.3rem;
+    color: $mediumYellow;
 
     h4 {
       font-size: 1.4rem;

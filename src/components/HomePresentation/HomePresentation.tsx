@@ -1,4 +1,4 @@
-import { Palmtree, Sparkles, Thermometer } from "lucide-react"
+import { Palmtree, Sparkles, ThermometerSun } from "lucide-react"
 import { InfoCard } from "../InfoCard/InfoCard"
 import styles from "./HomePresentation.module.scss"
 import { DestinationCard } from "../DestinationCard/DestinationCard"
@@ -13,7 +13,7 @@ export const HomePresentation = () => {
 
         <CardCarousel className={styles.cardsCarousel}>
           <InfoCard
-            Icon={Thermometer}
+            Icon={ThermometerSun}
             iconWrapper={styles.thermometerWrapper}
             iconClassName={styles.thermometerIcon} 
             title="Temperatur"  
