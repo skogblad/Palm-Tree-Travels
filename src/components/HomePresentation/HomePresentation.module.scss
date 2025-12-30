@@ -10,7 +10,7 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgb(250, 251, 252) 50%
+    rgba($superLightBlue, 60%)
   );
   font-size: 1rem;
   
@@ -82,7 +82,6 @@
     background-color: $superLightGreen;
     width: 650px;
     grid-column: 1 / -1;
-    border-radius: 10px;
     justify-self: center;
     margin-top: 50px;
     padding: 20px;
@@ -90,6 +89,8 @@
 
     h4 {
       font-size: 1.4rem;
+      margin-top: 10px;
+      margin-bottom: 0;
       font-weight: 600;
     }
   }

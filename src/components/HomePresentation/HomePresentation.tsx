@@ -38,7 +38,7 @@ export const HomePresentation = () => {
         </CardCarousel>
 
         <article className={styles.finalPunchArticle}>
-          <h4>Sök efter upplevelse, inte destination</h4>
+          <h4>Följ solen, inte kartan</h4>
           <p>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis – Palm Tree Travels hittar destinationer som matchar din känsla.</p>
         </article>
       </section>
