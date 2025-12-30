@@ -15,6 +15,10 @@
       width: 380px;
       font-size: 1rem;
     }
+
+    hr {
+      display: none;
+    }
   }
 
   h2 {
@@ -45,25 +49,26 @@
     gap: 20px;
 
     .logoSection {
-      margin-left: 15px;
-      margin-top: 50px;
+      grid-column: 1 / -1;
+      margin: 0;
+      justify-self: center;
 
       p {
         display: none;
       }
-    }
-  }
 
-  @media screen and (max-width: 375px) {
-    .logoSection {
-      grid-column: 1 / -1;
-      margin-top: 0;
-      justify-self: center;
+      hr {
+        display: block;
+        border: 0.5px solid rgba(39, 42, 43, 0.084);
+        margin-top: 10px;
+        width: 80vw;
+        margin-left: calc(-40vw + 50%);
+      }
     }
-
+      
     .navContainer {
       margin-left: 30px;
-      margin-top: 10px;
+      margin-top: 0;
     }
   }
 }

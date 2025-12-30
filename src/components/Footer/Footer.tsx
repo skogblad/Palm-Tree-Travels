@@ -6,8 +6,9 @@ export const Footer = () => {
     <>
       <section className={styles.footerContainer}>
         <div className={styles.logoSection}>
-          <img src="./logoLong.png" alt="Palm Tree Travels logotyp" />
+          <img src="./logoLong_2.png" alt="Palm Tree Travels logotyp" />
           <p>Upptäck varma, inspirerande destinationer baserade på upplevelser, inte bara platser.</p>
+          <hr />
         </div>
         
         <nav aria-label="Fotlänkar" className={styles.navContainer}>
