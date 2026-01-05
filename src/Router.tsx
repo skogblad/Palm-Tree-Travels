@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router";
 import { Layout } from "./pages/Layout/Layout";
 import { Error } from "./pages/Error";
 import { Home } from "./pages/Home";
-import { DestinationApp } from "./pages/DestinationApp";
 import { Favorites } from "./pages/Favorites";
+import { DestinationSearch } from "./pages/DestinationSearch";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/search-destination",
-        element: <DestinationApp />
+        element: <DestinationSearch />
       },
       {
         path: "/favorites",
