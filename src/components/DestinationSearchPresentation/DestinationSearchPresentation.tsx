@@ -1,21 +1,23 @@
 import * as Slider from "@radix-ui/react-slider";
 import styles from "./DestinationSearchPresentation.module.scss"
 import React, { useState } from "react";
-import { experiencesOptions, vibesOptions } from "../../constants/categoryOptions";
+import { DestinationCard } from "../DestinationCard/DestinationCard";
+import { availableExperiences, availableVibes, filterDestinations } from "../../constants/curatedDestinations";
 
 export const DestinationSearchPresentation = () => {
   const [tempRange, setTempRange] = useState([25, 35]);
   const [selectedVibes, setSelectedVibes] = useState<string[]>([]);
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
+  const [destinations, setDestinations] = useState<ReturnType<typeof filterDestinations>>([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    // Combines all selected kinds for API
-    const allKinds = [...selectedVibes, ...selectedExperiences].join(",");
-    console.log("Search with kinds:", allKinds);
-
-    // TODO: Call getDestinations with kinds
+    const results = filterDestinations(selectedVibes, selectedExperiences);
+    
+    setDestinations(results);
+    setHasSearched(true);
   }
 
   return (
@@ -52,7 +54,7 @@ export const DestinationSearchPresentation = () => {
                 setSelectedVibes(selected);
               }}
             >
-              {vibesOptions.map((opt) => (
+              {availableVibes.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
@@ -68,16 +70,35 @@ export const DestinationSearchPresentation = () => {
                 setSelectedExperiences(selected);
               }}
             >
-              {experiencesOptions.map((opt) => (
+              {availableExperiences.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
           </label>
 
           <button type="reset">Återställ</button>
-          <button type="submit">Sök</button>
+          <button type="submit" >Sök</button>
         </form>
       </section>
+
+      {hasSearched && (
+        <section className={styles.resultContainer}>
+          <h3>Resultat ({destinations.length} destinationer)</h3>
+          {destinations.length > 0 ? (
+            destinations.map((d) => (
+              <DestinationCard 
+                key={d.name} 
+                img={d.imageUrl}
+                alt={d.name} 
+                title={`${d.name}, ${d.country}`} 
+                description={d.description}
+              />
+            ))
+          ) : (
+            <p>Inga resultat hittades</p>
+          )}
+        </section>
+      )}
     </>
   )
 }
