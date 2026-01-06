@@ -3,6 +3,7 @@ import { InfoCard } from "../InfoCard/InfoCard"
 import styles from "./HomePresentation.module.scss"
 import { DestinationCard } from "../DestinationCard/DestinationCard"
 import { CardCarousel } from "../CardCarousel/CardCarousel"
+import { curatedDestinations } from "../../constants/curatedDestinations"
 
 export const HomePresentation = () => {
   return (
@@ -48,11 +49,15 @@ export const HomePresentation = () => {
         <p className={styles.subText2}>Populära tropiska resmål som resenärer upptäcker just nu</p>
 
         <CardCarousel className={styles.cardsCarousel}>
-          <DestinationCard img="./topBackground2.jpg" alt="test" title="Destination 1" description="Hola hola"/>
-
-          <DestinationCard img="./topBackground2.jpg" alt="test" title="Destination 2" description="TJOO"/>
-
-          <DestinationCard img="./topBackground2.jpg" alt="test" title="Destination 3" description="TESSST"/>
+          {curatedDestinations.slice(0, 3).map((d) => (
+            <DestinationCard 
+              key={d.name}
+              img={d.imageUrl}
+              alt={d.name}
+              title={`${d.name}, ${d.country}`}
+              description={d.description}
+            />
+          ))}
         </CardCarousel>
       </section>
     </>
