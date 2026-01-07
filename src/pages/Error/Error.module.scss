@@ -1,0 +1,7 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.backLink {
+  @include button-base;
+  font-size: 1.2rem;
+}
