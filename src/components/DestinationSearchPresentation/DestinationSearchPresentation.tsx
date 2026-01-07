@@ -90,8 +90,10 @@ export const DestinationSearchPresentation = () => {
                 key={d.name} 
                 img={d.imageUrl}
                 alt={d.name} 
-                title={`${d.name}, ${d.country}`} 
+                title={d.name} 
+                country={d.country}
                 description={d.description}
+                experience={d.experiences}
               />
             ))
           ) : (
