@@ -4,6 +4,7 @@ import styles from "./HomePresentation.module.scss"
 import { DestinationCard } from "../DestinationCard/DestinationCard"
 import { CardCarousel } from "../CardCarousel/CardCarousel"
 import { curatedDestinations } from "../../constants/curatedDestinations"
+import { NavLink } from "react-router"
 
 export const HomePresentation = () => {
   return (
@@ -41,6 +42,7 @@ export const HomePresentation = () => {
         <article className={styles.finalPunchArticle}>
           <h4>Följ solen, inte kartan</h4>
           <p>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis – Palm Tree Travels hittar destinationer som matchar din känsla.</p>
+          <NavLink to={"/search-destination"}>Upptäck nu</NavLink>
         </article>
       </section>
 
@@ -54,8 +56,10 @@ export const HomePresentation = () => {
               key={d.name}
               img={d.imageUrl}
               alt={d.name}
-              title={`${d.name}, ${d.country}`}
+              title={d.name}
+              country={d.country}
               description={d.description}
+              experience={d.experiences}
             />
           ))}
         </CardCarousel>

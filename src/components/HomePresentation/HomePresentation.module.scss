@@ -10,7 +10,7 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba($superLightYellow, 60%)
+    rgba($superLightBlue, 40%)
   );
   font-size: 1rem;
   
@@ -79,20 +79,39 @@
   }
 
   .finalPunchArticle {
-    background-color: $darkBlue;
+    background-color:rgba($superLightGreen, 0.5);
     width: 650px;
     grid-column: 1 / -1;
     justify-self: center;
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 25px;
     font-size: 1.3rem;
-    color: $mediumYellow;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 3px rgba($lightGreen, 0.03);
 
     h4 {
       font-size: 1.4rem;
       margin-top: 10px;
       margin-bottom: 0;
       font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    a {
+      font-size: 1.2rem;
+      color: $mediumYellow;
+      background-color: rgba($darkBlue, 0.8);
+      padding: 5px 10px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+
+      &:hover {
+        color: $darkGreen;
+        background-color: $lightGreen;
+      }
     }
   }
 
