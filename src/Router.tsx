@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./pages/Layout/Layout";
-import { Error } from "./pages/Error";
+import { Error } from "./pages/Error/Error";
 import { Home } from "./pages/Home";
 import { Favorites } from "./pages/Favorites";
 import { DestinationSearch } from "./pages/DestinationSearch";

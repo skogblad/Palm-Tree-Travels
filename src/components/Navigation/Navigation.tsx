@@ -17,13 +17,13 @@ export const Navigation = () => {
       <ul>
         <li>
           <NavLink to={"/search-destination"} aria-label="Sök destination">
-            {isHomePage ? "Sök destination" : <Search/>}
+            {isHomePage ? "Sök destination" : <Search aria-hidden="true"/>}
           </NavLink>
         </li>
 
         <li>
           <NavLink to={"/favorites"} aria-label="Favoriter">
-            {isHomePage ? "Favoriter" : <Heart/>}
+            {isHomePage ? "Favoriter" : <Heart aria-hidden="true"/>}
           </NavLink>
         </li>
       </ul>

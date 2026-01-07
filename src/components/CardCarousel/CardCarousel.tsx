@@ -36,7 +36,7 @@ export const CardCarousel = ({ children, className }: CardCarouselProps) => {
             onClick={goToPrev}
             aria-label="Föregående kort"
           >
-            <ChevronLeft />
+            <ChevronLeft aria-hidden="true"/>
           </button>
 
           {items[activeIndex]}
@@ -47,7 +47,7 @@ export const CardCarousel = ({ children, className }: CardCarouselProps) => {
             onClick={goToNext}
             aria-label="Nästa kort"
           >
-            <ChevronRight />
+            <ChevronRight aria-hidden="true"/>
           </button>
         </div>
 
