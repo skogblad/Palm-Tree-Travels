@@ -9,9 +9,11 @@ type destinationCardProps = {
   country: string
   description: string
   experience: string[]
+  temperature?: number
+  weatherIcon?: string
 }
 
-export const DestinationCard = ({ img, alt, title, country, description, experience }: destinationCardProps) => {
+export const DestinationCard = ({ img, alt, title, country, description, experience, temperature, weatherIcon }: destinationCardProps) => {
   const experienceLabels = experience.map((exp) => ({
     value: exp,
     label: availableExperiences.find((e) => e.value === exp)?.label ?? exp
@@ -28,6 +30,11 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
           <span key={exp.value} className={styles.tag}>{exp.label}</span>
         ))}
       </div>
+      {temperature !== undefined && (
+        <span className={styles.tempSpan}>
+          Aktuell temperatur:<img src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt="Väderikon" className={styles.weatherIcon}/>{Math.round(temperature)}°C 
+        </span>
+      )}
     </article>
   )
 }

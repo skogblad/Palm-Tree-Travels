@@ -5,7 +5,7 @@
   text-align: left;
   border-radius: 20px;
   overflow: hidden;
-  width: 370px;
+  width: 380px;
   box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
 
   img {
@@ -16,12 +16,13 @@
   
   h3, 
   p, 
-  .countrySpan {
-    margin-inline: 20px;
+  .countrySpan,
+  .tempSpan {
+    margin-inline: 30px;
   }
 
   h3 {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0;
     font-size: 1.3rem;
     font-weight: 500;
@@ -43,13 +44,14 @@
   }
 
   p {
-    margin-bottom: 30px;
+    margin-bottom: 45px;
+    margin-top: 27px;
     font-size: 1.1rem;
   }
 
   .experienceTags {
     margin-bottom: 20px;
-    padding-inline: 20px;
+    padding-inline: 30px;
 
     .tag {
       font-size: 0.875rem;
@@ -64,6 +66,31 @@
         #d1fae5 30%,
         #e2fbef 100%
       );
+    }
+  }
+
+  .tempSpan {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-weight: 600;
+    color: $lightYellow;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding-inline: 20px;
+    width: fit-content;
+    box-shadow: inset 0 0 0 2px rgba(192, 255, 216, 0.1);
+    background: linear-gradient(90deg,
+      #de9acb 0%,
+      #f5b4e2 50%,
+      #efafdf 100%
+    );
+
+    .weatherIcon {
+      width: 35px;
+      height: auto;
     }
   }
 
