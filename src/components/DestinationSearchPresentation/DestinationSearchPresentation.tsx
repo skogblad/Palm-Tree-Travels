@@ -3,34 +3,75 @@ import styles from "./DestinationSearchPresentation.module.scss"
 import React, { useState } from "react";
 import { DestinationCard } from "../DestinationCard/DestinationCard";
 import { availableExperiences, availableVibes, filterDestinations } from "../../constants/curatedDestinations";
+import type { CuratedDestination } from "../../models/curatedDestinations";
 import { DayPicker, type DateRange } from "react-day-picker";
 import { sv } from "date-fns/locale";
 import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
+import { getWeather } from "../../services/weatherService";
+import type { Weather } from "../../models/Weather";
 
 export const DestinationSearchPresentation = () => {
-  const [tempRange, setTempRange] = useState([25, 35]);
+  const [tempRange, setTempRange] = useState([20, 30]);
   const [selectedVibes, setSelectedVibes] = useState<string[]>([]);
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
-  const [destinations, setDestinations] = useState<ReturnType<typeof filterDestinations>>([]);
+  const [destinations, setDestinations] = useState<CuratedDestination[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
+  const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
 
-  function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const results = filterDestinations(selectedVibes, selectedExperiences);
+
+    // If no date is selected, show results filtered only by vibes/experiences 
+    // without applying temperature filtering/fetching weather data (prevent crash & unneccessary API call)
+    if (!dateRange?.from) {
+      setDestinations(results);
+      setHasSearched(true);
+      return;
+    }
+
+    const monthKeys = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"] as const;
+    const month = dateRange.from.getMonth();
+    const selectedMonthKey = monthKeys[month];
+
+    const filteredByTemp = results.filter((dest) => {
+      const destTemp = dest.avgTempByMonth[selectedMonthKey];
+      return destTemp >= tempRange[0] && destTemp <= tempRange[1];
+    });
+
+    const getCoordinates = filteredByTemp.map((dest) => {
+      return getWeather(dest.lat, dest.lon);
+    });
+
+    const weatherResults = await Promise.all(getCoordinates);
+
+    const weatherMap: Record<string, Weather> = {};
+    filteredByTemp.forEach((dest, index) => {
+      weatherMap[dest.name] = weatherResults[index];
+    });
     
-    setDestinations(results);
+    setDestinations(filteredByTemp);
     setHasSearched(true);
+    setCurrentWeather(weatherMap);
+  }
+
+  const handleReset = () => {
+    setTempRange([20, 30]);
+    setSelectedVibes([]);
+    setSelectedExperiences([]);
+    setDateRange(undefined);
+    setHasSearched(false);
   }
 
   return (
     <>
       <section>
-        <h2>Start din sökning</h2>
+        <h2>Starta din sökning</h2>
 
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <form onSubmit={handleSubmit} onReset={handleReset} className={styles.formContainer}>
           <div className="calendarWrapper">
             <span>Resedatum:</span>
             <DayPicker
@@ -103,7 +144,9 @@ export const DestinationSearchPresentation = () => {
               <DestinationCard 
                 key={d.name} 
                 img={d.imageUrl}
-                alt={d.name} 
+                alt={d.name}
+                weatherIcon={currentWeather[d.name]?.icon}
+                temperature={currentWeather[d.name]?.temp} 
                 title={d.name} 
                 country={d.country}
                 description={d.description}
