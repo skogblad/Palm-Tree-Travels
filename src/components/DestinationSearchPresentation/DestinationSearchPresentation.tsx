@@ -3,6 +3,10 @@ import styles from "./DestinationSearchPresentation.module.scss"
 import React, { useState } from "react";
 import { DestinationCard } from "../DestinationCard/DestinationCard";
 import { availableExperiences, availableVibes, filterDestinations } from "../../constants/curatedDestinations";
+import { DayPicker, type DateRange } from "react-day-picker";
+import { sv } from "date-fns/locale";
+import "react-day-picker/style.css";
+import "./DayPickerStyles.scss";
 
 export const DestinationSearchPresentation = () => {
   const [tempRange, setTempRange] = useState([25, 35]);
@@ -10,6 +14,7 @@ export const DestinationSearchPresentation = () => {
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [destinations, setDestinations] = useState<ReturnType<typeof filterDestinations>>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [dateRange, setDateRange] = useState<DateRange | undefined>();
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -26,6 +31,15 @@ export const DestinationSearchPresentation = () => {
         <h2>Start din sökning</h2>
 
         <form onSubmit={handleSubmit} className={styles.formContainer}>
+          <div className="calendarWrapper">
+            <span>Resedatum:</span>
+            <DayPicker
+              locale={sv} 
+              mode="range"
+              selected={dateRange}
+              onSelect={setDateRange}
+            />
+          </div>
 
           <div>
             <span>Temperatur: {tempRange[0]}° - {tempRange[1]}°</span>
