@@ -4,6 +4,7 @@ import { Error } from "./pages/Error/Error";
 import { Home } from "./pages/Home";
 import { Favorites } from "./pages/Favorites";
 import { DestinationSearch } from "./pages/DestinationSearch";
+import { Destination } from "./pages/Destination";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "/search-destination",
         element: <DestinationSearch />
+      },
+      {
+        path: "/destination/:id",
+        element: <Destination />
       },
       {
         path: "/favorites",
