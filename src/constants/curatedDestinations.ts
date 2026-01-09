@@ -7,6 +7,7 @@ export const curatedDestinations: CuratedDestination[] = [
   // 🌴 CARIBBEAN
   // ============================================
   {
+    id: 1,
     name: "Punta Cana",
     country: "Dominikanska republiken",
     lat: 18.58,
@@ -15,9 +16,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "snorkeling", "golf"],
     description: "Känd för sina kritvita stränder och kristallklara vatten. Punta Cana är ett paradis med all-inclusive-resorts och palmkantade kuster.",
     imageUrl: "https://images.unsplash.com/photo-1569700946659-fe1941c71fe4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 26, mar: 27, apr: 27, may: 28, jun: 28, jul: 29, aug: 29, sep: 29, oct: 28, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 27, Maj: 28, Juni: 28, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
   {
+    id: 2,
     name: "Nassau",
     country: "Bahamas",
     lat: 25.05,
@@ -26,9 +28,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "diving", "casino"],
     description: "Bahamas huvudstad blandar kolonial charm med moderna lyxresorts och den berömda Atlantis Paradise Island.",
     imageUrl: "https://images.unsplash.com/photo-1615839901889-c828c4a96c15?q=80&w=2490&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 21, feb: 22, mar: 23, apr: 25, may: 27, jun: 28, jul: 29, aug: 29, sep: 28, oct: 27, nov: 24, dec: 22 }
+    avgTempByMonth: { Januari: 21, Februari: 22, Mars: 23, April: 25, Maj: 27, Juni: 28, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 24, December: 22 }
   },
   {
+    id: 3,
     name: "Montego Bay",
     country: "Jamaica",
     lat: 18.47,
@@ -37,9 +40,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "snorkeling", "nightlife"],
     description: "Känd som 'MoBay' erbjuder detta jamaicanska paradis reggaemusik, jerk-mat och några av Karibiens vackraste stränder.",
     imageUrl: "https://images.unsplash.com/photo-1700807307391-444e76b0e2ff?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 26, mar: 27, apr: 28, may: 28, jun: 29, jul: 29, aug: 29, sep: 29, oct: 28, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 28, Maj: 28, Juni: 29, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
   {
+    id: 4,
     name: "Aruba",
     country: "Aruba",
     lat: 12.52,
@@ -48,9 +52,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "windsurfing", "snorkeling"],
     description: "One Happy Island - Aruba är känt för sina vita stränder, året-runt-sol och ständigt svalkande passadvindar.",
     imageUrl: "https://images.unsplash.com/photo-1633421332483-1aa89f0c6b9a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 27, mar: 28, apr: 28, may: 29, jun: 29, jul: 29, aug: 30, sep: 30, oct: 29, nov: 28, dec: 27 }
+    avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 30, September: 30, Oktober: 29, November: 28, December: 27 }
   },
   {
+    id: 5,
     name: "San Juan",
     country: "Puerto Rico",
     lat: 18.47,
@@ -59,13 +64,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "nightlife"],
     description: "Puerto Ricos livliga huvudstad med färgglad kolonialarkitektur, fantastiska stränder och legendariskt nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1650764798436-7c7debbdc697?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 25, feb: 25, mar: 26, apr: 27, may: 28, jun: 28, jul: 28, aug: 29, sep: 28, oct: 28, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 25, Februari: 25, Mars: 26, April: 27, Maj: 28, Juni: 28, Juli: 28, Augusti: 29, September: 28, Oktober: 28, November: 27, December: 26 }
   },
 
   // ============================================
   // 🌏 SOUTHEAST ASIA
   // ============================================
   {
+    id: 6,
     name: "Phuket",
     country: "Thailand",
     lat: 7.89,
@@ -74,9 +80,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "diving", "nightlife"],
     description: "Thailands största ö erbjuder fantastiska stränder, pulserande nattliv och dykning i världsklass i Andamansjön.",
     imageUrl: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 28, mar: 29, apr: 29, may: 28, jun: 28, jul: 28, aug: 28, sep: 27, oct: 27, nov: 27, dec: 27 }
+    avgTempByMonth: { Januari: 27, Februari: 28, Mars: 29, April: 29, Maj: 28, Juni: 28, Juli: 28, Augusti: 28, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
+    id: 7,
     name: "Koh Samui",
     country: "Thailand",
     lat: 9.51,
@@ -85,9 +92,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "spa", "temples"],
     description: "Ett tropiskt öparadis känt för palmkantade stränder, lyxiga spa och det ikoniska Big Buddha-templet.",
     imageUrl: "https://images.unsplash.com/photo-1556463207-5f043fc03306?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 27, mar: 28, apr: 29, may: 29, jun: 29, jul: 28, aug: 28, sep: 28, oct: 27, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 26, Februari: 27, Mars: 28, April: 29, Maj: 29, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 27, November: 27, December: 26 }
   },
   {
+    id: 8,
     name: "Bali",
     country: "Indonesien",
     lat: -8.41,
@@ -96,9 +104,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "temples", "yoga"],
     description: "Gudarnas ö förtrollar med uråldriga tempel, terrasserade risfält, surfing i världsklass och spirituella retreats.",
     imageUrl: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 27, mar: 27, apr: 27, may: 27, jun: 26, jul: 26, aug: 26, sep: 27, oct: 28, nov: 28, dec: 27 }
+    avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 27, Maj: 27, Juni: 26, Juli: 26, Augusti: 26, September: 27, Oktober: 28, November: 28, December: 27 }
   },
   {
+    id: 9,
     name: "Boracay",
     country: "Filippinerna",
     lat: 11.97,
@@ -107,9 +116,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "diving", "nightlife"],
     description: "Hem till den världsberömda White Beach. Boracay är Filippinernas främsta ödestination med puderviit sand.",
     imageUrl: "https://images.unsplash.com/photo-1708195559744-c2b3e60dbe27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 27, mar: 28, apr: 30, may: 30, jun: 29, jul: 28, aug: 28, sep: 28, oct: 28, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 26, Februari: 27, Mars: 28, April: 30, Maj: 30, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 27, December: 26 }
   },
   {
+    id: 10,
     name: "Langkawi",
     country: "Malaysia",
     lat: 6.35,
@@ -118,9 +128,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nature", "cable-car"],
     description: "En ögrupp med 99 öar som erbjuder tax-free shopping, orörda stränder och den berömda Sky Bridge.",
     imageUrl: "https://images.unsplash.com/photo-1669812849320-283db1bf8216?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 28, feb: 29, mar: 29, apr: 29, may: 28, jun: 28, jul: 28, aug: 28, sep: 27, oct: 27, nov: 27, dec: 27 }
+    avgTempByMonth: { Januari: 28, Februari: 29, Mars: 29, April: 29, Maj: 28, Juni: 28, Juli: 28, Augusti: 28, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
+    id: 11,
     name: "Da Nang",
     country: "Vietnam",
     lat: 16.05,
@@ -129,9 +140,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "food"],
     description: "En kuststad med fantastiska stränder, den berömda Gyllene bron och porten till det antika Hoi An.",
     imageUrl: "https://images.unsplash.com/photo-1663684591502-93887202a863?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 22, feb: 23, mar: 25, apr: 27, may: 29, jun: 30, jul: 30, aug: 29, sep: 28, oct: 26, nov: 24, dec: 22 }
+    avgTempByMonth: { Januari: 22, Februari: 23, Mars: 25, April: 27, Maj: 29, Juni: 30, Juli: 30, Augusti: 29, September: 28, Oktober: 26, November: 24, December: 22 }
   },
   {
+    id: 12,
     name: "Goa",
     country: "Indien",
     lat: 15.50,
@@ -140,13 +152,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "yoga"],
     description: "Indiens strandparadis kombinerar portugisiskt kolonialt arv med legendariska strandfester och spirituella retreats.",
     imageUrl: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 27, mar: 29, apr: 31, may: 32, jun: 29, jul: 28, aug: 28, sep: 28, oct: 29, nov: 28, dec: 27 }
+    avgTempByMonth: { Januari: 26, Februari: 27, Mars: 29, April: 31, Maj: 32, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 29, November: 28, December: 27 }
   },
 
   // ============================================
   // 🏝️ INDIAN OCEAN
   // ============================================
   {
+    id: 13,
     name: "Maldiverna",
     country: "Maldiverna",
     lat: 3.20,
@@ -155,9 +168,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "diving", "overwater-villa"],
     description: "Det ultimata tropiska paradiset med kristallklara laguner, övervattenbungalows och världens bästa dykning.",
     imageUrl: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 28, feb: 29, mar: 30, apr: 30, may: 29, jun: 29, jul: 28, aug: 28, sep: 28, oct: 28, nov: 28, dec: 28 }
+    avgTempByMonth: { Januari: 28, Februari: 29, Mars: 30, April: 30, Maj: 29, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 28, December: 28 }
   },
   {
+    id: 14,
     name: "Seychellerna",
     country: "Seychellerna",
     lat: -4.68,
@@ -166,9 +180,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nature", "snorkeling"],
     description: "En ögrupp med 115 öar med dramatiska granitklippor, orörda stränder och sällsynt djurliv.",
     imageUrl: "https://images.unsplash.com/photo-1596250470244-d172e7eb4054?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 28, mar: 28, apr: 28, may: 28, jun: 27, jul: 26, aug: 26, sep: 27, oct: 27, nov: 27, dec: 27 }
+    avgTempByMonth: { Januari: 27, Februari: 28, Mars: 28, April: 28, Maj: 28, Juni: 27, Juli: 26, Augusti: 26, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
+    id: 15,
     name: "Mauritius",
     country: "Mauritius",
     lat: -20.35,
@@ -177,9 +192,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nature", "golf"],
     description: "En paradisö känd för sina stränder, laguner, rev och den häpnadsväckande undervattensvattenfalls-illusionen.",
     imageUrl: "https://images.unsplash.com/photo-1513415277900-a62401e19be4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 27, mar: 27, apr: 25, may: 23, jun: 21, jul: 20, aug: 20, sep: 21, oct: 23, nov: 25, dec: 26 }
+    avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 25, Maj: 23, Juni: 21, Juli: 20, Augusti: 20, September: 21, Oktober: 23, November: 25, December: 26 }
   },
   {
+    id: 16,
     name: "Zanzibar",
     country: "Tanzania",
     lat: -6.16,
@@ -188,13 +204,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "spices"],
     description: "Kryddön erbjuder orörda stränder, Stone Towns UNESCO-arv och aromatiska kryddplantager.",
     imageUrl: "https://images.unsplash.com/photo-1549035092-33b2937b075a?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 29, feb: 29, mar: 29, apr: 28, may: 27, jun: 26, jul: 25, aug: 25, sep: 26, oct: 27, nov: 28, dec: 29 }
+    avgTempByMonth: { Januari: 29, Februari: 29, Mars: 29, April: 28, Maj: 27, Juni: 26, Juli: 25, Augusti: 25, September: 26, Oktober: 27, November: 28, December: 29 }
   },
 
   // ============================================
   // 🌊 MEDITERRANEAN
   // ============================================
   {
+    id: 17,
     name: "Santorini",
     country: "Grekland",
     lat: 36.39,
@@ -203,9 +220,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "wine", "sunset"],
     description: "Den ikoniska grekiska ön med vitkalkade byggnader, blå kupoler och hisnande caldera-vyer vid solnedgång.",
     imageUrl: "https://images.unsplash.com/photo-1580502304784-8985b7eb7260?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 12, feb: 12, mar: 14, apr: 17, may: 21, jun: 25, jul: 27, aug: 27, sep: 24, oct: 20, nov: 16, dec: 13 }
+    avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 17, Maj: 21, Juni: 25, Juli: 27, Augusti: 27, September: 24, Oktober: 20, November: 16, December: 13 }
   },
   {
+    id: 18,
     name: "Mykonos",
     country: "Grekland",
     lat: 37.45,
@@ -214,9 +232,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "sightseeing"],
     description: "De grekiska öarnas festhuvudstad, känd för sina väderkvarnar, strandklubbar och legendariska nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 11, feb: 11, mar: 13, apr: 16, may: 20, jun: 24, jul: 26, aug: 26, sep: 23, oct: 19, nov: 15, dec: 12 }
+    avgTempByMonth: { Januari: 11, Februari: 11, Mars: 13, April: 16, Maj: 20, Juni: 24, Juli: 26, Augusti: 26, September: 23, Oktober: 19, November: 15, December: 12 }
   },
   {
+    id: 19,
     name: "Ibiza",
     country: "Spanien",
     lat: 38.91,
@@ -225,9 +244,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "wellness"],
     description: "Världens klubbhuvudstad erbjuder också gömda vikar, yoga-retreats och fantastiska Medelhavssolnedgångar.",
     imageUrl: "https://images.unsplash.com/photo-1563784462030-fe92bbdcf857?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 12, feb: 12, mar: 14, apr: 16, may: 20, jun: 24, jul: 27, aug: 28, sep: 25, oct: 21, nov: 16, dec: 13 }
+    avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 16, Maj: 20, Juni: 24, Juli: 27, Augusti: 28, September: 25, Oktober: 21, November: 16, December: 13 }
   },
   {
+    id: 20,
     name: "Mallorca",
     country: "Spanien",
     lat: 39.57,
@@ -235,10 +255,11 @@ export const curatedDestinations: CuratedDestination[] = [
     vibes: ["mediterranean", "relaxation", "family-friendly"],
     experiences: ["beach", "cycling", "sightseeing"],
     description: "Balearernas största ö med varierade landskap från bergsbyar till orörda vikar och livliga Palma.",
-    imageUrl: "https://images.unsplash.com/photo-1566993850067-bb8df9c9807e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 10, feb: 11, mar: 13, apr: 15, may: 19, jun: 23, jul: 26, aug: 27, sep: 24, oct: 19, nov: 14, dec: 11 }
+    imageUrl: "https://images.unsplash.com/photo-1672264430465-781cd9154896?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avgTempByMonth: { Januari: 10, Februari: 11, Mars: 13, April: 15, Maj: 19, Juni: 23, Juli: 26, Augusti: 27, September: 24, Oktober: 19, November: 14, December: 11 }
   },
   {
+    id: 21,
     name: "Amalfikusten",
     country: "Italien",
     lat: 40.63,
@@ -247,9 +268,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "food", "beach"],
     description: "Dramatiska klippor, pastellfärgade byar och det djupblå Medelhavet gör denna UNESCO-plats oförglömlig.",
     imageUrl: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 10, feb: 10, mar: 12, apr: 15, may: 19, jun: 23, jul: 26, aug: 27, sep: 23, oct: 19, nov: 14, dec: 11 }
+    avgTempByMonth: { Januari: 10, Februari: 10, Mars: 12, April: 15, Maj: 19, Juni: 23, Juli: 26, Augusti: 27, September: 23, Oktober: 19, November: 14, December: 11 }
   },
   {
+    id: 22,
     name: "Sardinien",
     country: "Italien",
     lat: 40.12,
@@ -258,9 +280,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "sailing", "food"],
     description: "Italiens näst största ö med den berömda Costa Smeralda, antika ruiner och kristallklart vatten.",
     imageUrl: "https://images.unsplash.com/photo-1591103000599-50f5b4ec7d3d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 10, feb: 11, mar: 13, apr: 15, may: 19, jun: 24, jul: 27, aug: 27, sep: 24, oct: 19, nov: 14, dec: 11 }
+    avgTempByMonth: { Januari: 10, Februari: 11, Mars: 13, April: 15, Maj: 19, Juni: 24, Juli: 27, Augusti: 27, September: 24, Oktober: 19, November: 14, December: 11 }
   },
   {
+    id: 23,
     name: "Dubrovnik",
     country: "Kroatien",
     lat: 42.65,
@@ -269,9 +292,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "sightseeing", "beach"],
     description: "Adriatiska havets pärla med fantastiska medeltida murar, Game of Thrones-inspelningsplatser och öhopping.",
     imageUrl: "https://images.unsplash.com/photo-1610104052927-ed67e7faefc3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 9, feb: 10, mar: 12, apr: 15, may: 19, jun: 24, jul: 27, aug: 27, sep: 23, oct: 18, nov: 13, dec: 10 }
+    avgTempByMonth: { Januari: 9, Februari: 10, Mars: 12, April: 15, Maj: 19, Juni: 24, Juli: 27, Augusti: 27, September: 23, Oktober: 18, November: 13, December: 10 }
   },
   {
+    id: 24,
     name: "Bodrum",
     country: "Turkiet",
     lat: 37.03,
@@ -280,9 +304,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "history"],
     description: "Turkiets Saint-Tropez kombinerar antika ruiner, vitkalkad arkitektur och legendariska strandklubbar.",
     imageUrl: "https://images.unsplash.com/photo-1684858504602-677ac40eadfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 11, feb: 12, mar: 14, apr: 17, may: 22, jun: 27, jul: 29, aug: 29, sep: 25, oct: 20, nov: 15, dec: 12 }
+    avgTempByMonth: { Januari: 11, Februari: 12, Mars: 14, April: 17, Maj: 22, Juni: 27, Juli: 29, Augusti: 29, September: 25, Oktober: 20, November: 15, December: 12 }
   },
   {
+    id: 25,
     name: "Cypern",
     country: "Cypern",
     lat: 34.92,
@@ -291,13 +316,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "wine"],
     description: "Afrodites ö erbjuder antika ruiner, vackra stränder och bergsbyar med vintraditioner.",
     imageUrl: "https://images.unsplash.com/photo-1677023484291-005b9840132f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 12, feb: 12, mar: 14, apr: 18, may: 22, jun: 26, jul: 29, aug: 29, sep: 27, oct: 23, nov: 18, dec: 14 }
+    avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 18, Maj: 22, Juni: 26, Juli: 29, Augusti: 29, September: 27, Oktober: 23, November: 18, December: 14 }
   },
 
   // ============================================
   // 🌎 MEXICO & CENTRAL AMERICA
   // ============================================
   {
+    id: 26,
     name: "Cancún",
     country: "Mexiko",
     lat: 21.16,
@@ -306,9 +332,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "ruins"],
     description: "Mexikos mest kända semesterdestination erbjuder vita stränder, Maya-ruiner och resorts i världsklass.",
     imageUrl: "https://images.unsplash.com/photo-1695385246146-1e12a7479410?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 24, feb: 25, mar: 26, apr: 28, may: 29, jun: 29, jul: 29, aug: 29, sep: 28, oct: 27, nov: 26, dec: 24 }
+    avgTempByMonth: { Januari: 24, Februari: 25, Mars: 26, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 26, December: 24 }
   },
   {
+    id: 27,
     name: "Tulum",
     country: "Mexiko",
     lat: 20.21,
@@ -317,9 +344,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "ruins", "yoga"],
     description: "Bohemisk strandstad känd för klippkantade Maya-ruiner, cenoter och miljömedvetna lyxresorts.",
     imageUrl: "https://images.unsplash.com/photo-1504814532849-cff240bbc503?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 24, feb: 25, mar: 26, apr: 28, may: 29, jun: 29, jul: 29, aug: 29, sep: 28, oct: 27, nov: 26, dec: 24 }
+    avgTempByMonth: { Januari: 24, Februari: 25, Mars: 26, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 26, December: 24 }
   },
   {
+    id: 28,
     name: "Cabo San Lucas",
     country: "Mexiko",
     lat: 22.89,
@@ -328,9 +356,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "fishing", "nightlife"],
     description: "Där öknen möter havet erbjuder Cabo dramatiska klippformationer, sportfiske och pulserande nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1645735308116-d12ac96798a5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 19, feb: 20, mar: 21, apr: 23, may: 25, jun: 28, jul: 30, aug: 30, sep: 29, oct: 27, nov: 23, dec: 20 }
+    avgTempByMonth: { Januari: 19, Februari: 20, Mars: 21, April: 23, Maj: 25, Juni: 28, Juli: 30, Augusti: 30, September: 29, Oktober: 27, November: 23, December: 20 }
   },
   {
+    id: 29,
     name: "Costa Rica",
     country: "Costa Rica",
     lat: 9.93,
@@ -339,9 +368,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["nature", "surfing", "wildlife"],
     description: "Pura Vida! Regnskogar, vulkaner och både Stilla havs- och Karibiska stränder i ett ekoparadis.",
     imageUrl: "https://images.unsplash.com/photo-1552727131-5fc6af16796d?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 27, mar: 28, apr: 28, may: 27, jun: 26, jul: 26, aug: 26, sep: 26, oct: 25, nov: 25, dec: 25 }
+    avgTempByMonth: { Januari: 26, Februari: 27, Mars: 28, April: 28, Maj: 27, Juni: 26, Juli: 26, Augusti: 26, September: 26, Oktober: 25, November: 25, December: 25 }
   },
   {
+    id: 30,
     name: "Roatán",
     country: "Honduras",
     lat: 16.32,
@@ -350,13 +380,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "beach"],
     description: "Del av världens näst största barriärrev. Roatán är ett dykarparadis med prisvärd karibisk charm.",
     imageUrl: "https://images.unsplash.com/photo-1505760112740-45991f3e9339?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 26, mar: 27, apr: 28, may: 29, jun: 29, jul: 29, aug: 29, sep: 29, oct: 28, nov: 27, dec: 26 }
+    avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
 
   // ============================================
   // 🌴 USA & HAWAII
   // ============================================
   {
+    id: 31,
     name: "Miami Beach",
     country: "USA",
     lat: 25.79,
@@ -365,9 +396,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "nightlife", "art"],
     description: "Art deco-arkitektur, South Beach-glamour och världsberömda nattklubbar gör Miami till en ikonisk destination.",
     imageUrl: "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 20, feb: 21, mar: 23, apr: 25, may: 27, jun: 28, jul: 29, aug: 29, sep: 28, oct: 26, nov: 24, dec: 21 }
+    avgTempByMonth: { Januari: 20, Februari: 21, Mars: 23, April: 25, Maj: 27, Juni: 28, Juli: 29, Augusti: 29, September: 28, Oktober: 26, November: 24, December: 21 }
   },
   {
+    id: 32,
     name: "Maui",
     country: "USA",
     lat: 20.80,
@@ -376,9 +408,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "hiking", "whale-watching"],
     description: "Dalens ö erbjuder vägen till Hana, soluppgång vid Haleakala och några av Hawaiis bästa stränder.",
     imageUrl: "https://images.unsplash.com/photo-1558983731-16245204a27d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 23, feb: 23, mar: 24, apr: 24, may: 25, jun: 26, jul: 27, aug: 27, sep: 27, oct: 26, nov: 25, dec: 24 }
+    avgTempByMonth: { Januari: 23, Februari: 23, Mars: 24, April: 24, Maj: 25, Juni: 26, Juli: 27, Augusti: 27, September: 27, Oktober: 26, November: 25, December: 24 }
   },
   {
+    id: 33,
     name: "Honolulu",
     country: "USA",
     lat: 21.31,
@@ -387,9 +420,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "surfing", "history"],
     description: "Hem till Waikiki Beach, Diamond Head och Pearl Harbor - Hawaiis livliga huvudstad.",
     imageUrl: "https://images.unsplash.com/photo-1573992554018-83e7853bd45f?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 23, feb: 23, mar: 24, apr: 25, may: 26, jun: 27, jul: 28, aug: 28, sep: 28, oct: 27, nov: 25, dec: 24 }
+    avgTempByMonth: { Januari: 23, Februari: 23, Mars: 24, April: 25, Maj: 26, Juni: 27, Juli: 28, Augusti: 28, September: 28, Oktober: 27, November: 25, December: 24 }
   },
   {
+    id: 34,
     name: "Key West",
     country: "USA",
     lat: 24.56,
@@ -398,13 +432,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "sunset"],
     description: "USA:s sydligaste punkt, känd för Hemingway, solnedgångar och avslappnad östämning.",
     imageUrl: "https://images.unsplash.com/photo-1531429957-9e7c26e39c84?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 21, feb: 22, mar: 24, apr: 26, may: 28, jun: 29, jul: 30, aug: 30, sep: 29, oct: 27, nov: 24, dec: 22 }
+    avgTempByMonth: { Januari: 21, Februari: 22, Mars: 24, April: 26, Maj: 28, Juni: 29, Juli: 30, Augusti: 30, September: 29, Oktober: 27, November: 24, December: 22 }
   },
 
   // ============================================
   // 🏜️ MIDDLE EAST & AFRICA
   // ============================================
   {
+    id: 35,
     name: "Dubai",
     country: "Förenade Arabemiraten",
     lat: 25.20,
@@ -413,9 +448,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["shopping", "beach", "sightseeing"],
     description: "Ultramodern arkitektur, lyxshopping och konstgjorda öar i Persiska viken.",
     imageUrl: "https://images.unsplash.com/photo-1611577810610-642f8ac05c32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 19, feb: 20, mar: 23, apr: 28, may: 33, jun: 35, jul: 37, aug: 37, sep: 34, oct: 30, nov: 25, dec: 21 }
+    avgTempByMonth: { Januari: 19, Februari: 20, Mars: 23, April: 28, Maj: 33, Juni: 35, Juli: 37, Augusti: 37, September: 34, Oktober: 30, November: 25, December: 21 }
   },
   {
+    id: 36,
     name: "Sharm El Sheikh",
     country: "Egypten",
     lat: 27.91,
@@ -424,9 +460,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "desert"],
     description: "Resortstad vid Röda havet känd för dykning i världsklass, korallrev och ökenexkursioner.",
     imageUrl: "https://images.unsplash.com/photo-1578327254130-f16b8e7202aa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 17, feb: 18, mar: 21, apr: 25, may: 29, jun: 32, jul: 33, aug: 33, sep: 31, oct: 27, nov: 23, dec: 19 }
+    avgTempByMonth: { Januari: 17, Februari: 18, Mars: 21, April: 25, Maj: 29, Juni: 32, Juli: 33, Augusti: 33, September: 31, Oktober: 27, November: 23, December: 19 }
   },
   {
+    id: 37,
     name: "Marrakech",
     country: "Marocko",
     lat: 31.63,
@@ -435,9 +472,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "food", "shopping"],
     description: "Den röda staden förtrollar med sin medina, souker, palats och det berömda Jemaa el-Fnaa-torget.",
     imageUrl: "https://images.unsplash.com/photo-1569370088252-c26ef022594c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 12, feb: 14, mar: 17, apr: 19, may: 23, jun: 27, jul: 31, aug: 30, sep: 26, oct: 21, nov: 16, dec: 13 }
+    avgTempByMonth: { Januari: 12, Februari: 14, Mars: 17, April: 19, Maj: 23, Juni: 27, Juli: 31, Augusti: 30, September: 26, Oktober: 21, November: 16, December: 13 }
   },
   {
+    id: 38,
     name: "Kapstaden",
     country: "Sydafrika",
     lat: -33.92,
@@ -446,13 +484,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["nature", "wine", "beach"],
     description: "Taffelberget, pingvinkolonier, vindistrikt och fantastiska stränder i en otrolig stad.",
     imageUrl: "https://images.unsplash.com/photo-1563560698934-562b0cbf3436?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 26, feb: 26, mar: 24, apr: 23, may: 20, jun: 18, jul: 17, aug: 17, sep: 19, oct: 21, nov: 22, dec: 24 }
+    avgTempByMonth: { Januari: 26, Februari: 26, Mars: 24, April: 23, Maj: 20, Juni: 18, Juli: 17, Augusti: 17, September: 19, Oktober: 21, November: 22, December: 24 }
   },
 
   // ============================================
   // 🌊 PACIFIC & AUSTRALIA
   // ============================================
   {
+    id: 39,
     name: "Fiji",
     country: "Fiji",
     lat: -17.77,
@@ -461,9 +500,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "diving", "culture"],
     description: "333 tropiska öar med kristallklara laguner, korallrev och världens varmaste välkomnande.",
     imageUrl: "https://images.unsplash.com/photo-1730440009903-d1e810ead901?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 27, mar: 27, apr: 26, may: 25, jun: 24, jul: 23, aug: 24, sep: 24, oct: 25, nov: 26, dec: 27 }
+    avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 26, Maj: 25, Juni: 24, Juli: 23, Augusti: 24, September: 24, Oktober: 25, November: 26, December: 27 }
   },
   {
+    id: 40,
     name: "Bora Bora",
     country: "Franska Polynesien",
     lat: -16.50,
@@ -472,9 +512,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "snorkeling", "overwater-villa"],
     description: "Den ultimata bröllopsdestinationen med ikoniska övervattenbungalows och en fantastisk turkos lagun.",
     imageUrl: "https://images.unsplash.com/photo-1652842183703-47c2f7bb8c3c?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 28, feb: 28, mar: 28, apr: 28, may: 27, jun: 26, jul: 25, aug: 25, sep: 26, oct: 26, nov: 27, dec: 28 }
+    avgTempByMonth: { Januari: 28, Februari: 28, Mars: 28, April: 28, Maj: 27, Juni: 26, Juli: 25, Augusti: 25, September: 26, Oktober: 26, November: 27, December: 28 }
   },
   {
+    id: 41,
     name: "Gold Coast",
     country: "Australien",
     lat: -28.02,
@@ -483,9 +524,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "surfing", "theme-parks"],
     description: "Australiens lekplats med 70 km gyllene stränder, surfing i världsklass och berömda nöjesparker.",
     imageUrl: "https://images.unsplash.com/photo-1661674753163-0f8bca582509?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 25, feb: 25, mar: 24, apr: 22, may: 19, jun: 17, jul: 16, aug: 17, sep: 19, oct: 21, nov: 23, dec: 25 }
+    avgTempByMonth: { Januari: 25, Februari: 25, Mars: 24, April: 22, Maj: 19, Juni: 17, Juli: 16, Augusti: 17, September: 19, Oktober: 21, November: 23, December: 25 }
   },
   {
+    id: 42,
     name: "Cairns",
     country: "Australien",
     lat: -16.92,
@@ -494,13 +536,14 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "rainforest", "nature"],
     description: "Porten till Stora barriärrevet och Daintree-regnskogen - två UNESCO-världsarv.",
     imageUrl: "https://images.unsplash.com/photo-1688337707006-64d5a1f6582c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 28, feb: 28, mar: 27, apr: 26, may: 24, jun: 22, jul: 22, aug: 23, sep: 25, oct: 27, nov: 28, dec: 28 }
+    avgTempByMonth: { Januari: 28, Februari: 28, Mars: 27, April: 26, Maj: 24, Juni: 22, Juli: 22, Augusti: 23, September: 25, Oktober: 27, November: 28, December: 28 }
   },
 
   // ============================================
   // 🌴 SOUTH AMERICA
   // ============================================
   {
+    id: 43,
     name: "Rio de Janeiro",
     country: "Brasilien",
     lat: -22.91,
@@ -509,9 +552,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "sightseeing", "nightlife"],
     description: "Cidade Maravilhosa - Kristusstatyn, Copacabana Beach, samba och karneval i en otrolig stad.",
     imageUrl: "https://images.unsplash.com/photo-1700677866571-43199bcbc593?q=80&w=2530&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 27, feb: 27, mar: 26, apr: 24, may: 22, jun: 21, jul: 21, aug: 21, sep: 22, oct: 23, nov: 24, dec: 26 }
+    avgTempByMonth: { Januari: 27, Februari: 27, Mars: 26, April: 24, Maj: 22, Juni: 21, Juli: 21, Augusti: 21, September: 22, Oktober: 23, November: 24, December: 26 }
   },
   {
+    id: 44,
     name: "Cartagena",
     country: "Colombia",
     lat: 10.39,
@@ -520,9 +564,10 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["beach", "history", "food"],
     description: "En färgglad kolonial muromgärdad stad vid Karibiska kusten med kullerstensgator och tropiska stränder.",
     imageUrl: "https://images.unsplash.com/photo-1536308037887-165852797016?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 28, feb: 28, mar: 28, apr: 29, may: 29, jun: 29, jul: 29, aug: 29, sep: 28, oct: 28, nov: 28, dec: 28 }
+    avgTempByMonth: { Januari: 28, Februari: 28, Mars: 28, April: 29, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 28, November: 28, December: 28 }
   },
   {
+    id: 45,
     name: "Galápagosöarna",
     country: "Ecuador",
     lat: -0.74,
@@ -531,7 +576,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["wildlife", "diving", "nature"],
     description: "Evolutionens levande laboratorium - simma med sjölejon, vandra bland jättesköldpaddor och snorkla med pingviner.",
     imageUrl: "https://images.unsplash.com/photo-1595517930215-d2778a56ac93?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    avgTempByMonth: { jan: 25, feb: 26, mar: 26, apr: 26, may: 25, jun: 23, jul: 22, aug: 21, sep: 21, oct: 22, nov: 23, dec: 24 }
+    avgTempByMonth: { Januari: 25, Februari: 26, Mars: 26, April: 26, Maj: 25, Juni: 23, Juli: 22, Augusti: 21, September: 21, Oktober: 22, November: 23, December: 24 }
   },
 ];
 

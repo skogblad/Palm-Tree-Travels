@@ -1,19 +1,20 @@
 export type MonthlyTemperatures = {
-  jan: number;
-  feb: number;
-  mar: number;
-  apr: number;
-  may: number;
-  jun: number;
-  jul: number;
-  aug: number;
-  sep: number;
-  oct: number;
-  nov: number;
-  dec: number;
+  Januari: number;
+  Februari: number;
+  Mars: number;
+  April: number;
+  Maj: number;
+  Juni: number;
+  Juli: number;
+  Augusti: number;
+  September: number;
+  Oktober: number;
+  November: number;
+  December: number;
 };
 
 export type CuratedDestination = {
+  id: number;
   name: string;
   country: string;
   lat: number;
