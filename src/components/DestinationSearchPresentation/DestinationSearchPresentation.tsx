@@ -3,13 +3,14 @@ import styles from "./DestinationSearchPresentation.module.scss"
 import React, { useState } from "react";
 import { DestinationCard } from "../DestinationCard/DestinationCard";
 import { availableExperiences, availableVibes, filterDestinations } from "../../constants/curatedDestinations";
-import type { CuratedDestination } from "../../models/curatedDestinations";
+import type { CuratedDestination, MonthlyTemperatures } from "../../models/curatedDestinations";
 import { DayPicker, type DateRange } from "react-day-picker";
 import { sv } from "date-fns/locale";
 import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
 import { getWeather } from "../../services/weatherService";
 import type { Weather } from "../../models/Weather";
+import { Link } from "react-router";
 
 export const DestinationSearchPresentation = () => {
   const [tempRange, setTempRange] = useState([20, 30]);
@@ -19,6 +20,7 @@ export const DestinationSearchPresentation = () => {
   const [hasSearched, setHasSearched] = useState(false);
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
+  const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,9 +35,10 @@ export const DestinationSearchPresentation = () => {
       return;
     }
 
-    const monthKeys = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"] as const;
+    const monthKeys = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"] as const;
     const month = dateRange.from.getMonth();
     const selectedMonthKey = monthKeys[month];
+    setSelectedMonth(selectedMonthKey);
 
     const filteredByTemp = results.filter((dest) => {
       const destTemp = dest.avgTempByMonth[selectedMonthKey];
@@ -64,6 +67,7 @@ export const DestinationSearchPresentation = () => {
     setSelectedExperiences([]);
     setDateRange(undefined);
     setHasSearched(false);
+    setSelectedMonth(null)
   }
 
   return (
@@ -141,17 +145,20 @@ export const DestinationSearchPresentation = () => {
           <h3>Resultat ({destinations.length} destinationer)</h3>
           {destinations.length > 0 ? (
             destinations.map((d) => (
-              <DestinationCard 
-                key={d.name} 
-                img={d.imageUrl}
-                alt={d.name}
-                weatherIcon={currentWeather[d.name]?.icon}
-                temperature={currentWeather[d.name]?.temp} 
-                title={d.name} 
-                country={d.country}
-                description={d.description}
-                experience={d.experiences}
-              />
+              <Link key={d.id} to={`/destination/${d.id}`}>
+                <DestinationCard 
+                  img={d.imageUrl}
+                  alt={d.name}
+                  weatherIcon={currentWeather[d.name]?.icon}
+                  temperature={currentWeather[d.name]?.temp} 
+                  title={d.name} 
+                  country={d.country}
+                  selectedMonth={selectedMonth}
+                  avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
+                  description={d.description}
+                  experience={d.experiences}
+                />
+              </Link>  
             ))
           ) : (
             <p>Inga resultat hittades</p>

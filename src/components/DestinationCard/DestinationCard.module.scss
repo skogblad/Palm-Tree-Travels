@@ -28,18 +28,31 @@
     font-weight: 500;
   }
 
-  .countrySpan {
+  .countryWeatherContainer {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    font-weight: 600;
-    color: $darkBlue;
+
+    .countrySpan, 
+    .avgTempSpan {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      font-weight: 600;
+    }
 
     svg {
       width: 17px;
       height: 17px;
+    }
+    
+    .countrySpan {
+      color: $darkBlue;
+      gap: 5px;
+    }
+
+    .avgTempSpan {
+      color: $darkYellow;
+      gap: 2px;
     }
   }
 
