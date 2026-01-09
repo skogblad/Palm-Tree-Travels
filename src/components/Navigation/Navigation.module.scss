@@ -4,18 +4,19 @@
 .navigationContainer {
   width: 100%;
   background-image: url("/header2.jpeg");
-  height: 140px;
+  height: 80px;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  border-bottom: solid 2px rgba($h1, 0.15);
 
   h1 {
-    font-size: 3.3rem;
+    font-size: 1.7rem;
     justify-self: flex-start;
-    padding-top: 40px;
+    padding-top: 25px;
     color: $h1;
     margin-block: 0;
-    margin-left: 70px;
+    margin-left: 50px;
     font-family: "Limelight", sans-serif;
   }
 
@@ -29,8 +30,9 @@
     display: flex;
     gap: 15px;
     justify-content: flex-end;
-    margin-top: -20px;
-    margin-right: 90px;
+    margin-top: -25px;
+    margin-right: 120px;
+    
 
     a {
       @include button-base;
@@ -39,11 +41,12 @@
       justify-content: center;
       padding: 6px;
       border-radius: 50%;
+      background-color: rgba($darkBlue, 0.9);
     }
 
     svg {
-      height: 30px;
-      width: 30px;
+      height: 25px;
+      width: 25px;
     }
   }
 
@@ -116,6 +119,7 @@
   background-image: url("/topBackground7.jpg");
   height: 750px;
   position: relative;
+  border-bottom: none;
 
   &::after {
     content: "";
