@@ -12,7 +12,7 @@ type destinationCardProps = {
   temperature?: number
   weatherIcon?: string
   avgTempByMonth?: number
-  selectedMonth: string | null
+  selectedMonth?: string | null
 }
 
 export const DestinationCard = ({ img, alt, title, country, description, experience, temperature, weatherIcon, avgTempByMonth, selectedMonth }: destinationCardProps) => {
