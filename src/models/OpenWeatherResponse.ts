@@ -1,9 +1,9 @@
 export type OpenWeatherResponse = {
-  current: {
+  main: {
     temp: number;
-    weather: {
-      description: string;
-      icon: string;
-    }[];
   }
+  weather: {
+    description: string;
+    icon: string;
+  }[];
 }
