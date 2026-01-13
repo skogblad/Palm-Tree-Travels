@@ -1,51 +1,147 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 .destinationContainer {
   display: flex;
-  gap: 2rem;
-  margin-inline: 30px;
-  margin-block: 50px;
+  gap: 40px;
+  margin-inline: 40px;
+  margin-top: 30px;
+  margin-bottom: 70px;
 
-  .destinationWrapper {
-    flex: 1;
-  }
-
-  .imgWrapper {
-    flex: 0 0 50%;
-  }
-
-  h2 {
-    font-size: 5rem;
-    //font-family: "Limelight", sans-serif;;
-    margin-bottom: 10px;
-  }
-
-  img {
-    width: 50vw;
-    height: auto;
-    //display: flex;
-    //justify-self: flex-end;
-    box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-    border-radius: 40px;
-  }
-
-  .tempContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    background-color: $superLightYellow;
-    margin-top: 20px;
-    padding-top: 10px;
-
-    .monthlyTempTitle {
-      grid-column: 1 / -1;
-      font-size: 1.1rem;
-      font-weight: 500;
+  .textWrapper {
+    h2 {
+      font-size: 5rem;
+      //font-family: "Limelight", sans-serif;;
+      margin-bottom: 20px;
+      color: $darkBlue;
+      margin-top: 50px;
     }
+
+    .countryTempWrapper {
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: center;
+
+      .countrySpan {
+        display: flex;
+        align-items: center;
+        background-color: $superLightBlue;
+        color: $superDarkBlue;
+        padding-inline: 20px;
+        padding-block: 5px;
+        border-radius: 40px;
+        gap: 5px;
+  
+        svg {
+          width: 17px;
+          height: 17px;
+        }
+      }
+
+      .tempSpan {
+        @include current-weather-span;
+        border-radius: 40px;
     
-    .tempMonthly {
-      border: solid 5px $lightYellow;
-      padding: 10px;
+        .weatherIcon {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+
+    .pOne,
+    .pTwo {
+      color: $superDarkBlue;
+      text-align: left;
+    }
+
+    .pOne {
+      font-weight: 500;
+      margin-top: 40px;
+      font-size: 1.4rem;
+    }
+
+    .pTwo {
+      font-size: 1.2rem;
+    }
+
+    .readMoreTag {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      text-align: left;
+      color: $superDarkBlue;
+
+      a {
+        color: $superDarkBlue;
+        font-weight: 500;
+
+        &:hover {
+          color: $palmTreeGreen;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .tempContainer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background-color: $lightYellow;
+      margin-block: 40px;
+      padding-block: 30px;
+      padding-inline: 30px;
+      border-radius: 15px;
+
+      .monthlyTempTitle {
+        grid-column: 1 / -1;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: $superDarkBlue;
+        margin-bottom: 15px;
+      }
+      
+      .tempMonthly {
+        background-color: $superLightYellow;
+        padding: 10px;
+        font-weight: 500;
+        color: $superDarkBlue;
+        font-size: 1.1rem;
+
+        .temp {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .backBtn {
+      @include button-base;
+      font-size: 1.2rem;
+    }
+  }
+
+  .rightWrapper {
+    flex: 0 0 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+      box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+      border-radius: 40px;
+      margin-top: 80px;
+    }
+
+    .experienceTags {
+      margin-top: 30px;
+      padding-inline: 30px;
+  
+      .tag {
+        @include experience-tag;
+        font-size: 1rem;
+      }
     }
   }
 }
