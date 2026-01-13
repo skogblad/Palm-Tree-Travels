@@ -21,6 +21,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 2,
     name: "Nassau",
+    wikiName: "Nassau, Bahamas",
     country: "Bahamas",
     lat: 25.05,
     lon: -77.35,
@@ -57,6 +58,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 5,
     name: "San Juan",
+    wikiName: "San Juan, Puerto Rico",
     country: "Puerto Rico",
     lat: 18.47,
     lon: -66.10,
@@ -453,6 +455,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 36,
     name: "Sharm El Sheikh",
+    wikiName: "Sharm el-Sheikh",
     country: "Egypten",
     lat: 27.91,
     lon: 34.33,
@@ -517,6 +520,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 41,
     name: "Gold Coast",
+    wikiName: "Gold Coast, Queensland",
     country: "Australien",
     lat: -28.02,
     lon: 153.43,
@@ -557,6 +561,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 44,
     name: "Cartagena",
+    wikiName: "Cartagena, Colombia",
     country: "Colombia",
     lat: 10.39,
     lon: -75.51,

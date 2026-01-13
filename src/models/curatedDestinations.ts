@@ -16,6 +16,7 @@ export type MonthlyTemperatures = {
 export type CuratedDestination = {
   id: number;
   name: string;
+  wikiName?: string;  // Optional: Used for Wikipedia API when name differs from article title
   country: string;
   lat: number;
   lon: number;
