@@ -1,39 +1,66 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
 
-.destinationContainer {
-  display: flex;
-  gap: 40px;
-  margin-inline: 40px;
-  margin-top: 30px;
-  margin-bottom: 70px;
+.pageWrapper {
+  margin-bottom: 80px;
+  
+  .goBackTextTop {
+    display: flex;
+    justify-self: left;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: $h1;
+    font-size: 1rem;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 
-  .textWrapper {
+  .destinationContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 70px;
+    margin-inline: 50px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+    padding-inline: 40px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+
     h2 {
+      grid-column: 1 / -1;
       font-size: 5rem;
-      //font-family: "Limelight", sans-serif;;
-      margin-bottom: 20px;
       color: $darkBlue;
-      margin-top: 50px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      justify-self: left;
     }
 
     .countryTempWrapper {
+      grid-column: 1 / -1;
       display: flex;
       gap: 20px;
       font-size: 1rem;
       font-weight: 700;
-      justify-content: center;
+      justify-content: left;
+      margin-bottom: 40px;
 
       .countrySpan {
         display: flex;
         align-items: center;
-        background-color: $superLightBlue;
+        background-color: $lightBlue;
         color: $superDarkBlue;
         padding-inline: 20px;
         padding-block: 5px;
         border-radius: 40px;
         gap: 5px;
-  
+
         svg {
           width: 17px;
           height: 17px;
@@ -51,97 +78,99 @@
       }
     }
 
-    .pOne,
-    .pTwo {
-      color: $superDarkBlue;
-      text-align: left;
-    }
-
-    .pOne {
-      font-weight: 500;
-      margin-top: 40px;
-      font-size: 1.4rem;
-    }
-
-    .pTwo {
-      font-size: 1.2rem;
-    }
-
-    .readMoreTag {
-      font-size: 1rem;
-      margin-bottom: 30px;
-      text-align: left;
-      color: $superDarkBlue;
-
-      a {
+    .textWrapper {
+      .pOne,
+      .pTwo {
         color: $superDarkBlue;
-        font-weight: 500;
-
-        &:hover {
-          color: $palmTreeGreen;
-          font-weight: 800;
-        }
+        text-align: left;
       }
-    }
 
-    .tempContainer {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      background-color: $lightYellow;
-      margin-block: 40px;
-      padding-block: 30px;
-      padding-inline: 30px;
-      border-radius: 15px;
-
-      .monthlyTempTitle {
-        grid-column: 1 / -1;
+      .pOne {
+        font-weight: 500;
         font-size: 1.4rem;
-        font-weight: 800;
-        color: $superDarkBlue;
-        margin-bottom: 15px;
       }
-      
-      .tempMonthly {
-        background-color: $superLightYellow;
-        padding: 10px;
-        font-weight: 500;
-        color: $superDarkBlue;
-        font-size: 1.1rem;
 
-        .temp {
-          font-weight: 700;
+      .pTwo {
+        font-size: 1.2rem;
+      }
+
+      .readMoreTag {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        text-align: left;
+        color: $superDarkBlue;
+
+        a {
+          color: $superDarkBlue;
+          font-weight: 500;
+
+          &:hover {
+            color: $palmTreeGreen;
+            font-weight: 800;
+          }
+        }
+      }
+
+      .tempContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        background-color: $mediumYellow;
+        margin-block: 40px;
+        padding-block: 30px;
+        padding-inline: 30px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+
+        .monthlyTempTitle {
+          grid-column: 1 / -1;
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: $superDarkBlue;
+          margin-bottom: 15px;
+        }
+        
+        .tempMonthly {
+          background-color: $lightYellow;
+          padding: 10px;
+          font-weight: 500;
+          color: $superDarkBlue;
+          font-size: 1.1rem;
+          border-radius: 40px;
+
+          .temp {
+            font-weight: 700;
+          }
         }
       }
     }
 
-    .backBtn {
-      @include button-base;
-      font-size: 1.2rem;
+    .rightWrapper {
+      flex: 0 0 50%;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: cover;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+        border-radius: 40px;
+      }
+
+      .experienceTags {
+        margin-top: 30px;
+        padding-inline: 30px;
+    
+        .tag {
+          @include experience-tag;
+          font-size: 1rem;
+        }
+      }
     }
   }
 
-  .rightWrapper {
-    flex: 0 0 50%;
-
-    img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: cover;
-      box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-      border-radius: 40px;
-      margin-top: 80px;
-    }
-
-    .experienceTags {
-      margin-top: 30px;
-      padding-inline: 30px;
-  
-      .tag {
-        @include experience-tag;
-        font-size: 1rem;
-      }
-    }
+  .backBtn {
+    @include button-base;
+    font-size: 1.4rem;
   }
 }
