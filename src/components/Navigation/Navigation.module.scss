@@ -3,12 +3,9 @@
 
 .navigationContainer {
   width: 100%;
-  background-image: url("/header2.jpeg");
+  background: $footerBlue;
   height: 80px;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  border-bottom: solid 2px rgba($h1, 0.15);
+  border-bottom: solid 1px rgba($h1, 0.1);
 
   h1 {
     font-size: 1.7rem;
@@ -30,8 +27,8 @@
     display: flex;
     gap: 15px;
     justify-content: flex-end;
-    margin-top: -25px;
-    margin-right: 120px;
+    margin-top: -30px;
+    margin-right: 80px;
     
 
     a {
@@ -116,8 +113,12 @@
 }
 
 .navHomeContainer {
+  width: 100%;
   background-image: url("/topBackground7.jpg");
   height: 750px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   position: relative;
   border-bottom: none;
 
