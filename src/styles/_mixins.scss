@@ -1,7 +1,7 @@
 @import "./variables";
 
 @mixin button-base {
-  color: $mediumYellow;
+  color: $lightYellow;
   background-color: rgba($darkBlue, 0.8);
   padding: 3px 7px;
   border-radius: 10px;
