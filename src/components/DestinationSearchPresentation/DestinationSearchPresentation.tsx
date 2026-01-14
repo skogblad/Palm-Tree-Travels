@@ -12,6 +12,8 @@ import { getWeather } from "../../services/weatherService";
 import type { Weather } from "../../models/Weather";
 import { Link } from "react-router";
 import { TagSelector } from "../TagSelector/TagSelector";
+import { ArrowDownAZ, Globe, List, Map } from "lucide-react";
+import { MapView } from "../MapView/MapView";
 
 export const DestinationSearchPresentation = () => {
   const [tempRange, setTempRange] = useState([20, 30]);
@@ -22,6 +24,7 @@ export const DestinationSearchPresentation = () => {
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
   const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(null);
+  const [viewMode, setViewMode] = useState<"list" | "map">("list");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +81,22 @@ export const DestinationSearchPresentation = () => {
 
   const toggleExperienceTags = (value: string) => {
     setSelectedExperiences(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
+  }
+
+  const sortByAlpha = () => {
+    const sortedDestAlpha =  [...destinations].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    setDestinations(sortedDestAlpha);
+  }
+
+  const sortByCountry = () => {
+    const sortedDestCountry = [...destinations].sort((a, b) =>
+      a.country.localeCompare(b.country)
+    );
+
+    setDestinations(sortedDestCountry);
   }
 
   return (
@@ -142,23 +161,52 @@ export const DestinationSearchPresentation = () => {
       {hasSearched && (
         <section className={styles.resultContainer}>
           <h3 className={styles.resultsTitle}>Resultat ({destinations.length} destinationer)</h3>
-          {destinations.length > 0 ? (
-            destinations.map((d) => (
-              <Link key={d.id} to={`/destination/${d.id}`}>
-                <DestinationCard 
-                  img={d.imageUrl}
-                  alt={d.name}
-                  weatherIcon={currentWeather[d.name]?.icon}
-                  temperature={currentWeather[d.name]?.temp} 
-                  title={d.name} 
-                  country={d.country}
-                  selectedMonth={selectedMonth}
-                  avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
-                  description={d.description}
-                  experience={d.experiences}
-                />
-              </Link>  
-            ))
+          
+          {destinations.length > 0 && (
+            <div className={styles.sortOptions}>
+              <button 
+                className={styles.sortIcon} 
+                aria-label="Sortera alfabetiskt" 
+                onClick={sortByAlpha}
+              >
+                <ArrowDownAZ aria-hidden="true"/>
+              </button>
+
+              <button 
+                className={styles.sortIcon} 
+                aria-label="Sortera alfabetiskt" 
+                onClick={sortByCountry}
+              >
+                <Globe aria-hidden="true"/>
+              </button>
+
+              <button className={styles.viewToggleIcon}  aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"} onClick={() => setViewMode(viewMode === "list" ? "map" : "list")}>
+                {viewMode === "list" ? <Map aria-hidden="true"/> : <List aria-hidden="true"/>}
+              </button>
+            </div>
+          )}
+
+          {destinations.length > 0 ? (  
+            viewMode === "list" ? (
+              destinations.map((d) => (
+                <Link key={d.id} to={`/destination/${d.id}`}>
+                  <DestinationCard 
+                    img={d.imageUrl}
+                    alt={d.name}
+                    weatherIcon={currentWeather[d.name]?.icon}
+                    temperature={currentWeather[d.name]?.temp} 
+                    title={d.name} 
+                    country={d.country}
+                    selectedMonth={selectedMonth}
+                    avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
+                    description={d.description}
+                    experience={d.experiences}
+                  />
+                </Link>  
+              ))
+            ) : (
+              <MapView destinations={destinations} />
+            )
           ) : (
             <p>Inga resultat hittades</p>
           )}
