@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+  }
   
   // Main container
   .rdp-root {

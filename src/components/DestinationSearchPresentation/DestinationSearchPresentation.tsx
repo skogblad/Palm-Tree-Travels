@@ -11,6 +11,7 @@ import "./DayPickerStyles.scss";
 import { getWeather } from "../../services/weatherService";
 import type { Weather } from "../../models/Weather";
 import { Link } from "react-router";
+import { TagSelector } from "../TagSelector/TagSelector";
 
 export const DestinationSearchPresentation = () => {
   const [tempRange, setTempRange] = useState([20, 30]);
@@ -70,79 +71,77 @@ export const DestinationSearchPresentation = () => {
     setSelectedMonth(null)
   }
 
+  // Toggles the selection state of a tag (removes if selected, adds if not selected)
+  const toggleVibeTags = (value: string) => {
+    setSelectedVibes(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]);
+  }
+
+  const toggleExperienceTags = (value: string) => {
+    setSelectedExperiences(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
+  }
+
   return (
     <>
-      <section>
-        <h2>Starta din sökning</h2>
+      <section className={styles.searchPage}>
+        
 
         <form onSubmit={handleSubmit} onReset={handleReset} className={styles.formContainer}>
-          <div className="calendarWrapper">
-            <span>Resedatum:</span>
-            <DayPicker
-              locale={sv} 
-              mode="range"
-              selected={dateRange}
-              onSelect={setDateRange}
+        <h2 className={styles.titleH2}>Hitta din drömdestination</h2>  
+          <div className={styles.leftColumn}>
+            <div className={styles.tempWrapper}>
+              <span>Temperatur: {tempRange[0]}° - {tempRange[1]}°</span>
+              <Slider.Root 
+                className={styles.root} 
+                value={tempRange}
+                onValueChange={setTempRange}
+                max={50} 
+                minStepsBetweenThumbs={1}
+              >
+                <Slider.Track className={styles.track}>
+                  <Slider.Range className={styles.range} />
+                </Slider.Track>
+                <Slider.Thumb className={styles.thumb} aria-label="Lägst" />
+                <Slider.Thumb className={styles.thumb} aria-label="Högst" />
+              </Slider.Root>
+            </div>
+
+            <div className="calendarWrapper">
+              <span className="title">Resedatum:</span>
+              <DayPicker
+                locale={sv} 
+                mode="range"
+                selected={dateRange}
+                onSelect={setDateRange}
+              />
+            </div>
+          </div>
+          
+          <div className={styles.filterSection}>
+            <TagSelector 
+              title="Vibes"
+              options={availableVibes}
+              selectedValues={selectedVibes}
+              onToggle={toggleVibeTags}
+            />
+
+            <TagSelector 
+              title="Upplevelser"
+              options={availableExperiences}
+              selectedValues={selectedExperiences}
+              onToggle={toggleExperienceTags}
             />
           </div>
 
-          <div>
-            <span>Temperatur: {tempRange[0]}° - {tempRange[1]}°</span>
-            <Slider.Root 
-              className={styles.root} 
-              value={tempRange}
-              onValueChange={setTempRange}
-              max={50} 
-              minStepsBetweenThumbs={1}
-            >
-              <Slider.Track className={styles.track}>
-                <Slider.Range className={styles.range} />
-              </Slider.Track>
-              <Slider.Thumb className={styles.thumb} aria-label="Lägst" />
-              <Slider.Thumb className={styles.thumb} aria-label="Högst" />
-            </Slider.Root>
+          <div className={styles.buttonWrapper}>
+            <button type="reset" className={styles.resetBtn}>Återställ</button>
+            <button type="submit" className={styles.submitBtn}>Sök</button>
           </div>
-          
-          <label className={styles.vibesInput}>
-            Vibes:
-            <select 
-              name="valda vibes" 
-              multiple={true}
-              onChange={(e) => {
-                const selected = Array.from(e.target.selectedOptions, opt => opt.value);
-                setSelectedVibes(selected);
-              }}
-            >
-              {availableVibes.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-          </label>
-
-          <label className={styles.experienceInput}>
-            Upplevelser:
-            <select 
-              name="valda upplevelser" 
-              multiple={true}
-              onChange={(e) => {
-                const selected = Array.from(e.target.selectedOptions, opt => opt.value);
-                setSelectedExperiences(selected);
-              }}
-            >
-              {availableExperiences.map((opt) => (
-                <option key={opt.value} value={opt.value}>{opt.label}</option>
-              ))}
-            </select>
-          </label>
-
-          <button type="reset">Återställ</button>
-          <button type="submit" >Sök</button>
         </form>
       </section>
 
       {hasSearched && (
         <section className={styles.resultContainer}>
-          <h3>Resultat ({destinations.length} destinationer)</h3>
+          <h3 className={styles.resultsTitle}>Resultat ({destinations.length} destinationer)</h3>
           {destinations.length > 0 ? (
             destinations.map((d) => (
               <Link key={d.id} to={`/destination/${d.id}`}>
