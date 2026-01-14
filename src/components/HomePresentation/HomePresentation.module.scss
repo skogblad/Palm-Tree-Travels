@@ -8,11 +8,7 @@
   justify-content: center;
   margin-block: 50px;
   padding-bottom: 70px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba($superLightBlue, 40%)
-  );
+  background: linear-gradient(to bottom, transparent 0%, rgba($superLightBlue2, 40%));
   font-size: 1rem;
   
 
@@ -76,7 +72,7 @@
 
   .sparklesIcon {
     @extend .iconSize;
-    color: $darkYellow;
+    color: $superDarkYellow;
   }
 
   .finalPunchArticle {
@@ -107,8 +103,35 @@
       padding: 5px 10px;
     }
   }
+}
 
-  @media screen and (max-width: 768px) {
+.featuredDestinationContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  h2 {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    margin-block: 0;
+    font-weight: 600;
+  }
+
+  .subText2 {
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+    justify-self: center;
+  }
+
+  .cardsCarousel {
+    display: contents;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .howItWorksContainer {
     margin-block: 40px;
 
     h2 {
@@ -143,7 +166,15 @@
     }
   }
 
-  @media screen and (max-width: 425px) {
+  .featuredDestinationContainer {
+    h2 {
+      font-size: 2.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .howItWorksContainer {
     grid-template-columns: 1fr;
     margin-bottom: 35px;
     padding-bottom: 55px;
@@ -167,7 +198,22 @@
     }
   }
 
-  @media screen and (max-width: 375px) {
+  .featuredDestinationContainer {
+    grid-template-columns: 1fr;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+  
+    .subText2 {
+      width: 380px;
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .howItWorksContainer {
     h2 {
       font-size: 1.7rem;
     }
@@ -186,52 +232,8 @@
       }
     }
   }
-}
-
-.featuredDestinationContainer {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 100px;
-
-  h2 {
-    grid-column: 1 / -1;
-    font-size: 2.5rem;
-    margin-block: 0;
-    font-weight: 600;
-  }
-
-  .subText2 {
-    grid-column: 1 / -1;
-    font-size: 1.2rem;
-    justify-self: center;
-  }
-
-  .cardsCarousel {
-    display: contents;
-  }
-
-  @media screen and (max-width: 768px) {
-    h2 {
-      font-size: 2.1rem;
-    }
-  }
-
-  @media screen and (max-width: 425px) {
-    grid-template-columns: 1fr;
-
-    h2 {
-      font-size: 1.7rem;
-    }
   
-    .subText2 {
-      width: 380px;
-      margin-top: 0;
-    }
-  }
-
-  @media screen and (max-width: 375px) {
+  .featuredDestinationContainer {
     h2 {
       font-size: 1.7rem;
     }
