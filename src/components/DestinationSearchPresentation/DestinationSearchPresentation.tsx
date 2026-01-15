@@ -1,110 +1,60 @@
 import * as Slider from "@radix-ui/react-slider";
 import styles from "./DestinationSearchPresentation.module.scss"
-import React, { useState } from "react";
+import React from "react";
 import { DestinationCard } from "../DestinationCard/DestinationCard";
-import { availableExperiences, availableVibes, filterDestinations } from "../../constants/curatedDestinations";
+import { availableExperiences, availableVibes } from "../../constants/curatedDestinations";
 import type { CuratedDestination, MonthlyTemperatures } from "../../models/curatedDestinations";
 import { DayPicker, type DateRange } from "react-day-picker";
 import { sv } from "date-fns/locale";
 import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
-import { getWeather } from "../../services/weatherService";
 import type { Weather } from "../../models/Weather";
 import { Link } from "react-router";
 import { TagSelector } from "../TagSelector/TagSelector";
 import { ArrowDownAZ, Globe, List, Map } from "lucide-react";
 import { MapView } from "../MapView/MapView";
 
-export const DestinationSearchPresentation = () => {
-  const [tempRange, setTempRange] = useState([20, 30]);
-  const [selectedVibes, setSelectedVibes] = useState<string[]>([]);
-  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
-  const [destinations, setDestinations] = useState<CuratedDestination[]>([]);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [dateRange, setDateRange] = useState<DateRange | undefined>();
-  const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
-  const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(null);
-  const [viewMode, setViewMode] = useState<"list" | "map">("list");
+type DestinationSearchPresentationProps = {
+  tempRange: [number, number];
+  selectedVibes: string[];
+  selectedExperiences: string[];
+  dateRange: DateRange | undefined;
+  selectedMonth: keyof MonthlyTemperatures | null;
+  destinations: CuratedDestination[];
+  currentWeather: Record<string, Weather>;
+  hasSearched: boolean;
+  viewMode: "list" | "map";
+  handlers: {
+    onTempRangeChange: (value: number[]) => void;
+    onDateRangeChange: (range: DateRange | undefined) => void;
+    onToggleVibeTags: (value: string) => void;
+    onToggleExperienceTags: (value: string) => void;
+    onSubmit: (e: React.FormEvent) => void;
+    onReset: () => void;
+    onSortByAlpha: () => void;
+    onSortByCountry: () => void;
+    onToggleViewMode: () => void;
+  };
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const results = filterDestinations(selectedVibes, selectedExperiences);
-
-    // If no date is selected, show results filtered only by vibes/experiences 
-    // without applying temperature filtering/fetching weather data (prevent crash & unneccessary API call)
-    if (!dateRange?.from) {
-      setDestinations(results);
-      setHasSearched(true);
-      return;
-    }
-
-    const monthKeys = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"] as const;
-    const month = dateRange.from.getMonth();
-    const selectedMonthKey = monthKeys[month];
-    setSelectedMonth(selectedMonthKey);
-
-    const filteredByTemp = results.filter((dest) => {
-      const destTemp = dest.avgTempByMonth[selectedMonthKey];
-      return destTemp >= tempRange[0] && destTemp <= tempRange[1];
-    });
-
-    const getCoordinates = filteredByTemp.map((dest) => {
-      return getWeather(dest.lat, dest.lon);
-    });
-
-    const weatherResults = await Promise.all(getCoordinates);
-
-    const weatherMap: Record<string, Weather> = {};
-    filteredByTemp.forEach((dest, index) => {
-      weatherMap[dest.name] = weatherResults[index];
-    });
-    
-    setDestinations(filteredByTemp);
-    setHasSearched(true);
-    setCurrentWeather(weatherMap);
-  }
-
-  const handleReset = () => {
-    setTempRange([20, 30]);
-    setSelectedVibes([]);
-    setSelectedExperiences([]);
-    setDateRange(undefined);
-    setHasSearched(false);
-    setSelectedMonth(null)
-  }
-
-  // Toggles the selection state of a tag (removes if selected, adds if not selected)
-  const toggleVibeTags = (value: string) => {
-    setSelectedVibes(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value]);
-  }
-
-  const toggleExperienceTags = (value: string) => {
-    setSelectedExperiences(prev => prev.includes(value) ? prev.filter(v => v !== value) : [...prev, value])
-  }
-
-  const sortByAlpha = () => {
-    const sortedDestAlpha =  [...destinations].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-
-    setDestinations(sortedDestAlpha);
-  }
-
-  const sortByCountry = () => {
-    const sortedDestCountry = [...destinations].sort((a, b) =>
-      a.country.localeCompare(b.country)
-    );
-
-    setDestinations(sortedDestCountry);
-  }
-
+export const DestinationSearchPresentation = ({ tempRange, selectedVibes, selectedExperiences,dateRange, selectedMonth, destinations, currentWeather, hasSearched, viewMode, handlers }: DestinationSearchPresentationProps) => {
+  
+  const {
+    onTempRangeChange,
+    onDateRangeChange,
+    onToggleVibeTags,
+    onToggleExperienceTags,
+    onSubmit,
+    onReset,
+    onSortByAlpha,
+    onSortByCountry,
+    onToggleViewMode,
+  } = handlers;
+  
   return (
     <>
       <section className={styles.searchPage}>
-        
-
-        <form onSubmit={handleSubmit} onReset={handleReset} className={styles.formContainer}>
+        <form onSubmit={onSubmit} onReset={onReset} className={styles.formContainer}>
         <h2 className={styles.titleH2}>Hitta din drömdestination</h2>  
           <div className={styles.leftColumn}>
             <div className={styles.tempWrapper}>
@@ -112,7 +62,7 @@ export const DestinationSearchPresentation = () => {
               <Slider.Root 
                 className={styles.root} 
                 value={tempRange}
-                onValueChange={setTempRange}
+                onValueChange={onTempRangeChange}
                 max={50} 
                 minStepsBetweenThumbs={1}
               >
@@ -130,7 +80,7 @@ export const DestinationSearchPresentation = () => {
                 locale={sv} 
                 mode="range"
                 selected={dateRange}
-                onSelect={setDateRange}
+                onSelect={onDateRangeChange}
               />
             </div>
           </div>
@@ -140,14 +90,14 @@ export const DestinationSearchPresentation = () => {
               title="Vibes"
               options={availableVibes}
               selectedValues={selectedVibes}
-              onToggle={toggleVibeTags}
+              onToggle={onToggleVibeTags}
             />
 
             <TagSelector 
               title="Upplevelser"
               options={availableExperiences}
               selectedValues={selectedExperiences}
-              onToggle={toggleExperienceTags}
+              onToggle={onToggleExperienceTags}
             />
           </div>
 
@@ -167,7 +117,7 @@ export const DestinationSearchPresentation = () => {
               <button 
                 className={styles.sortIcon} 
                 aria-label="Sortera alfabetiskt" 
-                onClick={sortByAlpha}
+                onClick={onSortByAlpha}
               >
                 <ArrowDownAZ aria-hidden="true"/>
               </button>
@@ -175,12 +125,16 @@ export const DestinationSearchPresentation = () => {
               <button 
                 className={styles.sortIcon} 
                 aria-label="Sortera alfabetiskt" 
-                onClick={sortByCountry}
+                onClick={onSortByCountry}
               >
                 <Globe aria-hidden="true"/>
               </button>
 
-              <button className={styles.viewToggleIcon}  aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"} onClick={() => setViewMode(viewMode === "list" ? "map" : "list")}>
+              <button 
+                className={styles.viewToggleIcon}  
+                aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"} 
+                onClick={onToggleViewMode}
+              >
                 {viewMode === "list" ? <Map aria-hidden="true"/> : <List aria-hidden="true"/>}
               </button>
             </div>
