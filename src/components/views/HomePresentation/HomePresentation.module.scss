@@ -31,50 +31,6 @@
     display: contents;
   }
 
-  .iconWrapper {
-    display: flex;
-    justify-content: flex-start;
-    padding: 12px 20px;
-    border-radius: 15px;
-    margin-top: 30px;
-    margin-inline: 20px;
-  }
-
-  .thermometerWrapper {
-    @extend .iconWrapper;
-    background-color: $superLightPink;
-  }
-
-  .palmTreeWrapper {
-    @extend .iconWrapper;
-    background-color: $superLightGreen;
-  }
-
-  .sparklesWrapper {
-    @extend .iconWrapper;
-    background-color: $lightYellow;
-  }
-
-  .iconSize {
-    width: 30px;
-    height: 30px;
-  }
-
-  .thermometerIcon {
-    @extend .iconSize;
-    color: rgb(213, 46, 82);
-  }
-
-  .palmTreeIcon {
-    @extend .iconSize;
-    color: $palmTreeGreen;
-  }
-
-  .sparklesIcon {
-    @extend .iconSize;
-    color: $superDarkYellow;
-  }
-
   .finalPunchArticle {
     background-color:rgba($superLightGreen, 0.5);
     width: 650px;
@@ -141,23 +97,14 @@
     .subText {
       width: 600px;
       margin-bottom: 30px;
-    }
-
-    .iconWrapper {
-      padding: 10px 15px;
-      margin-top: 20px;
-      margin-inline: 15px;
-    }
-
-    .iconSize {
-      width: 25px;
-      height: 25px;
+      margin-top: 0;
     }
 
     .finalPunchArticle {
-      width: 580px;
-      padding-block: 10px;
-      font-size: 1.2rem;
+      width: 560px;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      font-size: 1.15rem;
       margin-top: 40px;
 
       h4 {
@@ -169,6 +116,20 @@
   .featuredDestinationContainer {
     h2 {
       font-size: 2.1rem;
+    }
+
+    .subText2 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .featuredDestinationContainer {
+    .cardsCarousel {
+      > *:nth-child(3) {
+        display: none;
+      }
     }
   }
 }

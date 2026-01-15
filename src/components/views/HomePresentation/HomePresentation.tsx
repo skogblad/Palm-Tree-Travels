@@ -1,6 +1,7 @@
 import { Palmtree, Sparkles, ThermometerSun } from "lucide-react"
 import { InfoCard } from "../../cards/InfoCard/InfoCard"
 import styles from "./HomePresentation.module.scss"
+import iconStyles from "../../cards/InfoCard/InfoCard.module.scss"
 import { DestinationCard } from "../../cards/DestinationCard/DestinationCard"
 import { CardCarousel } from "../../cards/CardCarousel/CardCarousel"
 import { curatedDestinations } from "../../../constants/curatedDestinations"
@@ -16,24 +17,24 @@ export const HomePresentation = () => {
         <CardCarousel className={styles.cardsCarousel}>
           <InfoCard
             Icon={ThermometerSun}
-            iconWrapper={styles.thermometerWrapper}
-            iconClassName={styles.thermometerIcon} 
+            iconWrapper={iconStyles.thermometerWrapper}
+            iconClassName={iconStyles.thermometerIcon} 
             title="Temperatur"  
             infoText="Upptäck platser med den värme du längtar efter, uppdaterade med väderdata i realtid" 
           />
 
           <InfoCard 
             Icon={Palmtree}
-            iconWrapper={styles.palmTreeWrapper}
-            iconClassName={styles.palmTreeIcon} 
+            iconWrapper={iconStyles.palmTreeWrapper}
+            iconClassName={iconStyles.palmTreeIcon} 
             title="Tropiska vibbar" 
             infoText="Utforska destinationer med palmer, stränder och den perfekta stämningen för just dig" 
           />
 
           <InfoCard
             Icon={Sparkles}
-            iconWrapper={styles.sparklesWrapper}
-            iconClassName={styles.sparklesIcon} 
+            iconWrapper={iconStyles.sparklesWrapper}
+            iconClassName={iconStyles.sparklesIcon} 
             title="Upplevelser" 
             infoText="Få personliga rekommendationer baserat på upplevelsen du söker, inte bara en plats" 
           />
@@ -51,7 +52,7 @@ export const HomePresentation = () => {
         <p className={styles.subText2}>Populära tropiska resmål som resenärer upptäcker just nu</p>
 
         <CardCarousel className={styles.cardsCarousel}>
-          {curatedDestinations.slice(0, 3).map((d) => (
+          {curatedDestinations.slice(0, window.innerWidth <= 768 && window.innerWidth > 425 ? 2 : 3).map((d) => (
             <DestinationCard 
               key={d.name}
               img={d.imageUrl}

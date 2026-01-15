@@ -1,3 +1,5 @@
+@import "/src/styles/variables";
+
 .articleContainer {
   background-color: rgb(255, 255, 255);
   text-align: left;
@@ -21,27 +23,96 @@
     font-size: 1.1rem;
   }
 
-  @media screen and (max-width: 1024px) {
-    width: 260px;
+  .iconWrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-inline: 20px;
   }
 
-  @media screen and (max-width: 768px) {
+  .thermometerWrapper {
+    @extend .iconWrapper;
+    background-color: $superLightPink;
+  }
+
+  .palmTreeWrapper {
+    @extend .iconWrapper;
+    background-color: $superLightGreen;
+  }
+
+  .sparklesWrapper {
+    @extend .iconWrapper;
+    background-color: $lightYellow;
+  }
+
+  .iconSize {
+    width: 30px;
+    height: 30px;
+  }
+
+  .thermometerIcon {
+    @extend .iconSize;
+    color: rgb(213, 46, 82);
+  }
+
+  .palmTreeIcon {
+    @extend .iconSize;
+    color: $palmTreeGreen;
+  }
+
+  .sparklesIcon {
+    @extend .iconSize;
+    color: $superDarkYellow;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .articleContainer {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .articleContainer {
     width: 220px;
 
     h3 {
       font-size: 1.2rem;
+      margin-block: 25px;
     }
 
     p {
       font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .iconWrapper {
+      padding: 10px 15px;
+      margin-top: 20px;
+      margin-inline: 15px;
+    }
+
+    .iconSize {
+      width: 25px;
+      height: 25px;
     }
   }
+}
 
-  @media screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
+  .articleContainer {
     width: 250px;
-  }
 
-  @media screen and (max-width: 375px) {
+    p {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .articleContainer {
     width: 220px;
   }
 }
