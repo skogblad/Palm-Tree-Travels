@@ -1,7 +1,7 @@
 import { MapPin, Thermometer } from "lucide-react"
-import { availableExperiences } from "../../constants/curatedDestinations"
+import { availableExperiences } from "../../../constants/curatedDestinations"
 import styles from "./DestinationCard.module.scss"
-import { getWeatherIconUrl } from "../../utils/getWeatherIconUrl"
+import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl"
 
 type destinationCardProps = {
   img: string

@@ -1,9 +1,9 @@
 import { Palmtree, Sparkles, ThermometerSun } from "lucide-react"
-import { InfoCard } from "../InfoCard/InfoCard"
+import { InfoCard } from "../../cards/InfoCard/InfoCard"
 import styles from "./HomePresentation.module.scss"
-import { DestinationCard } from "../DestinationCard/DestinationCard"
-import { CardCarousel } from "../CardCarousel/CardCarousel"
-import { curatedDestinations } from "../../constants/curatedDestinations"
+import { DestinationCard } from "../../cards/DestinationCard/DestinationCard"
+import { CardCarousel } from "../../cards/CardCarousel/CardCarousel"
+import { curatedDestinations } from "../../../constants/curatedDestinations"
 import { NavLink } from "react-router"
 
 export const HomePresentation = () => {

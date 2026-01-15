@@ -1,12 +1,12 @@
 import styles from "./DestinationPresentation.module.scss";
-import type { CuratedDestination } from "../../models/curatedDestinations"
+import type { CuratedDestination } from "../../../models/curatedDestinations"
 import { useEffect, useState } from "react";
-import type { WikipediaData } from "../../models/WikipediaData";
-import { getWikipediaData } from "../../services/wikipediaService";
+import type { WikipediaData } from "../../../models/WikipediaData";
+import { getWikipediaData } from "../../../services/wikipediaService";
 import { Link } from "react-router";
 import { ArrowLeft, MapPin } from "lucide-react";
-import { useCurrentWeather } from "../../hooks/useCurrentWeather";
-import { getWeatherIconUrl } from "../../utils/getWeatherIconUrl";
+import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
+import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
