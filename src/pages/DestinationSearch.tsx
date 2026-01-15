@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DestinationSearchPresentation } from "../components/DestinationSearchPresentation/DestinationSearchPresentation"
+import { DestinationSearchPresentation } from "../components/views/DestinationSearchPresentation/DestinationSearchPresentation"
 import { filterDestinations } from "../utils/destinationFilters";
 import type { DateRange } from "react-day-picker";
 import type { CuratedDestination, MonthlyTemperatures } from "../models/curatedDestinations";

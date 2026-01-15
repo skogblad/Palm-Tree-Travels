@@ -1,18 +1,18 @@
 import * as Slider from "@radix-ui/react-slider";
 import styles from "./DestinationSearchPresentation.module.scss"
 import React from "react";
-import { DestinationCard } from "../DestinationCard/DestinationCard";
-import { availableExperiences, availableVibes } from "../../constants/curatedDestinations";
-import type { CuratedDestination, MonthlyTemperatures } from "../../models/curatedDestinations";
+import { DestinationCard } from "../../cards/DestinationCard/DestinationCard";
+import { availableExperiences, availableVibes } from "../../../constants/curatedDestinations";
+import type { CuratedDestination, MonthlyTemperatures } from "../../../models/curatedDestinations";
 import { DayPicker, type DateRange } from "react-day-picker";
 import { sv } from "date-fns/locale";
 import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
-import type { Weather } from "../../models/Weather";
+import type { Weather } from "../../../models/Weather";
 import { Link } from "react-router";
-import { TagSelector } from "../TagSelector/TagSelector";
+import { TagSelector } from "../../controls/TagSelector/TagSelector";
 import { ArrowDownAZ, Globe, List, Map } from "lucide-react";
-import { MapView } from "../MapView/MapView";
+import { MapView } from "../../MapView/MapView";
 
 type DestinationSearchPresentationProps = {
   tempRange: [number, number];

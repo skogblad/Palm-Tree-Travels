@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { DestinationPresentation } from "../components/DestinationPresentation/DestinationPresentation"
+import { DestinationPresentation } from "../components/views/DestinationPresentation/DestinationPresentation"
 import { curatedDestinations } from "../constants/curatedDestinations";
 
 export const Destination = () => {
