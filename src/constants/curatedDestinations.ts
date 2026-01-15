@@ -1,7 +1,5 @@
 import type { CuratedDestination } from "../models/curatedDestinations";
 
-// ... resten av filen med destinations-datan
-
 export const curatedDestinations: CuratedDestination[] = [
   // ============================================
   // 🌴 CARIBBEAN
@@ -619,19 +617,3 @@ export const availableExperiences = [
   { value: "golf", label: "Golf" },
   { value: "sailing", label: "Segling" },
 ];
-
-// Helper function to filter destinations
-export const filterDestinations = (
-  selectedVibes: string[],
-  selectedExperiences: string[]
-): CuratedDestination[] => {
-  return curatedDestinations.filter((dest) => {
-    const matchesVibes = selectedVibes.length === 0 || 
-      selectedVibes.some((vibe) => dest.vibes.includes(vibe));
-    
-    const matchesExperiences = selectedExperiences.length === 0 || 
-      selectedExperiences.some((exp) => dest.experiences.includes(exp));
-    
-    return matchesVibes && matchesExperiences;
-  });
-};
