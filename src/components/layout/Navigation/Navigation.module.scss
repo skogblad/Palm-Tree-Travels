@@ -46,70 +46,6 @@
       width: 25px;
     }
   }
-
-  @media screen and (max-width: 1024px) {
-    h1 {
-      margin-left: 50px;
-      font-size: 3rem;
-    }
-
-    ul {
-      margin-right: 50px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 90px;
-
-    h1 {
-      font-size: 2rem;
-      padding-top: 30px;
-      margin-left: 30px;
-    }
-
-    ul {
-      margin-top: -15px;
-
-      svg {
-        height: 24px;
-        width: 24px;
-      }
-    }
-  }
-
-  @media screen and (max-width: 425px) {
-    height: 120px;
-    background-image: url("/header.jpg");
-
-    h1 {
-      font-size: 2.1rem;
-      padding-top: 20px;
-      margin-left: 0;
-      justify-self: center;
-    }
-
-    ul {
-      margin-right: 20px;
-      margin-top: 10px;
-    }
-  }
-
-  @media screen and (max-width: 375px) {
-    height: 95px;
-
-    h1 {
-      font-size: 1.7rem;
-    }
-
-    ul {
-      margin-right: 15px;
-      gap: 5px;
-  
-      a {
-        font-size: 1rem;
-      }
-    }
-  }
 }
 
 .navHomeContainer {
@@ -160,8 +96,16 @@
       font-size: 1.7rem;
     }
   }
+}
 
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
+  .navigationContainer {
+    ul {
+      margin-right: 50px;
+    }
+  }
+
+  .navHomeContainer {
     height: 600px;
     
     h1 {
@@ -176,8 +120,26 @@
       font-size: 1.6rem;
     }
   }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .navigationContainer {
+    h1 {
+      margin-left: 30px;
+      font-size: 1.6rem;
+    }
+
+    ul {
+      margin-top: -25px;
+
+      svg {
+        height: 22px;
+        width: 22px;
+      }
+    }
+  }
+
+  .navHomeContainer {
     height: 450px;
     
     h1 {
@@ -197,8 +159,26 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
+  .navigationContainer {
+    height: 120px;
+
+    h1 {
+      font-size: 2rem;
+      padding-top: 20px;
+      margin-left: 0;
+      justify-self: center;
+    }
+
+    ul {
+      margin-right: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  .navHomeContainer {
     height: 290px;
 
     &::after {
@@ -223,8 +203,23 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
+  .navigationContainer {
+    height: 115px;
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
+    ul {
+      margin-right: 15px;
+      gap: 10px;
+    }
+  }
+
+  .navHomeContainer {
     height: 270px;
 
     h1 {
