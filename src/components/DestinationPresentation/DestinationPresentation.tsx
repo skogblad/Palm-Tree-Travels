@@ -6,6 +6,7 @@ import { getWikipediaData } from "../../services/wikipediaService";
 import { Link } from "react-router";
 import { ArrowLeft, MapPin } from "lucide-react";
 import { useCurrentWeather } from "../../hooks/useCurrentWeather";
+import { getWeatherIconUrl } from "../../utils/getWeatherIconUrl";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
@@ -38,7 +39,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
             {isLoading && <span>Laddar väder...</span>}
             {weather && (
               <span className={styles.tempSpan}>
-                Aktuell temperatur:<img src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt="Väderikon" className={styles.weatherIcon} />{Math.round(weather.temp)}°C
+                Aktuell temperatur:<img src={getWeatherIconUrl(weather.icon)} alt="Väderikon" className={styles.weatherIcon} />{Math.round(weather.temp)}°C
               </span>
             )}
           </div>

@@ -1,6 +1,7 @@
 import { MapPin, Thermometer } from "lucide-react"
 import { availableExperiences } from "../../constants/curatedDestinations"
 import styles from "./DestinationCard.module.scss"
+import { getWeatherIconUrl } from "../../utils/getWeatherIconUrl"
 
 type destinationCardProps = {
   img: string
@@ -39,7 +40,7 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
       </div>
       {temperature !== undefined && (
         <span className={styles.tempSpan}>
-          Aktuell temperatur:<img src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt="Väderikon" className={styles.weatherIcon}/>{Math.round(temperature)}°C 
+          Aktuell temperatur:<img src={getWeatherIconUrl(weatherIcon!)} alt="Väderikon" className={styles.weatherIcon}/>{Math.round(temperature)}°C 
         </span>
       )}
     </article>
