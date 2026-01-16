@@ -14,6 +14,7 @@ type DestinationPresentationProps = {
 
 export const DestinationPresentation = ({ destination }: DestinationPresentationProps) => {
   const [wikiText, setWikiText] = useState<WikipediaData>();
+  const [isExpanded, setIsExpanded] = useState(false);
   const { weather, isLoading } = useCurrentWeather(destination.lat, destination.lon);
 
   useEffect(() => {
@@ -25,6 +26,10 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
 
     getData();
   }, [destination.wikiName, destination.name]);
+
+  const paragraphs = wikiText?.description.split('\n') || [];
+  const firstParagraph = paragraphs[0];
+  const remainingParagraph = paragraphs.slice(1)
 
   return (
     <>
@@ -46,13 +51,29 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
 
           <div className={styles.textWrapper}>
             <p className={styles.pOne}>{destination.description}</p>
-            {wikiText?.description.split('\n').map((paragraph, index) => (
+            {firstParagraph && (
+              <p className={styles.pTwo}>{firstParagraph}</p>
+            )}
+
+            {isExpanded && remainingParagraph.map((paragraph, index) => (
               <p key={index} className={styles.pTwo}>{paragraph}</p>
             ))}
-            <p className={styles.readMoreTag}>
-              <a href={wikiText?.wikiUrl ?? undefined} target="_blank" rel="noopener noreferrer">Läs mer (länk)</a>
-            </p>
 
+            {(isExpanded || paragraphs.length === 1) && (
+              <span className={styles.readMoreTag}>
+                <a href={wikiText?.wikiUrl ?? undefined} target="_blank" rel="noopener noreferrer">Läs mer (länk)</a>
+              </span>
+            )}
+            
+            {paragraphs.length > 1 && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className={styles.expandButton}
+              >
+                {isExpanded ? "Visa mindre" : "Läs mer"}
+              </button>
+            )}
+            
             <div className={styles.tempContainer}>
               <span className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</span>
               {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (

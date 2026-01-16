@@ -95,6 +95,7 @@
       }
 
       .readMoreTag {
+        display: block;
         font-size: 1rem;
         margin-bottom: 30px;
         text-align: left;
@@ -102,12 +103,29 @@
 
         a {
           color: $superDarkBlue;
-          font-weight: 500;
+          font-weight: 600;
 
           &:hover {
-            color: $palmTreeGreen;
+            color: $superDarkBlue2;
             font-weight: 800;
           }
+        }
+      }
+
+      .expandButton {
+        display: flex;
+        background: none;
+        border: none;
+        color: $superDarkBlue;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+        padding-top: 10px;
+        text-decoration: underline;
+
+        &:hover {
+          color: $superDarkBlue2;
         }
       }
 
@@ -116,7 +134,8 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         background-color: $mediumYellow;
-        margin-block: 40px;
+        margin-top: 55px;
+        margin-bottom: 40px;
         padding-block: 30px;
         padding-inline: 30px;
         border-radius: 15px;
@@ -174,5 +193,145 @@
     font-size: 1.4rem;
     padding-inline: 10px;
     padding-block: 5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pageWrapper {
+    .destinationContainer {
+      column-gap: 30px;
+
+      .textWrapper {
+        .tempContainer {
+          padding-inline: 10px;
+          gap: 10px;
+          width: 440px;
+
+          .tempMonthly {
+            font-size: 1rem;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pageWrapper {
+    .destinationContainer {
+      grid-template-columns: 1fr;
+      margin-inline: 30px;
+      padding-inline: 30px;
+
+      .countryTempWrapper {
+        order: 1;
+      }
+
+      .rightWrapper {
+        order: 2;
+
+        img {
+          max-height: 400px;
+          margin-bottom: 20px;
+        }
+
+        .experienceTags {
+          display: none;
+        }
+      }
+
+      .textWrapper {
+        order: 3;
+
+        .tempContainer {
+          justify-self: center;
+          padding-inline: 30px;
+          gap: 20px;
+          width: 600px;
+
+          .tempMonthly {
+            font-size: 1.1rem;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    .backBtn {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .pageWrapper {
+    .destinationContainer {
+      margin-inline: 30px;
+      padding-inline: 20px;
+      padding-bottom: 15px;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      .countryTempWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .rightWrapper {
+        img {
+          max-height: 400px;
+        }
+      }
+
+      .textWrapper {
+        .pOne {
+          font-size: 1.2rem;
+        }
+  
+        .pTwo {
+          font-size: 1rem;
+        }
+
+        .expandButton {
+          font-size: 1rem;
+        }
+
+        .tempContainer {
+          grid-template-columns: repeat(2, 1fr);
+          margin-inline: 0;
+          padding-inline: 10px;
+          gap: 10px;
+          width: 320px;
+
+          .monthlyTempTitle {
+            font-size: 1.2rem;
+            margin-inline: 20px;
+          }
+
+          .tempMonthly {
+            font-size: 1rem;
+            padding: 10px;
+          }
+        }
+      }
+    }
+
+    .backBtn {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .pageWrapper {
+    .destinationContainer {
+      margin-inline: 10px;
+      padding-bottom: 0;
+      padding-inline: 13px;
+    }
   }
 }
