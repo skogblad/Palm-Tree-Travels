@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DestinationSearchPresentation } from "../components/views/DestinationSearchPresentation/DestinationSearchPresentation"
-import { filterDestinations } from "../utils/destinationFilters";
+import { filterDestinations } from "../utils/filterDestinations";
 import type { DateRange } from "react-day-picker";
 import type { CuratedDestination, MonthlyTemperatures } from "../models/curatedDestinations";
 import type { Weather } from "../models/Weather";
@@ -16,6 +16,7 @@ export const DestinationSearch = () => {
   const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
   const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(null);
   const [viewMode, setViewMode] = useState<"list" | "map">("list");
+  const [destinationScores, setDestinationScores] = useState<Record<number, number>>({});
 
   // Converts the slider's array of numbers to a pair of two numbers
   const handleTempRangeChange = (value: number[]) => {
@@ -23,16 +24,17 @@ export const DestinationSearch = () => {
       setTempRange([value[0], value[1]]);
     }
   };
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const results = filterDestinations(selectedVibes, selectedExperiences);
+    const { destinations: results, scores } = filterDestinations(selectedVibes, selectedExperiences);
 
     // If no date is selected, show results filtered only by vibes/experiences 
     // without applying temperature filtering/fetching weather data (prevent crash & unneccessary API call)
     if (!dateRange?.from) {
       setDestinations(results);
+      setDestinationScores(scores)
       setHasSearched(true);
       return;
     }
@@ -57,8 +59,9 @@ export const DestinationSearch = () => {
     filteredByTemp.forEach((dest, index) => {
       weatherMap[dest.name] = weatherResults[index];
     });
-    
+
     setDestinations(filteredByTemp);
+    setDestinationScores(scores);
     setHasSearched(true);
     setCurrentWeather(weatherMap);
   }
@@ -82,7 +85,7 @@ export const DestinationSearch = () => {
   }
 
   const sortSearchedDestinations = (key: "name" | "country") => {
-    const sorted =  [...destinations].sort((a, b) =>
+    const sorted = [...destinations].sort((a, b) =>
       a[key].localeCompare(b[key])
     );
 
@@ -98,11 +101,12 @@ export const DestinationSearch = () => {
   }
 
   return (
-    <DestinationSearchPresentation 
+    <DestinationSearchPresentation
       tempRange={tempRange}
       selectedVibes={selectedVibes}
       selectedExperiences={selectedExperiences}
       destinations={destinations}
+      destinationScores={destinationScores}
       hasSearched={hasSearched}
       dateRange={dateRange}
       currentWeather={currentWeather}

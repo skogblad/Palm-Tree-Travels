@@ -21,6 +21,7 @@ type DestinationSearchPresentationProps = {
   dateRange: DateRange | undefined;
   selectedMonth: keyof MonthlyTemperatures | null;
   destinations: CuratedDestination[];
+  destinationScores: Record<number, number>;
   currentWeather: Record<string, Weather>;
   hasSearched: boolean;
   viewMode: "list" | "map";
@@ -37,8 +38,8 @@ type DestinationSearchPresentationProps = {
   };
 }
 
-export const DestinationSearchPresentation = ({ tempRange, selectedVibes, selectedExperiences,dateRange, selectedMonth, destinations, currentWeather, hasSearched, viewMode, handlers }: DestinationSearchPresentationProps) => {
-  
+export const DestinationSearchPresentation = ({ tempRange, selectedVibes, selectedExperiences, dateRange, selectedMonth, destinations, destinationScores, currentWeather, hasSearched, viewMode, handlers }: DestinationSearchPresentationProps) => {
+
   const {
     onTempRangeChange,
     onDateRangeChange,
@@ -50,20 +51,20 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
     onSortByCountry,
     onToggleViewMode,
   } = handlers;
-  
+
   return (
     <>
       <section className={styles.searchPage}>
         <form onSubmit={onSubmit} onReset={onReset} className={styles.formContainer}>
-        <h2 className={styles.titleH2}>Hitta din drömdestination</h2>  
+          <h2 className={styles.titleH2}>Hitta din drömdestination</h2>
           <div className={styles.leftColumn}>
             <div className={styles.tempWrapper}>
               <span>Temperatur: {tempRange[0]}° - {tempRange[1]}°</span>
-              <Slider.Root 
-                className={styles.root} 
+              <Slider.Root
+                className={styles.root}
                 value={tempRange}
                 onValueChange={onTempRangeChange}
-                max={50} 
+                max={50}
                 minStepsBetweenThumbs={1}
               >
                 <Slider.Track className={styles.track}>
@@ -77,23 +78,23 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
             <div className="calendarWrapper">
               <span className="title">Resedatum:</span>
               <DayPicker
-                locale={sv} 
+                locale={sv}
                 mode="range"
                 selected={dateRange}
                 onSelect={onDateRangeChange}
               />
             </div>
           </div>
-          
+
           <div className={styles.filterSection}>
-            <TagSelector 
+            <TagSelector
               title="Vibes"
               options={availableVibes}
               selectedValues={selectedVibes}
               onToggle={onToggleVibeTags}
             />
 
-            <TagSelector 
+            <TagSelector
               title="Upplevelser"
               options={availableExperiences}
               selectedValues={selectedExperiences}
@@ -111,52 +112,53 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
       {hasSearched && (
         <section className={styles.resultContainer}>
           <h3 className={styles.resultsTitle}>Resultat ({destinations.length} destinationer)</h3>
-          
+
           {destinations.length > 0 && (
             <div className={styles.sortOptions}>
-              <button 
-                className={styles.sortIcon} 
-                aria-label="Sortera alfabetiskt" 
+              <button
+                className={styles.sortIcon}
+                aria-label="Sortera alfabetiskt"
                 onClick={onSortByAlpha}
               >
-                <ArrowDownAZ aria-hidden="true"/>
+                <ArrowDownAZ aria-hidden="true" />
               </button>
 
-              <button 
-                className={styles.sortIcon} 
-                aria-label="Sortera alfabetiskt" 
+              <button
+                className={styles.sortIcon}
+                aria-label="Sortera alfabetiskt"
                 onClick={onSortByCountry}
               >
-                <Globe aria-hidden="true"/>
+                <Globe aria-hidden="true" />
               </button>
 
-              <button 
-                className={styles.viewToggleIcon}  
-                aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"} 
+              <button
+                className={styles.viewToggleIcon}
+                aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"}
                 onClick={onToggleViewMode}
               >
-                {viewMode === "list" ? <Map aria-hidden="true"/> : <List aria-hidden="true"/>}
+                {viewMode === "list" ? <Map aria-hidden="true" /> : <List aria-hidden="true" />}
               </button>
             </div>
           )}
 
-          {destinations.length > 0 ? (  
+          {destinations.length > 0 ? (
             viewMode === "list" ? (
               destinations.map((d) => (
                 <Link key={d.id} to={`/destination/${d.id}`}>
-                  <DestinationCard 
+                  <DestinationCard
                     img={d.imageUrl}
                     alt={d.name}
                     weatherIcon={currentWeather[d.name]?.icon}
-                    temperature={currentWeather[d.name]?.temp} 
-                    title={d.name} 
+                    temperature={currentWeather[d.name]?.temp}
+                    title={d.name}
                     country={d.country}
                     selectedMonth={selectedMonth}
                     avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
                     description={d.description}
                     experience={d.experiences}
+                    totalScore={destinationScores[d.id]}
                   />
-                </Link>  
+                </Link>
               ))
             ) : (
               <MapView destinations={destinations} />
