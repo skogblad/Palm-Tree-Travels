@@ -18,31 +18,31 @@ export const HomePresentation = () => {
           <InfoCard
             Icon={ThermometerSun}
             iconWrapper={iconStyles.thermometerWrapper}
-            iconClassName={iconStyles.thermometerIcon} 
-            title="Temperatur"  
-            infoText="Upptäck platser med den värme du längtar efter, uppdaterade med väderdata i realtid" 
+            iconClassName={iconStyles.thermometerIcon}
+            title="Temperatur"
+            infoText="Upptäck platser med den värme du längtar efter, uppdaterade med väderdata i realtid"
           />
 
-          <InfoCard 
+          <InfoCard
             Icon={Palmtree}
             iconWrapper={iconStyles.palmTreeWrapper}
-            iconClassName={iconStyles.palmTreeIcon} 
-            title="Tropiska vibbar" 
-            infoText="Utforska destinationer med palmer, stränder och den perfekta stämningen för just dig" 
+            iconClassName={iconStyles.palmTreeIcon}
+            title="Tropiska vibbar"
+            infoText="Utforska destinationer med palmer, stränder och den perfekta stämningen för just dig"
           />
 
           <InfoCard
             Icon={Sparkles}
             iconWrapper={iconStyles.sparklesWrapper}
-            iconClassName={iconStyles.sparklesIcon} 
-            title="Upplevelser" 
-            infoText="Få personliga rekommendationer baserat på upplevelsen du söker, inte bara en plats" 
+            iconClassName={iconStyles.sparklesIcon}
+            title="Upplevelser"
+            infoText="Få personliga rekommendationer baserat på upplevelsen du söker, inte bara en plats"
           />
         </CardCarousel>
 
         <article className={styles.finalPunchArticle}>
           <h4>Följ solen, inte kartan</h4>
-          <p>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis – Palm Tree Travels hittar destinationer som matchar din känsla.</p>
+          <p>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis – Palm Tree Travels hittar destinationer som matchar din känsla där sol och bad står i fokus.</p>
           <NavLink to={"/search-destination"}>Upptäck nu</NavLink>
         </article>
       </section>
@@ -54,7 +54,7 @@ export const HomePresentation = () => {
         <CardCarousel className={styles.cardsCarousel}>
           {curatedDestinations.slice(0, window.innerWidth <= 768 && window.innerWidth > 425 ? 2 : 3).map((d) => (
             <Link key={d.id} to={`/destination/${d.id}`}>
-              <DestinationCard 
+              <DestinationCard
                 key={d.name}
                 img={d.imageUrl}
                 alt={d.name}
@@ -64,7 +64,7 @@ export const HomePresentation = () => {
                 experience={d.experiences}
               />
             </Link>
-            
+
           ))}
         </CardCarousel>
       </section>
