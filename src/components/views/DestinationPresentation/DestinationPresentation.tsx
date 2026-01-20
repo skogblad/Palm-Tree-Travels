@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import { ArrowLeft, MapPin } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
+import { availableExperiences } from "../../../constants/curatedDestinations";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
@@ -29,12 +30,18 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
 
   const paragraphs = wikiText?.description.split('\n') || [];
   const firstParagraph = paragraphs[0];
-  const remainingParagraph = paragraphs.slice(1)
+  const remainingParagraph = paragraphs.slice(1);
+
+  // Translate experience tags to use swedish labels
+  const experienceLabels = destination.experiences.map((exp) => ({
+    value: exp,
+    label: availableExperiences.find((e) => e.value === exp)?.label ?? exp
+  }));
 
   return (
     <>
       <main className={styles.pageWrapper}>
-        <Link to={"/search-destination"} className={styles.goBackTextTop}><ArrowLeft/>Tillbaka</Link>
+        <Link to={"/search-destination"} className={styles.goBackTextTop}><ArrowLeft />Tillbaka</Link>
 
         <article key={destination.id} className={styles.destinationContainer}>
           <h2>{destination.name}</h2>
@@ -64,7 +71,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
                 <a href={wikiText?.wikiUrl ?? undefined} target="_blank" rel="noopener noreferrer">Läs mer (länk)</a>
               </span>
             )}
-            
+
             {paragraphs.length > 1 && (
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
@@ -73,7 +80,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
                 {isExpanded ? "Visa mindre" : "Läs mer"}
               </button>
             )}
-            
+
             <div className={styles.tempContainer}>
               <span className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</span>
               {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (
@@ -88,9 +95,9 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           <div className={styles.rightWrapper}>
             <img src={destination.imageUrl} alt={destination.name} />
             <div className={styles.experienceTags}>
-              {destination.experiences.map((experience, index) => (
-                <span key={index} className={styles.tag}>
-                  {experience}
+              {experienceLabels.map((exp) => (
+                <span key={exp.value} className={styles.tag}>
+                  {exp.label}
                 </span>
               ))}
             </div>
