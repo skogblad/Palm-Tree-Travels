@@ -7,7 +7,7 @@ import { Link } from "react-router";
 import { ArrowLeft, MapPin } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
-import { availableExperiences } from "../../../constants/curatedDestinations";
+import { getExperienceLabels } from "../../../utils/getExperienceLabels";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
@@ -17,6 +17,11 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   const [wikiText, setWikiText] = useState<WikipediaData>();
   const [isExpanded, setIsExpanded] = useState(false);
   const { weather, isLoading } = useCurrentWeather(destination.lat, destination.lon);
+  const experienceLabels = getExperienceLabels(destination.experiences);
+
+  const paragraphs = wikiText?.description.split('\n') || [];
+  const firstParagraph = paragraphs[0];
+  const remainingParagraph = paragraphs.slice(1);
 
   useEffect(() => {
     const getData = async () => {
@@ -27,16 +32,6 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
 
     getData();
   }, [destination.wikiName, destination.name]);
-
-  const paragraphs = wikiText?.description.split('\n') || [];
-  const firstParagraph = paragraphs[0];
-  const remainingParagraph = paragraphs.slice(1);
-
-  // Translate experience tags to use swedish labels
-  const experienceLabels = destination.experiences.map((exp) => ({
-    value: exp,
-    label: availableExperiences.find((e) => e.value === exp)?.label ?? exp
-  }));
 
   return (
     <>
