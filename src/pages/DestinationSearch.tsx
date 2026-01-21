@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DestinationSearchPresentation } from "../components/views/DestinationSearchPresentation/DestinationSearchPresentation"
 import { filterDestinations } from "../utils/filterDestinations";
 import type { DateRange } from "react-day-picker";
@@ -6,17 +6,42 @@ import type { CuratedDestination, MonthlyTemperatures } from "../models/curatedD
 import type { Weather } from "../models/Weather";
 import { getWeather } from "../services/weatherService";
 
+// Read sessionStorage one time when the component initiates
+const loadSavedState = () => {
+  if (typeof window === "undefined") return {};
+  const saved = sessionStorage.getItem('destinationSearchState');
+  return saved ? JSON.parse(saved) : {};
+};
+
 export const DestinationSearch = () => {
-  const [tempRange, setTempRange] = useState<[number, number]>([20, 30]);
-  const [selectedVibes, setSelectedVibes] = useState<string[]>([]);
-  const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
-  const [destinations, setDestinations] = useState<CuratedDestination[]>([]);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [dateRange, setDateRange] = useState<DateRange | undefined>();
-  const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>({});
-  const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(null);
-  const [viewMode, setViewMode] = useState<"list" | "map">("list");
-  const [destinationScores, setDestinationScores] = useState<Record<number, number>>({});
+  const savedState = loadSavedState();
+
+  const [tempRange, setTempRange] = useState<[number, number]>(savedState.tempRange || [20, 30]);
+  const [selectedVibes, setSelectedVibes] = useState<string[]>(savedState.selectedVibes || []);
+  const [selectedExperiences, setSelectedExperiences] = useState<string[]>(savedState.selectedExperiences || []);
+  const [destinations, setDestinations] = useState<CuratedDestination[]>(savedState.destinations || []);
+  const [destinationScores, setDestinationScores] = useState<Record<number, number>>(savedState.destinationScores || {});
+  const [dateRange, setDateRange] = useState<DateRange | undefined>(savedState.dateRange || undefined);
+  const [selectedMonth, setSelectedMonth] = useState<keyof MonthlyTemperatures | null>(savedState.selectedMonth || null);
+  const [viewMode, setViewMode] = useState<"list" | "map">(savedState.viewMode || "list");
+  const [currentWeather, setCurrentWeather] = useState<Record<string, Weather>>(savedState.currentWeather || {});
+  const [hasSearched, setHasSearched] = useState(!!savedState.destinations?.length);
+
+
+  // Live-save state in sessionStorage on changes
+  useEffect(() => {
+    sessionStorage.setItem("destinationSearchState", JSON.stringify({
+      tempRange,
+      selectedVibes,
+      selectedExperiences,
+      destinations,
+      destinationScores,
+      dateRange,
+      selectedMonth,
+      viewMode,
+      currentWeather
+    }));
+  }, [tempRange, selectedVibes, selectedExperiences, destinations, destinationScores, dateRange, selectedMonth, viewMode, currentWeather]);
 
   // Converts the slider's array of numbers to a pair of two numbers
   const handleTempRangeChange = (value: number[]) => {
@@ -72,7 +97,11 @@ export const DestinationSearch = () => {
     setSelectedExperiences([]);
     setDateRange(undefined);
     setHasSearched(false);
-    setSelectedMonth(null)
+    setSelectedMonth(null);
+    setDestinations([]);
+    setDestinationScores({});
+    setCurrentWeather({});
+    sessionStorage.removeItem('destinationSearchState');
   }
 
   // Toggles the selection state of a tag (removes if selected, adds if not selected)
