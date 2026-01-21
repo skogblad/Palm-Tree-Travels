@@ -3,7 +3,7 @@
 
 .pageWrapper {
   margin-bottom: 80px;
-  
+
   .goBackTextTop {
     display: flex;
     justify-self: left;
@@ -13,7 +13,7 @@
     margin-bottom: 0;
     color: $h1;
     font-size: 1rem;
-    
+
     svg {
       width: 20px;
       height: 20px;
@@ -70,7 +70,7 @@
       .tempSpan {
         @include current-weather-span;
         border-radius: 40px;
-    
+
         .weatherIcon {
           width: 40px;
           height: auto;
@@ -79,6 +79,7 @@
     }
 
     .textWrapper {
+
       .pOne,
       .pTwo {
         color: $superDarkBlue;
@@ -148,7 +149,7 @@
           color: $superDarkBlue;
           margin-bottom: 15px;
         }
-        
+
         .tempMonthly {
           background-color: $lightYellow;
           padding: 10px;
@@ -179,7 +180,7 @@
       .experienceTags {
         margin-top: 30px;
         padding-inline: 30px;
-    
+
         .tag {
           @include experience-tag;
           font-size: 1rem;
@@ -291,7 +292,7 @@
         .pOne {
           font-size: 1.2rem;
         }
-  
+
         .pTwo {
           font-size: 1rem;
         }

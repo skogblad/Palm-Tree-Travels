@@ -146,6 +146,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
               destinations.map((d) => (
                 <Link key={d.id} to={`/destination/${d.id}`}>
                   <DestinationCard
+                    destination={d}
                     img={d.imageUrl}
                     alt={d.name}
                     weatherIcon={currentWeather[d.name]?.icon}

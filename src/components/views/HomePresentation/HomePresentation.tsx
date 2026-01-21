@@ -55,6 +55,7 @@ export const HomePresentation = () => {
           {curatedDestinations.slice(0, window.innerWidth <= 768 && window.innerWidth > 425 ? 2 : 3).map((d) => (
             <Link key={d.id} to={`/destination/${d.id}`}>
               <DestinationCard
+                destination={d}
                 key={d.name}
                 img={d.imageUrl}
                 alt={d.name}
@@ -64,7 +65,6 @@ export const HomePresentation = () => {
                 experience={d.experiences}
               />
             </Link>
-
           ))}
         </CardCarousel>
       </section>
