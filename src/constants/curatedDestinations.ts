@@ -7,7 +7,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 1,
     name: "Punta Cana",
-    wikiName: "Punta Cana, Dominikanska republiken",
     country: "Dominikanska republiken",
     lat: 18.58,
     lon: -68.40,
@@ -33,7 +32,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 3,
     name: "Montego Bay",
-    wikiName: "Montego Bay, Jamaica",
     country: "Jamaica",
     lat: 18.47,
     lon: -77.92,
@@ -95,7 +93,8 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 8,
     name: "Turks & Caicos",
-    country: "Turks & Caicos",
+    wikiName: "Turks- och Caicosöarna",
+    country: "Turks- och Caicosöarna",
     lat: 21.80,
     lon: -72.31,
     vibes: ["luxury", "relaxation", "romantic"],
@@ -209,7 +208,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 17,
     name: "Nha Trang",
-    wikiName: "Nha Trang, Vietnam",
     country: "Vietnam",
     lat: 12.24,
     lon: 109.19,
@@ -262,7 +260,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 21,
     name: "Zanzibar",
-    wikiName: "Zanzibar, Tanzania",
     country: "Tanzania",
     lat: -6.16,
     lon: 39.19,
@@ -400,7 +397,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 32,
     name: "Split",
-    wikiName: "Split, Kroatien",
     country: "Kroatien",
     lat: 43.51,
     lon: 16.44,
@@ -413,7 +409,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 33,
     name: "Hvar",
-    wikiName: "Hvar, Kroatien",
     country: "Kroatien",
     lat: 43.17,
     lon: 16.44,
@@ -426,7 +421,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 34,
     name: "Bodrum",
-    wikiName: "Bodrum, Turkiet",
     country: "Turkiet",
     lat: 37.03,
     lon: 27.43,
@@ -455,7 +449,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 36,
     name: "Cancún",
-    wikiName: "Cancún, Mexiko",
     country: "Mexiko",
     lat: 21.16,
     lon: -86.85,
@@ -468,7 +461,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 37,
     name: "Tulum",
-    wikiName: "Tulum, Mexiko",
     country: "Mexiko",
     lat: 20.21,
     lon: -87.43,
@@ -481,7 +473,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 38,
     name: "Cabo San Lucas",
-    wikiName: "Cabo San Lucas, Mexiko",
     country: "Mexiko",
     lat: 22.89,
     lon: -109.91,
@@ -494,7 +485,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 39,
     name: "Playa del Carmen",
-    wikiName: "Playa del Carmen, Mexiko",
     country: "Mexiko",
     lat: 20.63,
     lon: -87.07,
@@ -520,7 +510,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 41,
     name: "Manuel Antonio",
-    wikiName: "Manuel Antonio, Costa Rica",
+    wikiName: "Manuel Antonio nationalpark",
     country: "Costa Rica",
     lat: 9.37,
     lon: -84.14,
@@ -533,7 +523,7 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 42,
     name: "Roatán",
-    wikiName: "Roatán, Honduras",
+    wikiName: "Roatán (ö)",
     country: "Honduras",
     lat: 16.32,
     lon: -86.53,
@@ -550,7 +540,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 43,
     name: "Miami Beach",
-    wikiName: "Miami Beach, USA",
     country: "USA",
     lat: 25.79,
     lon: -80.13,
@@ -575,7 +564,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 45,
     name: "Honolulu",
-    wikiName: "Honolulu, Hawaii",
     country: "USA (Hawaii)",
     lat: 21.31,
     lon: -157.86,
@@ -600,7 +588,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 47,
     name: "Key West",
-    wikiName: "Key West, USA",
     country: "USA",
     lat: 24.56,
     lon: -81.78,
@@ -653,14 +640,13 @@ export const curatedDestinations: CuratedDestination[] = [
   },
   {
     id: 51,
-    name: "Muscat",
-    wikiName: "Muscat, Oman",
+    name: "Muskat",
     country: "Oman",
     lat: 23.59,
     lon: 58.37,
     vibes: ["luxury", "culture", "adventure"],
     experiences: ["sightseeing", "hiking"],
-    description: "Muscat bjuder på autentisk arabisk kultur, lyxiga upplevelser, vackra stränder längs kusten och äventyr i spektakulära wadis och öknen.",
+    description: "Muskat bjuder på autentisk arabisk kultur, lyxiga upplevelser, vackra stränder längs kusten och äventyr i spektakulära wadis och öknen.",
     imageUrl: "https://images.unsplash.com/photo-1585134339424-0fc98d0bfe86?q=80&w=2040&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     avgTempByMonth: { Januari: 21, Februari: 22, Mars: 26, April: 30, Maj: 34, Juni: 34, Juli: 33, Augusti: 32, September: 31, Oktober: 30, November: 26, December: 22 }
   },
@@ -708,7 +694,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 55,
     name: "Cairns",
-    wikiName: "Cairns, Australien",
     country: "Australien",
     lat: -16.92,
     lon: 145.77,
