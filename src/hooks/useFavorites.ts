@@ -43,9 +43,6 @@ export const useFavorites = () => {
   return {
     favorites: destinations,
     toggleFavorite: toggleFavorites,
-    isFavorite: (id: number) => {
-      const currentFavorites = getFavoritesFromStorage();
-      return currentFavorites.some(d => d.id === id);
-    }
+    isFavorite: (id: number) => destinations.some(d => d.id === id)
   }
 }

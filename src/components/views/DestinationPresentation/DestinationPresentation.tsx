@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import type { WikipediaData } from "../../../models/WikipediaData";
 import { getWikipediaData } from "../../../services/wikipediaService";
 import { Link } from "react-router";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, Heart, MapPin } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
 import { getExperienceLabels } from "../../../utils/getExperienceLabels";
+import { useFavorites } from "../../../hooks/useFavorites";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
@@ -18,6 +19,8 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   const [isExpanded, setIsExpanded] = useState(false);
   const { weather, isLoading } = useCurrentWeather(destination.lat, destination.lon);
   const experienceLabels = getExperienceLabels(destination.experiences);
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const isFav = isFavorite(destination.id)
 
   const paragraphs = wikiText?.description.split('\n') || [];
   const firstParagraph = paragraphs[0];
@@ -40,6 +43,18 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
 
         <article key={destination.id} className={styles.destinationContainer}>
           <h2>{destination.name}</h2>
+
+          <button
+            className={`${styles.favoriteBtn} ${isFav ? styles.isFavorite : ''}`}
+            aria-label={isFav ? "Ta bort från favoriter" : "Lägg till i favoriter"}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleFavorite(destination);
+            }}
+          >
+            <Heart aria-hidden="true" />
+          </button>
 
           <div className={styles.countryTempWrapper}>
             <span className={styles.countrySpan}><MapPin />{destination.country}</span>

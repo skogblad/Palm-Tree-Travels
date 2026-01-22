@@ -23,8 +23,8 @@ type destinationCardProps = {
 
 export const DestinationCard = ({ img, alt, title, country, description, experience, showExperiences, temperature, weatherIcon, avgTempByMonth, selectedMonth, totalScore, destination }: destinationCardProps) => {
 
-  const { toggleFavorite, favorites } = useFavorites();
-  const isFav = favorites.some(d => d.id === destination.id);
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const isFav = isFavorite(destination.id);
   const experienceTags = experience ? getExperienceLabels(experience) : [];
 
   return (
