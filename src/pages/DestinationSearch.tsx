@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DestinationSearchPresentation } from "../components/views/DestinationSearchPresentation/DestinationSearchPresentation"
 import { filterDestinations } from "../utils/filterDestinations";
 import type { DateRange } from "react-day-picker";
@@ -15,6 +15,7 @@ const loadSavedState = () => {
 
 export const DestinationSearch = () => {
   const savedState = loadSavedState();
+  const resultsRef = useRef<HTMLElement>(null);
 
   const [tempRange, setTempRange] = useState<[number, number]>(savedState.tempRange || [20, 30]);
   const [selectedVibes, setSelectedVibes] = useState<string[]>(savedState.selectedVibes || []);
@@ -42,6 +43,12 @@ export const DestinationSearch = () => {
       currentWeather
     }));
   }, [tempRange, selectedVibes, selectedExperiences, destinations, destinationScores, dateRange, selectedMonth, viewMode, currentWeather]);
+
+  useEffect(() => {
+    if (hasSearched && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [hasSearched]);
 
   // Converts the slider's array of numbers to a pair of two numbers
   const handleTempRangeChange = (value: number[]) => {
@@ -141,6 +148,7 @@ export const DestinationSearch = () => {
       currentWeather={currentWeather}
       selectedMonth={selectedMonth}
       viewMode={viewMode}
+      resultsRef={resultsRef}
       handlers={{
         onTempRangeChange: handleTempRangeChange,
         onDateRangeChange: setDateRange,

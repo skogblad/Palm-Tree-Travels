@@ -25,6 +25,7 @@ type DestinationSearchPresentationProps = {
   currentWeather: Record<string, Weather>;
   hasSearched: boolean;
   viewMode: "list" | "map";
+  resultsRef: React.RefObject<HTMLElement | null>;
   handlers: {
     onTempRangeChange: (value: number[]) => void;
     onDateRangeChange: (range: DateRange | undefined) => void;
@@ -38,7 +39,7 @@ type DestinationSearchPresentationProps = {
   };
 }
 
-export const DestinationSearchPresentation = ({ tempRange, selectedVibes, selectedExperiences, dateRange, selectedMonth, destinations, destinationScores, currentWeather, hasSearched, viewMode, handlers }: DestinationSearchPresentationProps) => {
+export const DestinationSearchPresentation = ({ tempRange, selectedVibes, selectedExperiences, dateRange, selectedMonth, destinations, destinationScores, currentWeather, hasSearched, viewMode, resultsRef, handlers }: DestinationSearchPresentationProps) => {
 
   const {
     onTempRangeChange,
@@ -110,7 +111,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
       </section>
 
       {hasSearched && (
-        <section className={styles.resultContainer}>
+        <section ref={resultsRef} className={styles.resultContainer}>
           <h3 className={styles.resultsTitle}>Resultat ({destinations.length} destinationer)</h3>
 
           {destinations.length > 0 && (
