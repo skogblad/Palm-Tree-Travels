@@ -29,7 +29,7 @@
     justify-content: flex-end;
     margin-top: -30px;
     margin-right: 80px;
-    
+
 
     a {
       @include button-base;
@@ -50,7 +50,7 @@
 
 .navHomeContainer {
   width: 100%;
-  background-image: url("/topBackground7.jpg");
+  background-image: url("/topBackground7.webp");
   height: 750px;
   background-size: cover;
   background-position: center top;
@@ -107,7 +107,7 @@
 
   .navHomeContainer {
     height: 600px;
-    
+
     h1 {
       font-size: 5rem;
     }
@@ -141,7 +141,7 @@
 
   .navHomeContainer {
     height: 450px;
-    
+
     h1 {
       font-size: 3.5rem;
     }
@@ -184,8 +184,8 @@
     &::after {
       height: 120px;
     }
-  
-    
+
+
     h1 {
       font-size: 2.5rem;
       padding-top: 30px;
