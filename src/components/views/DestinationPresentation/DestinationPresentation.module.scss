@@ -34,6 +34,15 @@
     border-radius: 20px;
     position: relative;
 
+    h2 {
+      grid-column: 1 / -1;
+      font-size: 5rem;
+      color: $darkBlue;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      justify-self: left;
+    }
+
     .favoriteBtn {
       position: absolute;
       top: 35px;
@@ -54,8 +63,8 @@
       }
 
       svg {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
       }
 
       &.isFavorite {
@@ -66,15 +75,6 @@
           fill: $h1;
         }
       }
-    }
-
-    h2 {
-      grid-column: 1 / -1;
-      font-size: 5rem;
-      color: $darkBlue;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      justify-self: left;
     }
 
     .countryTempWrapper {
@@ -257,8 +257,15 @@
   .pageWrapper {
     .destinationContainer {
       grid-template-columns: 1fr;
-      margin-inline: 30px;
-      padding-inline: 30px;
+      margin-inline: 28px;
+      padding-inline: 28px;
+
+      .favoriteBtn {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
 
       .countryTempWrapper {
         order: 1;
@@ -309,6 +316,16 @@
 
       h2 {
         font-size: 3rem;
+      }
+
+      .favoriteBtn {
+        top: 25px;
+        right: 25px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       .countryTempWrapper {
