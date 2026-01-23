@@ -18,13 +18,14 @@
 
 .popupLink {
   text-decoration: none;
-  
+
   a {
-    color: $superDarkBlue2;
+    color: $mapTextBlue;
     font-size: 1rem;
+
     &:hover {
       text-decoration: underline;
-      color: $darkBlue2;
+      color: $darkGreen;
     }
   }
 }

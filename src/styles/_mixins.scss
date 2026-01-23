@@ -2,7 +2,7 @@
 
 @mixin button-base {
   color: $lightYellow;
-  background-color: rgba($darkBlue, 0.8);
+  background-color: rgba($superDarkBlue, 0.8);
   padding: 3px 7px;
   border-radius: 10px;
   transition: background-color 0.2s ease;
@@ -17,15 +17,15 @@
 @mixin current-weather-span {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  color: $lightYellow;
+  font-weight: 500;
+  color: $superDarkBlue1;
   border-radius: 10px;
-  padding-inline: 20px;
+  padding-inline: 15px;
   box-shadow: inset 0 0 0 2px rgba(192, 255, 216, 0.1);
   background: linear-gradient(90deg,
-      #de9acb 0%,
-      #f5b4e2 50%,
-      #efafdf 100%);
+      #e9f1fc 0%,
+      #bad6e5 50%,
+      #dff1ff 100%);
 }
 
 @mixin experience-tag {

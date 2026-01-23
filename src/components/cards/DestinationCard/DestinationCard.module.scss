@@ -90,12 +90,12 @@
     }
 
     .countrySpan {
-      color: $darkBlue;
+      color: $superDarkBlue;
       gap: 5px;
     }
 
     .avgTempSpan {
-      color: $superDarkYellow;
+      color: $superDarkPink;
       gap: 2px;
     }
   }
@@ -129,9 +129,9 @@
 
     .scoreSpan {
       padding: 6px 12px;
+      padding-inline: 15px;
     }
   }
-
 
   .experienceTags {
     margin-bottom: 30px;

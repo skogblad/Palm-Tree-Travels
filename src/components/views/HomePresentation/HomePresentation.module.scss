@@ -8,9 +8,9 @@
   justify-content: center;
   margin-block: 50px;
   padding-bottom: 70px;
-  background: linear-gradient(to bottom, transparent 0%, rgba($superLightBlue2, 40%));
+  background: linear-gradient(to bottom, transparent 0%, rgba($backgroundBlue, 40%));
   font-size: 1rem;
-  
+
 
   h2 {
     grid-column: 1 / -1;
@@ -32,7 +32,7 @@
   }
 
   .finalPunchArticle {
-    background-color:rgba($superLightGreen, 0.5);
+    background-color: rgba($superLightGreen, 0.5);
     width: 650px;
     grid-column: 1 / -1;
     justify-self: center;
@@ -98,7 +98,7 @@
     h2 {
       font-size: 2.1rem;
     }
-    
+
     .subText {
       width: 600px;
       margin-bottom: 30px;
@@ -132,7 +132,7 @@
 @media screen and (max-width: 768px) and (min-width: 426px) {
   .featuredDestinationContainer {
     .cardsCarousel {
-      > *:nth-child(3) {
+      >*:nth-child(3) {
         display: none;
       }
     }
@@ -148,12 +148,12 @@
     h2 {
       font-size: 1.7rem;
     }
-  
+
     .subText {
       width: 380px;
       margin-top: 0;
     }
-    
+
     .finalPunchArticle {
       width: 360px;
       font-size: 1.1rem;
@@ -170,7 +170,7 @@
     h2 {
       font-size: 1.7rem;
     }
-  
+
     .subText2 {
       width: 380px;
       margin-top: 0;
@@ -183,12 +183,12 @@
     h2 {
       font-size: 1.7rem;
     }
-    
+
     .subText {
       width: 280px;
       font-size: 1.1rem;
     }
-    
+
     .finalPunchArticle {
       width: 280px;
       font-size: 1rem;
@@ -198,12 +198,12 @@
       }
     }
   }
-  
+
   .featuredDestinationContainer {
     h2 {
       font-size: 1.7rem;
     }
-    
+
     .subText2 {
       width: 280px;
       font-size: 1.1rem;
