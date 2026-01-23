@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { WikipediaData } from "../../../models/WikipediaData";
 import { getWikipediaData } from "../../../services/wikipediaService";
 import { Link } from "react-router";
-import { ArrowLeft, Heart, MapPin } from "lucide-react";
+import { Heart, MapPin } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
 import { getExperienceLabels } from "../../../utils/getExperienceLabels";
@@ -39,8 +39,6 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   return (
     <>
       <main className={styles.pageWrapper}>
-        <Link to={"/search-destination"} className={styles.goBackTextTop}><ArrowLeft />Tillbaka</Link>
-
         <article key={destination.id} className={styles.destinationContainer}>
           <h2>{destination.name}</h2>
 

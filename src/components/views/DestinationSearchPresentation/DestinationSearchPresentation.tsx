@@ -89,7 +89,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
 
           <div className={styles.filterSection}>
             <TagSelector
-              title="Vibes"
+              title="Känsla"
               options={availableVibes}
               selectedValues={selectedVibes}
               onToggle={onToggleVibeTags}

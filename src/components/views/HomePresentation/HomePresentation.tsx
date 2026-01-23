@@ -10,9 +10,9 @@ import { Link, NavLink } from "react-router"
 export const HomePresentation = () => {
   return (
     <>
-      <section className={styles.howItWorksContainer}>
+      <section className={styles.howItWorksContainer} id="how-it-works">
         <h2>Hitta enkelt din drömresa</h2>
-        <p className={styles.subText}>Palm Tree Travels hjälper dig att upptäcka destinationer baserat på önskade upplevelser, med hjälp av väderdata och utvalda preferenser.</p>
+        <p className={styles.subText}>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis hittar Palm Tree Travels strandnära destinationer som matchar din känsla och utvalda preferenser.</p>
 
         <CardCarousel className={styles.cardsCarousel}>
           <InfoCard
@@ -20,7 +20,7 @@ export const HomePresentation = () => {
             iconWrapper={iconStyles.thermometerWrapper}
             iconClassName={iconStyles.thermometerIcon}
             title="Temperatur"
-            infoText="Upptäck platser med den värme du längtar efter, uppdaterade med väderdata i realtid"
+            infoText="Upptäck platser med den värme du längtar efter, baserat på nuvarande väder och historiska genomsnitt"
           />
 
           <InfoCard
@@ -40,11 +40,7 @@ export const HomePresentation = () => {
           />
         </CardCarousel>
 
-        <article className={styles.finalPunchArticle}>
-          <h4>Följ solen, inte kartan</h4>
-          <p>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis – Palm Tree Travels hittar destinationer som matchar din känsla där sol och bad står i fokus.</p>
-          <NavLink to={"/search-destination"}>Upptäck nu</NavLink>
-        </article>
+        <NavLink to={"/search-destination"}>Upptäck nu</NavLink>
       </section>
 
       <section className={styles.featuredDestinationContainer}>

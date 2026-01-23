@@ -4,22 +4,6 @@
 .pageWrapper {
   margin-bottom: 80px;
 
-  .goBackTextTop {
-    display: flex;
-    justify-self: left;
-    align-items: center;
-    margin-left: 40px;
-    margin-top: 30px;
-    margin-bottom: 0;
-    color: $h1;
-    font-size: 1rem;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
   .destinationContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -227,8 +211,7 @@
   .backBtn {
     @include button-base;
     font-size: 1.4rem;
-    padding-inline: 10px;
-    padding-block: 5px;
+    padding: 7px 15px;
   }
 }
 

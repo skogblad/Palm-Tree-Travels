@@ -94,6 +94,7 @@
     a {
       @include button-base;
       font-size: 1.7rem;
+      padding: 6px 12px;
     }
   }
 }
