@@ -14,6 +14,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "golf", "food"],
     description: "Känd för sina kritvita stränder och kristallklara vatten. Punta Cana är ett paradis med all-inclusive-resorts och palmkantade kuster.",
     imageUrl: "https://images.unsplash.com/photo-1569700946659-fe1941c71fe4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Palmträd som lutar sig över en vit sandstrand med turkost vatten och klarblå himmel.",
     avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 27, Maj: 28, Juni: 28, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
   {
@@ -27,6 +28,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "shopping", "food"],
     description: "Bahamas huvudstad blandar kolonial charm med moderna lyxresorts och den berömda Atlantis Paradise Island.",
     imageUrl: "https://images.unsplash.com/photo-1615839901889-c828c4a96c15?q=80&w=2490&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en liten grön ö med en motorbåt som skapar ett vitt svall i det turkosa vattnet.",
     avgTempByMonth: { Januari: 21, Februari: 22, Mars: 23, April: 25, Maj: 27, Juni: 28, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 24, December: 22 }
   },
   {
@@ -39,6 +41,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "food"],
     description: "Känd som 'MoBay' erbjuder detta jamaicanska paradis reggaemusik, jerk-mat och några av Karibiens vackraste stränder.",
     imageUrl: "https://images.unsplash.com/photo-1700807307391-444e76b0e2ff?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Lusthus/paviljong på en stenig udde som sträcker sig ut i ett lugnt hav under en mulen himmel.",
     avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 28, Maj: 28, Juni: 29, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
   {
@@ -51,6 +54,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "food"],
     description: "One Happy Island - Aruba är känt för sina vita stränder, året-runt-sol och ständigt svalkande passadvindar.",
     imageUrl: "https://images.unsplash.com/photo-1633421332483-1aa89f0c6b9a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vit sandstrand med turkost vatten och några hotellbyggnader i bakgrunden.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 30, September: 30, Oktober: 29, November: 28, December: 27 }
   },
   {
@@ -64,6 +68,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "sightseeing"],
     description: "Puerto Ricos livliga huvudstad med färgglad kolonialarkitektur, fantastiska stränder och legendariskt nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1650764798436-7c7debbdc697?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Färgglada kolonialbyggnader med orange, blå och turkosa fasader och balkonger.",
     avgTempByMonth: { Januari: 25, Februari: 25, Mars: 26, April: 27, Maj: 28, Juni: 28, Juli: 28, Augusti: 29, September: 28, Oktober: 28, November: 27, December: 26 }
   },
   {
@@ -76,6 +81,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "food", "golf"],
     description: "Karibisk lyx med vita sandstränder, kristallklart vatten och rom-kultur. Perfekt för surfing, cricket och det goda livet.",
     imageUrl: "https://images.unsplash.com/photo-1682289570915-5d6e41ade8bc?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Palmträd som böjer sig i vinden på en stenig kustlinje vid havet.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 29, Oktober: 29, November: 28, December: 28 }
   },
   {
@@ -88,6 +94,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "hiking", "wildlife"],
     description: "Dramatiska Pitons-bergen, regnskogar och vulkaniska stränder. Karibisk pärla perfekt för romantik och naturupplevelser.",
     imageUrl: "https://images.unsplash.com/photo-1617280325974-f9c5721a4862?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en halvmåneformad strand med båtar ankrade i turkost vatten och en halvö med palmer.",
     avgTempByMonth: { Januari: 26, Februari: 26, Mars: 26, April: 27, Maj: 28, Juni: 28, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 27, December: 26 }
   },
   {
@@ -101,6 +108,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "spa"],
     description: "Känt för kritvita sandstränder som Grace Bay Beach och kristallklart turkost vatten. Exklusiv och lugn atmosfär med lyxiga resorter bortom de mest myllrande turiststråken.",
     imageUrl: "https://images.unsplash.com/photo-1514130667032-770bbfe7b7b2?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en orörd vit sandstrand med turkost vatten och skuggor från palmer på sanden.",
     avgTempByMonth: { Januari: 24, Februari: 24, Mars: 24, April: 25, Maj: 26, Juni: 27, Juli: 28, Augusti: 28, September: 28, Oktober: 27, November: 26, December: 25 }
   },
   {
@@ -113,6 +121,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "wildlife"],
     description: "Familjevänligt paradis med den ikoniska Seven Mile Beach, unika möten med rockor i Stingray City och dykplatser i världsklass.",
     imageUrl: "https://images.unsplash.com/photo-1622561700644-babb49d52279?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över turkost vatten med många ankrade båtar och vattenskotrar.",
     avgTempByMonth: { Januari: 26, Februari: 26, Mars: 26, April: 27, Maj: 28, Juni: 28, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
 
@@ -129,6 +138,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "food", "shopping"],
     description: "Thailands största ö erbjuder fantastiska stränder, pulserande nattliv och dykning i världsklass i Andamansjön.",
     imageUrl: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=2001&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Dramatiska kalkstensklippor med frodig grönska som tornar upp sig över en tropisk vik med turkost vatten och båtar.",
     avgTempByMonth: { Januari: 27, Februari: 28, Mars: 29, April: 29, Maj: 28, Juni: 28, Juli: 28, Augusti: 28, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
@@ -142,6 +152,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["spa", "food", "sightseeing"],
     description: "Ett tropiskt öparadis känt för palmkantade stränder, lyxiga spa och det ikoniska Big Buddha-templet.",
     imageUrl: "https://images.unsplash.com/photo-1556463207-5f043fc03306?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "En stor gyllene Big Buddha-staty med utsmyckad tempelarkitektur under en dramatisk, molnig himmel.",
     avgTempByMonth: { Januari: 26, Februari: 27, Mars: 28, April: 29, Maj: 29, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 27, November: 27, December: 26 }
   },
   {
@@ -154,6 +165,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "hiking"],
     description: "Dramatiska kalkstensklippor, turkosa vatten och Maya Bay. Perfekt för både klättring och strandliv i södra Thailand.",
     imageUrl: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2039&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Traditionella thailändska longtail-båtar med färgglada band i turkost vatten framför dramatiska kalkstensklippor.",
     avgTempByMonth: { Januari: 27, Februari: 28, Mars: 29, April: 29, Maj: 28, Juni: 28, Juli: 27, Augusti: 27, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
@@ -166,6 +178,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "snorkeling", "spa", "sightseeing"],
     description: "Gudarnas ö förtrollar med uråldriga tempel, terrasserade risfält, surfing i världsklass och spirituella retreats.",
     imageUrl: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Fler-vånings tempelpagod (Pura Ulun Danu Bratan) på en sjö med berg i bakgrunden.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 27, Maj: 27, Juni: 26, Juli: 26, Augusti: 26, September: 27, Oktober: 28, November: 28, December: 27 }
   },
   {
@@ -178,6 +191,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "food"],
     description: "Hem till den världsberömda White Beach. Boracay är Filippinernas främsta ödestination med puderviit sand.",
     imageUrl: "https://images.unsplash.com/photo-1708195559744-c2b3e60dbe27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vit sandstrand med turkost vatten, ett livräddartorn, palmer och en surfbräda med texten \"I LOVE Boracay\".",
     avgTempByMonth: { Januari: 26, Februari: 27, Mars: 28, April: 30, Maj: 30, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 27, December: 26 }
   },
   {
@@ -190,6 +204,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "shopping"],
     description: "En ögrupp med 99 öar som erbjuder tax-free shopping, orörda stränder och den berömda Sky Bridge.",
     imageUrl: "https://images.unsplash.com/photo-1669812849320-283db1bf8216?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över frodiga gröna berg täckta av tät tropisk vegetation och en synlig \"sky bridge\".",
     avgTempByMonth: { Januari: 28, Februari: 29, Mars: 29, April: 29, Maj: 28, Juni: 28, Juli: 28, Augusti: 28, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
@@ -203,6 +218,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "sightseeing"],
     description: "En kuststad med fantastiska stränder, den berömda Gyllene bron och porten till det antika Hoi An.",
     imageUrl: "https://images.unsplash.com/photo-1663684591502-93887202a863?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Jättelika stenhänder som håller upp en gyllene bro (Gyllene bron) bland frodiga gröna berg.",
     avgTempByMonth: { Januari: 22, Februari: 23, Mars: 25, April: 27, Maj: 29, Juni: 30, Juli: 30, Augusti: 29, September: 28, Oktober: 26, November: 24, December: 22 }
   },
   {
@@ -215,6 +231,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "food", "sightseeing"],
     description: "Vietnams riviera med vackra stränder, ö-hopping och fantastisk street food. Perfekt för dykning och budgetvänlig strandlyx.",
     imageUrl: "https://images.unsplash.com/photo-1570366290364-5e76a15ae408?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en kurvig sandstrand med turkost vatten, strandparasoller och en kustväg med byggnader.",
     avgTempByMonth: { Januari: 24, Februari: 25, Mars: 26, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 26, December: 25 }
   },
 
@@ -231,6 +248,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "spa", "wildlife"],
     description: "Det ultimata tropiska paradiset med kristallklara laguner, övervattenbungalows och världens bästa dykning.",
     imageUrl: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Övervattensbungalower med spetsiga tak som sträcker sig i en kurva ut i det turkosa vattnet.",
     avgTempByMonth: { Januari: 28, Februari: 29, Mars: 30, April: 30, Maj: 29, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 28, December: 28 }
   },
   {
@@ -243,6 +261,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "wildlife", "hiking"],
     description: "En ögrupp med 115 öar med dramatiska granitklippor, orörda stränder och sällsynt djurliv.",
     imageUrl: "https://images.unsplash.com/photo-1596250470244-d172e7eb4054?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vit sandstrand med stora stenar, turkost vatten och frodig grönska på en sluttning.",
     avgTempByMonth: { Januari: 27, Februari: 28, Mars: 28, April: 28, Maj: 28, Juni: 27, Juli: 26, Augusti: 26, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
@@ -255,6 +274,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "golf", "hiking"],
     description: "En paradisö känd för sina stränder, laguner, rev och den häpnadsväckande undervattensvattenfalls-illusionen.",
     imageUrl: "https://images.unsplash.com/photo-1513415277900-a62401e19be4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en halvö med den karaktäristiska bergstoppen Le Morne i bakgrunden och turkost vatten.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 25, Maj: 23, Juni: 21, Juli: 20, Augusti: 20, September: 21, Oktober: 23, November: 25, December: 26 }
   },
   {
@@ -267,6 +287,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "sightseeing", "snorkeling"],
     description: "Kryddön erbjuder orörda stränder, Stone Towns UNESCO-arv och aromatiska kryddplantager.",
     imageUrl: "https://images.unsplash.com/photo-1549035092-33b2937b075a?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vita byggnader med halmtak på en stenig kustlinje vid klart turkost vatten under en blå himmel.",
     avgTempByMonth: { Januari: 29, Februari: 29, Mars: 29, April: 28, Maj: 27, Juni: 26, Juli: 25, Augusti: 25, September: 26, Oktober: 27, November: 28, December: 29 }
   },
   {
@@ -280,6 +301,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["food", "spa", "history"],
     description: "Indiens strandparadis kombinerar portugisiskt kolonialt arv med legendariska strandfester och spirituella retreats.",
     imageUrl: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Tropisk strand med turkost vatten och palmer som lutar sig över den gyllene sanden.",
     avgTempByMonth: { Januari: 26, Februari: 27, Mars: 29, April: 30, Maj: 30, Juni: 29, Juli: 28, Augusti: 28, September: 28, Oktober: 29, November: 28, December: 27 }
   },
   {
@@ -292,6 +314,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["wildlife", "history", "hiking"],
     description: "Tropisk pärla med teplantager, buddhistiska tempel och safariupplevelser. Perfekt för elefanter, stränder och kulturella skatter.",
     imageUrl: "https://images.unsplash.com/photo-1705936981588-a4192f66fcfb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Två elefanter som dricker och badar i ett vattenhål med savannlandskap i bakgrunden.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 29, Maj: 29, Juni: 28, Juli: 28, Augusti: 28, September: 28, Oktober: 28, November: 27, December: 27 }
   },
 
@@ -308,6 +331,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "wine", "food", "hiking"],
     description: "Den ikoniska grekiska ön med vitkalkade byggnader, blå kupoler och hisnande caldera-vyer vid solnedgång.",
     imageUrl: "https://images.unsplash.com/photo-1580502304784-8985b7eb7260?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vitkalkade hus i Oia på Santorini som klättrar längs en klippa vid havet i skymning, upplysta av varma lampor.",
     avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 17, Maj: 21, Juni: 25, Juli: 27, Augusti: 27, September: 24, Oktober: 20, November: 16, December: 13 }
   },
   {
@@ -320,6 +344,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["shopping", "food", "sightseeing"],
     description: "De grekiska öarnas festhuvudstad, känd för sina väderkvarnar, strandklubbar och legendariska nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Uteservering vid havet med vita bord och stolar längs en stenlagd strandpromenad, vitkalkade hus med blå detaljer och turkost hav.",
     avgTempByMonth: { Januari: 11, Februari: 11, Mars: 13, April: 16, Maj: 20, Juni: 24, Juli: 26, Augusti: 26, September: 23, Oktober: 19, November: 15, December: 12 }
   },
   {
@@ -332,6 +357,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "hiking", "snorkeling"],
     description: "Greklands största ö med antika ruiner, vackra stränder och autentisk grekisk kultur. Perfekt kombination av historia och havsliv.",
     imageUrl: "https://images.unsplash.com/photo-1720811247829-08c6b9cb3c24?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Färgglada byggnader i orange, gult och rosa längs en hamnpromenad med båtar.",
     avgTempByMonth: { Januari: 12, Februari: 13, Mars: 14, April: 16, Maj: 20, Juni: 24, Juli: 26, Augusti: 26, September: 23, Oktober: 21, November: 17, December: 13 }
   },
   {
@@ -344,6 +370,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["food", "spa", "sightseeing"],
     description: "Världens klubbhuvudstad erbjuder också gömda vikar, yoga-retreats och fantastiska Medelhavssolnedgångar.",
     imageUrl: "https://images.unsplash.com/photo-1563784462030-fe92bbdcf857?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "En vitkalkad stad på en sluttning med utsikt över en vik med turkost vatten.",
     avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 16, Maj: 20, Juni: 24, Juli: 27, Augusti: 28, September: 25, Oktober: 21, November: 16, December: 13 }
   },
   {
@@ -356,6 +383,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["hiking", "sightseeing", "food"],
     description: "Balearernas största ö med varierade landskap från bergsbyar till orörda vikar och livliga Palma.",
     imageUrl: "https://images.unsplash.com/photo-1672264430465-781cd9154896?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Avskild badvik med turkost vatten, omgiven av klippor och frodig grönska.",
     avgTempByMonth: { Januari: 10, Februari: 11, Mars: 13, April: 15, Maj: 19, Juni: 23, Juli: 26, Augusti: 27, September: 24, Oktober: 19, November: 14, December: 11 }
   },
   {
@@ -368,6 +396,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "food", "hiking"],
     description: "Dramatiska klippor, pastellfärgade byar och det djupblå Medelhavet gör denna UNESCO-plats oförglömlig.",
     imageUrl: "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Färgglada pastellfärgade byggnader tätt byggda på en brant klippsluttning vid havet.",
     avgTempByMonth: { Januari: 10, Februari: 10, Mars: 12, April: 15, Maj: 19, Juni: 23, Juli: 26, Augusti: 27, September: 23, Oktober: 19, November: 14, December: 11 }
   },
   {
@@ -380,6 +409,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sailing", "food", "snorkeling", "history"],
     description: "Italiens näst största ö med den berömda Costa Smeralda, antika ruiner och kristallklart vatten.",
     imageUrl: "https://images.unsplash.com/photo-1591103000599-50f5b4ec7d3d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en vik med turkost vatten, många ankrade båtar och en stenig kustlinje.",
     avgTempByMonth: { Januari: 10, Februari: 11, Mars: 13, April: 15, Maj: 19, Juni: 24, Juli: 27, Augusti: 27, September: 24, Oktober: 19, November: 14, December: 11 }
   },
   {
@@ -392,6 +422,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "wine"],
     description: "Italiens pärla med vulkanen Etna, antika tempel och maffig matkultur. Perfekt för vinprovning, historia och autentiskt italienskt liv.",
     imageUrl: "https://images.unsplash.com/photo-1524942434100-2b3f200f5b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en kuststad med terrakottafärgade tak, sandstrand och berg i bakgrunden.",
     avgTempByMonth: { Januari: 12, Februari: 12, Mars: 13, April: 16, Maj: 19, Juni: 23, Juli: 26, Augusti: 26, September: 24, Oktober: 20, November: 17, December: 13 }
   },
   {
@@ -404,6 +435,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "sightseeing", "shopping"],
     description: "Dalmatiens solsäkra pärla med antikt Diocletianus palats, livlig strandpromenad, pulserande nattliv och öhopping i azurblått hav.",
     imageUrl: "https://images.unsplash.com/photo-1555990538-c48ab0a194b5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Historisk stadskärna med terrakottafärgade tak och en hamn fylld med båtar och en marina.",
     avgTempByMonth: { Januari: 8, Februari: 9, Mars: 11, April: 15, Maj: 20, Juni: 24, Juli: 27, Augusti: 27, September: 22, Oktober: 18, November: 13, December: 9 }
   },
   {
@@ -416,6 +448,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "sailing", "wine"],
     description: "Kroatiens exklusiva party-ö med kristallklart hav, livliga beach clubs och doftande lavendelfält.",
     imageUrl: "https://images.unsplash.com/photo-1511097178962-9bab92bc5665?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Hamnstad med terrakottafärgade tak, en palmkantad strandpromenad och turkost vatten.",
     avgTempByMonth: { Januari: 10, Februari: 10, Mars: 12, April: 15, Maj: 19, Juni: 24, Juli: 26, Augusti: 26, September: 23, Oktober: 19, November: 15, December: 11 }
   },
   {
@@ -428,6 +461,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["food", "history", "shopping"],
     description: "Turkiets Saint-Tropez kombinerar antika ruiner, vitkalkad arkitektur och legendariska strandklubbar.",
     imageUrl: "https://images.unsplash.com/photo-1684858504602-677ac40eadfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Stenterrasser med rosa bougainvillea och olivträd framför moderna stenbyggnader med havsutsikt i gyllene solnedgång.",
     avgTempByMonth: { Januari: 11, Februari: 12, Mars: 14, April: 17, Maj: 22, Juni: 27, Juli: 29, Augusti: 29, September: 25, Oktober: 20, November: 15, December: 12 }
   },
   {
@@ -440,6 +474,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "wine", "food", "sightseeing"],
     description: "Afrodites ö erbjuder antika ruiner, vackra stränder och bergsbyar med vintraditioner.",
     imageUrl: "https://images.unsplash.com/photo-1677023484291-005b9840132f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Marina fylld med ankrade segelbåtar och motorbåtar, med byggnader i bakgrunden.",
     avgTempByMonth: { Januari: 12, Februari: 12, Mars: 14, April: 18, Maj: 22, Juni: 26, Juli: 29, Augusti: 29, September: 27, Oktober: 23, November: 18, December: 14 }
   },
 
@@ -456,6 +491,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "history", "sightseeing"],
     description: "Mexikos mest kända semesterdestination erbjuder vita stränder, Maya-ruiner och resorts i världsklass.",
     imageUrl: "https://images.unsplash.com/photo-1695385246146-1e12a7479410?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Forntida mayapyramid (Chichén Itzá) omgiven av grönt gräs och träd.",
     avgTempByMonth: { Januari: 24, Februari: 25, Mars: 26, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 26, December: 24 }
   },
   {
@@ -468,6 +504,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "spa", "sightseeing"],
     description: "Bohemisk strandstad känd för klippkantade Maya-ruiner, cenoter och miljömedvetna lyxresorts.",
     imageUrl: "https://images.unsplash.com/photo-1504814532849-cff240bbc503?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en bred vit sandstrand med vågor som slår in från det turkosa havet.",
     avgTempByMonth: { Januari: 24, Februari: 25, Mars: 26, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 26, December: 24 }
   },
   {
@@ -480,6 +517,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "food", "diving"],
     description: "Där öknen möter havet erbjuder Cabo dramatiska klippformationer, sportfiske och pulserande nattliv.",
     imageUrl: "https://images.unsplash.com/photo-1645735308116-d12ac96798a5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Färgglada byggnader med festliga dekorationer och band, palmer i en livlig stadsmiljö.",
     avgTempByMonth: { Januari: 19, Februari: 20, Mars: 21, April: 23, Maj: 25, Juni: 28, Juli: 30, Augusti: 30, September: 29, Oktober: 27, November: 23, December: 20 }
   },
   {
@@ -492,6 +530,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "sightseeing", "food"],
     description: "Riviera Mayas livliga hjärta med vita stränder, cenoter och femte avenyn. Perfekt för dykning, nattliv och utforskande av Maya-ruiner.",
     imageUrl: "https://images.unsplash.com/photo-1640617547871-15e4fb41d0c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Vit sandstrand kantad av en rad av höga palmer som leder ner till det turkosa havet.",
     avgTempByMonth: { Januari: 24, Februari: 24, Mars: 25, April: 26, Maj: 28, Juni: 28, Juli: 29, Augusti: 29, September: 28, Oktober: 27, November: 25, December: 24 }
   },
   {
@@ -505,6 +544,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "food"],
     description: "Costa Ricas mest kända surfparadis med perfekta vågor för alla nivåer, pulserande nattliv och avslappnad beach town-atmosfär längs Stillahavskusten.",
     imageUrl: "https://images.unsplash.com/photo-1636657795425-0db7a2b0528a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Silhuett av en surfare som bär en surfbräda på en strand i solnedgången med lila och orange himmel.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 29, Maj: 27, Juni: 27, Juli: 27, Augusti: 27, September: 26, Oktober: 26, November: 26, December: 27 }
   },
   {
@@ -518,6 +558,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["wildlife", "hiking", "snorkeling"],
     description: "Nationalpark där vit sandstrand möter frodig regnskog. Observera fyra aparter, sengångare och färgglada fåglar i ett av Costa Ricas mest prisade naturskatter.",
     imageUrl: "https://images.unsplash.com/photo-1665054481578-4e636551c8a8?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "En tukan med färgstark näbb som sitter på en gren med frodig grön vegetation i bakgrunden.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 28, April: 28, Maj: 28, Juni: 27, Juli: 27, Augusti: 27, September: 27, Oktober: 27, November: 27, December: 27 }
   },
   {
@@ -531,6 +572,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "wildlife"],
     description: "Del av världens näst största barriärrev. Roatán är ett dykarparadis med prisvärd karibisk charm.",
     imageUrl: "https://images.unsplash.com/photo-1505760112740-45991f3e9339?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Undervattensscen med ett korallrev och fiskar i klart blått vatten.",
     avgTempByMonth: { Januari: 26, Februari: 26, Mars: 27, April: 28, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 29, Oktober: 28, November: 27, December: 26 }
   },
 
@@ -547,6 +589,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["shopping", "sightseeing", "food"],
     description: "Art deco-arkitektur, South Beach-glamour och världsberömda nattklubbar gör Miami till en ikonisk destination.",
     imageUrl: "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Sanstrand med palmer och höghus och byggnader i art déco-stil i bakgrunden.",
     avgTempByMonth: { Januari: 20, Februari: 21, Mars: 23, April: 25, Maj: 27, Juni: 28, Juli: 29, Augusti: 29, September: 28, Oktober: 26, November: 24, December: 21 }
   },
   {
@@ -559,6 +602,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["hiking", "wildlife", "sightseeing"],
     description: "Dalens ö erbjuder vägen till Hana, soluppgång vid Haleakala och några av Hawaiis bästa stränder.",
     imageUrl: "https://images.unsplash.com/photo-1558983731-16245204a27d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Strand med mörka vulkaniska klippor på sanden, hav med vågor och palmer under en molnig himmel.",
     avgTempByMonth: { Januari: 24, Februari: 23, Mars: 23, April: 23, Maj: 24, Juni: 26, Juli: 26, Augusti: 26, September: 26, Oktober: 26, November: 24, December: 23 }
   },
   {
@@ -571,6 +615,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "history", "sightseeing"],
     description: "Hem till Waikiki Beach, Diamond Head och Pearl Harbor - Hawaiis livliga huvudstad.",
     imageUrl: "https://images.unsplash.com/photo-1573992554018-83e7853bd45f?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över Waikiki Beach med dess kurviga strand, höghus och Diamond Head-berget i bakgrunden.",
     avgTempByMonth: { Januari: 23, Februari: 23, Mars: 24, April: 24, Maj: 25, Juni: 26, Juli: 27, Augusti: 27, September: 27, Oktober: 26, November: 25, December: 23 }
   },
   {
@@ -583,6 +628,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["hiking", "snorkeling"],
     description: "The Garden Island med dramatiska Na Pali-klippor, Waimea Canyon och frodiga regnskogar. Hawaiis vackraste och mest orörda ö.",
     imageUrl: "https://images.unsplash.com/photo-1573325216298-f8d47669eee3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Dramatiska gröna Na Pali-klipporna som möter en vit sandstrand och turkost hav.",
     avgTempByMonth: { Januari: 23, Februari: 23, Mars: 23, April: 24, Maj: 25, Juni: 26, Juli: 27, Augusti: 27, September: 27, Oktober: 26, November: 25, December: 23 }
   },
   {
@@ -595,6 +641,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "sightseeing", "food"],
     description: "USA:s sydligaste punkt, känd för Hemingway, solnedgångar och avslappnad östämning.",
     imageUrl: "https://images.unsplash.com/photo-1531429957-9e7c26e39c84?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Silhuett av en segelbåt och en palm i en gyllene solnedgång över vattnet.",
     avgTempByMonth: { Januari: 21, Februari: 22, Mars: 24, April: 26, Maj: 28, Juni: 29, Juli: 30, Augusti: 30, September: 29, Oktober: 27, November: 24, December: 22 }
   },
 
@@ -611,6 +658,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["shopping", "sightseeing", "food"],
     description: "Ultramodern arkitektur, lyxshopping och konstgjorda öar i Persiska viken.",
     imageUrl: "https://images.unsplash.com/photo-1611577810610-642f8ac05c32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Dubais marina-skyline med moderna skyskrapor som reflekteras i vattnet under \"golden hour\".",
     avgTempByMonth: { Januari: 19, Februari: 20, Mars: 23, April: 28, Maj: 33, Juni: 35, Juli: 37, Augusti: 37, September: 34, Oktober: 30, November: 25, December: 21 }
   },
   {
@@ -624,6 +672,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling"],
     description: "Resortstad vid Röda havet känd för dykning i världsklass, korallrev och ökenexkursioner.",
     imageUrl: "https://images.unsplash.com/photo-1578327254130-f16b8e7202aa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Undervattensscen med korallrev och marint liv i klart, blått vatten.",
     avgTempByMonth: { Januari: 17, Februari: 18, Mars: 21, April: 25, Maj: 29, Juni: 32, Juli: 33, Augusti: 33, September: 31, Oktober: 27, November: 23, December: 19 }
   },
   {
@@ -636,6 +685,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "spa", "shopping"],
     description: "Förenade Arabemiratens lyxiga huvudstad med magnifika Sheikh Zayed-moskén, Louvre Abu Dhabi, exklusiva spa-resorter och vita sandstränder längs Arabiska golfen.",
     imageUrl: "https://images.unsplash.com/photo-1624317937315-0ced8736c9e9?q=80&w=1974&auto=format&fit=crop",
+    altText: "Abu Dhabis skyline på natten med upplysta, moderna skyskrapor under en mörkblå himmel.",
     avgTempByMonth: { Januari: 20, Februari: 21, Mars: 23, April: 27, Maj: 31, Juni: 33, Juli: 34, Augusti: 34, September: 32, Oktober: 29, November: 25, December: 22 }
   },
   {
@@ -648,6 +698,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "hiking"],
     description: "Muskat bjuder på autentisk arabisk kultur, lyxiga upplevelser, vackra stränder längs kusten och äventyr i spektakulära wadis och öknen.",
     imageUrl: "https://images.unsplash.com/photo-1585134339424-0fc98d0bfe86?q=80&w=2040&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Klippigt ökenlandskap med bruna berg som möter en vik med turkost vatten.",
     avgTempByMonth: { Januari: 21, Februari: 22, Mars: 26, April: 30, Maj: 34, Juni: 34, Juli: 33, Augusti: 32, September: 31, Oktober: 30, November: 26, December: 22 }
   },
 
@@ -664,6 +715,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "wildlife"],
     description: "333 tropiska öar med kristallklara laguner, korallrev och världens varmaste välkomnande.",
     imageUrl: "https://images.unsplash.com/photo-1730440009903-d1e810ead901?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Tropisk strand med vit sand, palmer och turkost vatten, omgiven av frodiga gröna kullar.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 27, April: 26, Maj: 25, Juni: 24, Juli: 23, Augusti: 24, September: 24, Oktober: 25, November: 26, December: 27 }
   },
   {
@@ -676,6 +728,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["snorkeling", "spa", "wildlife"],
     description: "Den ultimata bröllopsdestinationen med ikoniska övervattenbungalows och en fantastisk turkos lagun.",
     imageUrl: "https://images.unsplash.com/photo-1652842183703-47c2f7bb8c3c?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Övervattensbungalower i en turkos lagun med de ikoniska, dramatiska bergstopparna i bakgrunden.",
     avgTempByMonth: { Januari: 28, Februari: 28, Mars: 28, April: 28, Maj: 27, Juni: 26, Juli: 25, Augusti: 25, September: 26, Oktober: 26, November: 27, December: 28 }
   },
   {
@@ -689,6 +742,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "shopping", "food"],
     description: "Australiens lekplats med 70 km gyllene stränder, surfing i världsklass och berömda nöjesparker.",
     imageUrl: "https://images.unsplash.com/photo-1661674753163-0f8bca582509?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en lång, kurvig sandstrand med höghus och skyskrapor längs kusten.",
     avgTempByMonth: { Januari: 25, Februari: 25, Mars: 24, April: 22, Maj: 19, Juni: 17, Juli: 16, Augusti: 17, September: 19, Oktober: 21, November: 23, December: 25 }
   },
   {
@@ -701,6 +755,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["diving", "snorkeling", "wildlife"],
     description: "Porten till Stora barriärrevet och Daintree-regnskogen - två UNESCO-världsarv. Perfekt bas för dykning, snorkling med sköldpaddor och möten med exotiskt djurliv i tropisk miljö.",
     imageUrl: "https://images.unsplash.com/photo-1688337707006-64d5a1f6582c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över en frodig grön tropisk ö med en vik fylld av ankrade båtar i turkost vatten.",
     avgTempByMonth: { Januari: 28, Februari: 28, Mars: 27, April: 26, Maj: 24, Juni: 22, Juli: 22, Augusti: 23, September: 25, Oktober: 27, November: 28, December: 28 }
   },
   {
@@ -713,6 +768,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["surfing", "shopping", "sightseeing", "food"],
     description: "Australiens hamnstad är känd för sitt ikoniska operahus, sina fantastiska stränder och sin avslappnade utomhuslivsstil.",
     imageUrl: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=2533&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Operahuset i Sydney med dess ikoniska vita segel-arkitektur och Sydney Harbour Bridge i bakgrunden.",
     avgTempByMonth: { Januari: 23, Februari: 23, Mars: 21, April: 19, Maj: 16, Juni: 14, Juli: 13, Augusti: 14, September: 16, Oktober: 18, November: 20, December: 21 }
   },
 
@@ -729,6 +785,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["sightseeing", "food", "hiking"],
     description: "Cidade Maravilhosa - Kristusstatyn, Copacabana Beach, samba och karneval i en otrolig stad.",
     imageUrl: "https://images.unsplash.com/photo-1700677866571-43199bcbc593?q=80&w=2530&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Flygfoto över Rio de Janeiro med Sockertoppen, Guanabarabukten fylld med båtar och staden som breder ut sig.",
     avgTempByMonth: { Januari: 27, Februari: 27, Mars: 26, April: 24, Maj: 22, Juni: 21, Juli: 21, Augusti: 21, September: 22, Oktober: 23, November: 24, December: 26 }
   },
   {
@@ -742,6 +799,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["history", "food", "sightseeing"],
     description: "En färgglad kolonial muromgärdad stad vid Karibiska kusten med kullerstensgator och tropiska stränder.",
     imageUrl: "https://images.unsplash.com/photo-1536308037887-165852797016?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Färgglada kolonialbyggnader med blommor på balkongerna, gula och blå fasader och trädörrar.",
     avgTempByMonth: { Januari: 28, Februari: 28, Mars: 28, April: 29, Maj: 29, Juni: 29, Juli: 29, Augusti: 29, September: 28, Oktober: 28, November: 28, December: 28 }
   },
   {
@@ -754,6 +812,7 @@ export const curatedDestinations: CuratedDestination[] = [
     experiences: ["wildlife", "snorkeling", "hiking"],
     description: "Evolutionens levande laboratorium - simma med sjölejon, vandra bland jättesköldpaddor och snorkla med pingviner.",
     imageUrl: "https://images.unsplash.com/photo-1595517930215-d2778a56ac93?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    altText: "Ett sjölejon som vilar på en sandstrand med mörka vulkaniska klippor och havet i bakgrunden.",
     avgTempByMonth: { Januari: 25, Februari: 26, Mars: 26, April: 26, Maj: 25, Juni: 23, Juli: 22, Augusti: 21, September: 21, Oktober: 22, November: 23, December: 24 }
   },
 ];

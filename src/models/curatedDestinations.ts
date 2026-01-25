@@ -24,5 +24,6 @@ export type CuratedDestination = {
   experiences: string[];
   description: string;
   imageUrl: string;
+  altText: string;
   avgTempByMonth: MonthlyTemperatures;
 };
