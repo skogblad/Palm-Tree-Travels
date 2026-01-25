@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import { DestinationCard } from "../../cards/DestinationCard/DestinationCard"
 import styles from "./FavoritesPresentation.module.scss";
 import type { CuratedDestination } from "../../../models/curatedDestinations";
@@ -15,20 +15,19 @@ export const FavoritesPresentation = ({ favorites }: FavoritesPresentationProps)
       {favorites.length > 0 ? (
         <div className={styles.favoritesWrapper}>
           {favorites.map((d) => (
-            <Link key={d.id} to={`/destination/${d.id}`}>
-              <DestinationCard
-                destination={d}
-                img={d.imageUrl}
-                alt={d.name}
-                title={d.name}
-                country={d.country}
-                selectedMonth={null}
-                avgTempByMonth={undefined}
-                description={d.description}
-                experience={d.experiences}
-                showExperiences={true}
-              />
-            </Link>
+            <DestinationCard
+              key={d.id}
+              destination={d}
+              img={d.imageUrl}
+              alt={d.altText}
+              title={d.name}
+              country={d.country}
+              selectedMonth={null}
+              avgTempByMonth={undefined}
+              description={d.description}
+              experience={d.experiences}
+              showExperiences={true}
+            />
           ))}
         </div>
       ) : (

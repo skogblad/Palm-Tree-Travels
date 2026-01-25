@@ -4,6 +4,7 @@ import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl"
 import { useFavorites } from "../../../hooks/useFavorites"
 import type { CuratedDestination } from "../../../models/curatedDestinations"
 import { getExperienceLabels } from "../../../utils/getExperienceLabels"
+import { Link } from "react-router"
 
 type destinationCardProps = {
   img: string
@@ -30,22 +31,23 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
   return (
     <article className={styles.articleContainer}>
       <div className={styles.imageContainer}>
-        <img src={img} alt={alt} />
+        <Link to={`/destination/${destination.id}`}>
+          <img src={img} alt={alt} />
+        </Link>
+        
         <button
           className={`${styles.favoriteBtn} ${isFav ? styles.isFavorite : ''}`}
           aria-label={isFav ? "Ta bort från favoriter" : "Lägg till i favoriter"}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleFavorite(destination);
-          }}
+          onClick={() => toggleFavorite(destination)}
         >
           <Heart aria-hidden="true" />
 
         </button>
       </div>
 
-      <h3>{title}</h3>
+      <Link to={`/destination/${destination.id}`} className={styles.titleLink}>
+        <h3>{title}</h3>
+      </Link>
 
       <div className={styles.countryWeatherContainer}>
         <span className={styles.countrySpan}><MapPin aria-hidden="true" /> {country}</span>

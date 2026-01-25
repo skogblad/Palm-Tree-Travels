@@ -9,7 +9,6 @@ import { sv } from "date-fns/locale";
 import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
 import type { Weather } from "../../../models/Weather";
-import { Link } from "react-router";
 import { TagSelector } from "../../controls/TagSelector/TagSelector";
 import { ArrowDownAZ, Globe, List, Map } from "lucide-react";
 import { MapView } from "../../MapView/MapView";
@@ -145,22 +144,21 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
           {destinations.length > 0 ? (
             viewMode === "list" ? (
               destinations.map((d) => (
-                <Link key={d.id} to={`/destination/${d.id}`}>
-                  <DestinationCard
-                    destination={d}
-                    img={d.imageUrl}
-                    alt={d.name}
-                    weatherIcon={currentWeather[d.name]?.icon}
-                    temperature={currentWeather[d.name]?.temp}
-                    title={d.name}
-                    country={d.country}
-                    selectedMonth={selectedMonth}
-                    avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
-                    description={d.description}
-                    experience={d.experiences}
-                    totalScore={destinationScores[d.id]}
-                  />
-                </Link>
+                <DestinationCard
+                  key={d.id}
+                  destination={d}
+                  img={d.imageUrl}
+                  alt={d.altText}
+                  weatherIcon={currentWeather[d.name]?.icon}
+                  temperature={currentWeather[d.name]?.temp}
+                  title={d.name}
+                  country={d.country}
+                  selectedMonth={selectedMonth}
+                  avgTempByMonth={selectedMonth ? d.avgTempByMonth[selectedMonth] : undefined}
+                  description={d.description}
+                  experience={d.experiences}
+                  totalScore={destinationScores[d.id]}
+                />
               ))
             ) : (
               <MapView destinations={destinations} />

@@ -16,6 +16,11 @@
     position: relative;
     width: 100%;
 
+    a {
+      display: block;
+      width: 100%;
+    }
+
     img {
       width: 100%;
       height: 200px;
@@ -61,6 +66,12 @@
   .countrySpan,
   .tempSpan {
     margin-inline: 30px;
+  }
+
+  .titleLink {
+    display: block;
+    flex-shrink: 0;
+    height: auto;
   }
 
   h3 {
@@ -118,7 +129,6 @@
     font-size: 1rem;
     font-weight: 500;
     color: $superDarkGreen;
-    margin-right: 20px;
     border-radius: 20px;
     box-shadow: inset 0 0 0 2px rgba(192, 255, 216, 0.1);
     background: linear-gradient(90deg, $tagLight 0%, $tagMedium 30%, $tagDark 100%);
@@ -130,6 +140,7 @@
     .scoreSpan {
       padding: 6px 12px;
       padding-inline: 15px;
+      margin-right: 20px;
     }
   }
 
@@ -138,6 +149,7 @@
 
     .tagSpan {
       padding: 5px 11px;
+      margin-right: 10px;
     }
   }
 
@@ -170,6 +182,11 @@
     .countrySpan,
     .tempSpan {
       margin-inline: 20px;
+    }
+
+    .scoreWrapper {
+      margin-inline: 5px;
+      padding-inline: 15px;
     }
 
     .experienceTags {

@@ -5,7 +5,7 @@ import iconStyles from "../../cards/InfoCard/InfoCard.module.scss"
 import { DestinationCard } from "../../cards/DestinationCard/DestinationCard"
 import { CardCarousel } from "../../cards/CardCarousel/CardCarousel"
 import { curatedDestinations } from "../../../constants/curatedDestinations"
-import { Link, NavLink } from "react-router"
+import { NavLink } from "react-router"
 
 export const HomePresentation = () => {
   return (
@@ -49,18 +49,16 @@ export const HomePresentation = () => {
 
         <CardCarousel className={styles.cardsCarousel}>
           {curatedDestinations.slice(0, window.innerWidth <= 768 && window.innerWidth > 425 ? 2 : 3).map((d) => (
-            <Link key={d.id} to={`/destination/${d.id}`}>
-              <DestinationCard
-                destination={d}
-                key={d.name}
-                img={d.imageUrl}
-                alt={d.name}
-                title={d.name}
-                country={d.country}
-                description={d.description}
-                experience={d.experiences}
-              />
-            </Link>
+            <DestinationCard
+              key={d.id}
+              destination={d}
+              img={d.imageUrl}
+              alt={d.altText}
+              title={d.name}
+              country={d.country}
+              description={d.description}
+              experience={d.experiences}
+            />
           ))}
         </CardCarousel>
       </section>

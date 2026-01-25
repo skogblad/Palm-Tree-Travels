@@ -76,6 +76,7 @@
 @media screen and (max-width: 768px) {
   .howItWorksContainer {
     margin-block: 40px;
+    padding-bottom: 50px;
 
     h2 {
       font-size: 2.1rem;
@@ -89,12 +90,15 @@
   }
 
   .featuredDestinationContainer {
+    margin-top: 50px;
+
     h2 {
       font-size: 2.1rem;
     }
 
     .subText2 {
       margin-top: 0;
+      margin-bottom: 30px;
     }
   }
 }

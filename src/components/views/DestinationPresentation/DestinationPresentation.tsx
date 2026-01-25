@@ -45,11 +45,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           <button
             className={`${styles.favoriteBtn} ${isFav ? styles.isFavorite : ''}`}
             aria-label={isFav ? "Ta bort från favoriter" : "Lägg till i favoriter"}
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleFavorite(destination);
-            }}
+            onClick={() => toggleFavorite(destination)}
           >
             <Heart aria-hidden="true" />
           </button>
@@ -101,7 +97,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           </div>
 
           <div className={styles.rightWrapper}>
-            <img src={destination.imageUrl} alt={destination.name} />
+            <img src={destination.imageUrl} alt={destination.altText} />
             <div className={styles.experienceTags}>
               {experienceLabels.map((exp) => (
                 <span key={exp.value} className={styles.tag}>
