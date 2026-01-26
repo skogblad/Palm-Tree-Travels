@@ -10,7 +10,7 @@ import "react-day-picker/style.css";
 import "./DayPickerStyles.scss";
 import type { Weather } from "../../../models/Weather";
 import { TagSelector } from "../../controls/TagSelector/TagSelector";
-import { ArrowDownAZ, Globe, List, Map } from "lucide-react";
+import { ArrowDownAZ, Globe, List, Map, Percent } from "lucide-react";
 import { MapView } from "../../MapView/MapView";
 
 type DestinationSearchPresentationProps = {
@@ -34,6 +34,7 @@ type DestinationSearchPresentationProps = {
     onReset: () => void;
     onSortByAlpha: () => void;
     onSortByCountry: () => void;
+    onSortByScore: () => void;
     onToggleViewMode: () => void;
   };
 }
@@ -49,6 +50,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
     onReset,
     onSortByAlpha,
     onSortByCountry,
+    onSortByScore,
     onToggleViewMode,
   } = handlers;
 
@@ -114,31 +116,51 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
           <h3 className={styles.resultsTitle}>Resultat ({destinations.length} destinationer)</h3>
 
           {destinations.length > 0 && (
-            <div className={styles.sortOptions}>
-              <button
-                className={styles.sortIcon}
-                aria-label="Sortera alfabetiskt"
-                onClick={onSortByAlpha}
-              >
-                <ArrowDownAZ aria-hidden="true" />
-              </button>
-
-              <button
-                className={styles.sortIcon}
-                aria-label="Sortera alfabetiskt"
-                onClick={onSortByCountry}
-              >
-                <Globe aria-hidden="true" />
-              </button>
-
+            <div className={styles.viewSortBtns}>
               <button
                 className={styles.viewToggleIcon}
-                aria-label={viewMode === "list" ? "Visa karta" : "Visa lista"}
                 onClick={onToggleViewMode}
               >
-                {viewMode === "list" ? <Map aria-hidden="true" /> : <List aria-hidden="true" />}
+                {viewMode === "list" ? (
+                  <>
+                    <Map aria-hidden="true" /> 
+                    <span>Karta</span>
+                  </>
+                  ) : (
+                  <>
+                    <List aria-hidden="true" />
+                    <span>Lista</span>
+                  </>
+                )}
               </button>
+              
+              <div className={styles.sortOptions}>
+                <button
+                  className={styles.sortIcon}
+                  aria-label="Sortera alfabetiskt"
+                  onClick={onSortByAlpha}
+                >
+                  <ArrowDownAZ aria-hidden="true" />
+                </button>
+
+                <button
+                  className={styles.sortIcon}
+                  aria-label="Sortera på land"
+                  onClick={onSortByCountry}
+                >
+                  <Globe aria-hidden="true" />
+                </button>
+
+                <button
+                  className={styles.sortIcon}
+                  aria-label="Sortera på match"
+                  onClick={onSortByScore}
+                >
+                  <Percent aria-hidden="true" />
+                </button>
+              </div>
             </div>
+            
           )}
 
           {destinations.length > 0 ? (

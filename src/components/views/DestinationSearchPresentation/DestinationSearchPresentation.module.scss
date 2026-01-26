@@ -171,25 +171,50 @@
 		margin-top: 50px;
 	}
 
-	.sortOptions {
+	.viewSortBtns {
 		grid-column: 1 / -1;
-		justify-self: flex-end;
 		display: flex;
-		gap: 5px;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
 
-		.sortIcon,
 		.viewToggleIcon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.3rem;
 			@include button-base;
-			margin-right: 10px;
 			border: none;
-			cursor: pointer;
+			color: $superDarkGreen;
+			background-color: $superLightYellow;
+			padding: 7px 15px;
+			gap: 5px;
 
 			svg {
-				width: 30px;
-				height: 30px;
+				width: 22px;
+				height: 22px;
+			}
+		}
+
+		.sortOptions {
+			display: flex;
+			align-self: flex-end;
+			gap: 10px;
+
+			.sortIcon {
+				@include button-base;
+				border: none;
+				cursor: pointer;
+
+				svg {
+					width: 30px;
+					height: 30px;
+				}
 			}
 		}
 	}
+
+	
 
 
 	.subText2 {

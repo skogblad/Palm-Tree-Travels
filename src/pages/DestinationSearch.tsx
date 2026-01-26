@@ -131,6 +131,15 @@ export const DestinationSearch = () => {
   const handleSortByName = () => sortSearchedDestinations('name');
   const handleSortByCountry = () => sortSearchedDestinations('country');
 
+  const handleSortByScore = () => {
+    const sorted = [...destinations].sort((a, b) => {
+      const scoreA = destinationScores[a.id] ?? 0;
+      const scoreB = destinationScores[b.id] ?? 0;
+      return scoreB - scoreA;
+    });
+
+    setDestinations(sorted)
+  }
 
   const toggleViewMode = () => {
     setViewMode(viewMode === "list" ? "map" : "list");
@@ -158,6 +167,7 @@ export const DestinationSearch = () => {
         onReset: handleReset,
         onSortByAlpha: handleSortByName,
         onSortByCountry: handleSortByCountry,
+        onSortByScore: handleSortByScore,
         onToggleViewMode: toggleViewMode,
       }}
     />
