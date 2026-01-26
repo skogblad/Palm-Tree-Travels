@@ -26,4 +26,7 @@ export type CuratedDestination = {
   imageUrl: string;
   altText: string;
   avgTempByMonth: MonthlyTemperatures;
+  flightTime?: string;
+  bestTravelTime?: string;
+  currency?: string;
 };

@@ -31,7 +31,7 @@
       position: absolute;
       top: 35px;
       right: 35px;
-      background: rgba(239, 239, 239, 0.9);
+      background: #ffffff;
       border: none;
       border-radius: 50%;
       padding: 8px;
@@ -53,10 +53,11 @@
 
       &.isFavorite {
         border: 0.5px solid $h1;
+        background: white;
 
         svg {
           color: $h1;
-          fill: $h1;
+          fill: $h1
         }
       }
     }
@@ -98,6 +99,83 @@
     }
 
     .textWrapper {
+      .infoBox {
+        background-color: rgba($superLightGreen, 0.3);
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.3);
+        padding-bottom: 30px;
+        padding-top: 10px;
+        color: $superDarkGreen;
+        text-align: left;
+
+        .flightInfo,
+        .timeInfo,
+        .currencyInfo {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          span {
+            font-size: 1.2rem;
+          }
+
+          .destinationInfo {
+            font-weight: 500;
+          }
+        }
+
+        .flightInfo span:first-child,
+        .timeInfo span:first-child,
+        .currencyInfo span:first-child {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        h3,
+        span {
+          margin-left: 20px;
+        }
+  
+        h3 {
+          font-size: 1.5rem;
+        }
+  
+        hr {
+          border: 0.5px solid rgba(39, 42, 43, 0.084);
+          width: 200px;
+          margin-left: 20px;
+          
+          margin-top: 20px;
+        }
+  
+        .experienceWrapper {
+          margin-top: 20px;
+          
+          .experienceTitle {
+            font-weight: 500;
+            font-size: 1.2rem;
+          }
+
+          .experienceTags {
+            margin-top: 30px;
+            margin-left: 20px;
+    
+            .tag {
+              @include experience-tag;
+              font-size: 1rem;
+              margin-inline: 5px;
+            }
+          }
+        }
+      }
+
+      .aboutDestinationTitle {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-top: 40px;
+        color: $superDarkGreen;
+      }
 
       .pOne,
       .pTwo {
@@ -107,7 +185,7 @@
 
       .pOne {
         font-weight: 500;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       .pTwo {
@@ -148,40 +226,6 @@
           color: $superDarkGreen;
         }
       }
-
-      .tempContainer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        background-color: $mediumYellow;
-        margin-top: 55px;
-        margin-bottom: 40px;
-        padding-block: 30px;
-        padding-inline: 30px;
-        border-radius: 15px;
-        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-
-        .monthlyTempTitle {
-          grid-column: 1 / -1;
-          font-size: 1.4rem;
-          font-weight: 800;
-          color: $superDarkBlue;
-          margin-bottom: 15px;
-        }
-
-        .tempMonthly {
-          background-color: $lightYellow;
-          padding: 10px;
-          font-weight: 500;
-          color: $superDarkBlue;
-          font-size: 1.1rem;
-          border-radius: 40px;
-
-          .temp {
-            font-weight: 700;
-          }
-        }
-      }
     }
 
     .rightWrapper {
@@ -196,13 +240,37 @@
         border-radius: 40px;
       }
 
-      .experienceTags {
-        margin-top: 30px;
+      .tempContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        background-color: rgba($mediumYellow, 0.5);
+        margin-top: 55px;
+        margin-bottom: 40px;
+        padding-block: 30px;
         padding-inline: 30px;
-
-        .tag {
-          @include experience-tag;
-          font-size: 1rem;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+  
+        .monthlyTempTitle {
+          grid-column: 1 / -1;
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: $superDarkGreen;
+          margin-bottom: 15px;
+        }
+  
+        .tempMonthly {
+          background-color: rgba($darkYellow, 0.5);
+          padding: 10px;
+          font-weight: 500;
+          color: $superDarkBlue;
+          font-size: 1.1rem;
+          border-radius: 10px;
+  
+          .temp {
+            font-weight: 700;
+          }
         }
       }
     }

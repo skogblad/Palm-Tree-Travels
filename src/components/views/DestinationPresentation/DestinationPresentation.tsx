@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { WikipediaData } from "../../../models/WikipediaData";
 import { getWikipediaData } from "../../../services/wikipediaService";
 import { Link } from "react-router";
-import { Heart, MapPin } from "lucide-react";
+import { CircleDollarSign, CloudSun, Heart, MapPin, PlaneIcon } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
 import { getExperienceLabels } from "../../../utils/getExperienceLabels";
@@ -62,9 +62,43 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           </div>
 
           <div className={styles.textWrapper}>
-            <p className={styles.pOne}>{destination.description}</p>
+            <div className={styles.infoBox}>
+              <h3>Snabbfakta</h3>
+              <div className={styles.flightInfo}>
+                <span><PlaneIcon aria-hidden="true" />Flygtid:</span>
+                <span className={styles.destinationInfo}>{destination.flightTime}</span>
+              </div>
+              
+              <div className={styles.timeInfo}>
+                <span><CloudSun aria-hidden="true" />Bästa restid:</span>
+                <span className={styles.destinationInfo}>{destination.bestTravelTime}</span>
+              </div>
+              
+              <div className={styles.currencyInfo}>
+                <span><CircleDollarSign aria-hidden="true" />Valuta:</span>
+                <span className={styles.destinationInfo}>{destination.currency}</span>
+              </div>
+              
+              <hr />
+
+              <div className={styles.experienceWrapper}>
+                <span className={styles.experienceTitle}>Upplevelser</span>
+                <div className={styles.experienceTags}>
+                  {experienceLabels.map((exp) => (
+                    <span key={exp.value} className={styles.tag}>
+                      {exp.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {firstParagraph && (
+              <>
+              <h3 className={styles.aboutDestinationTitle}>Om destinationen:</h3>
+              <p className={styles.pOne}>{destination.description}</p>
               <p className={styles.pTwo}>{firstParagraph}</p>
+              </>
             )}
 
             {isExpanded && remainingParagraph.map((paragraph, index) => (
@@ -85,16 +119,6 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
                 {isExpanded ? "Visa mindre" : "Läs mer"}
               </button>
             )}
-
-            <div className={styles.tempContainer}>
-              <span className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</span>
-              {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (
-                <div key={month} className={styles.tempMonthly}>
-                  <span className={styles.month}>{month}: </span>
-                  <span className={styles.temp}>{temp}°C</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className={styles.rightWrapper}>
@@ -104,11 +128,14 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
               crossOrigin="anonymous"
               referrerPolicy="no-referrer"
             />
-            <div className={styles.experienceTags}>
-              {experienceLabels.map((exp) => (
-                <span key={exp.value} className={styles.tag}>
-                  {exp.label}
-                </span>
+
+            <div className={styles.tempContainer}>
+              <span className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</span>
+              {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (
+                <div key={month} className={styles.tempMonthly}>
+                  <span className={styles.month}>{month}: </span>
+                  <span className={styles.temp}>{temp}°C</span>
+                </div>
               ))}
             </div>
           </div>
