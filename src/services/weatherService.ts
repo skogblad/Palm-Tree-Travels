@@ -10,6 +10,10 @@ export const getWeather = async (lat: number, lon: number,) => {
     `${BASE_URL}?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
   );
 
+  if (!data.main?.temp || !data.weather?.[0]?.description || !data.weather?.[0].icon) {
+    throw new Error("Invalid weather data received from API");
+  }
+
   // Validation & reshape of API data + protects the rest of the app (like a translater between API's code & mine)
   const weather: Weather = {
     temp: data.main.temp,

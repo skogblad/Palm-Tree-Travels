@@ -17,7 +17,7 @@ type DestinationPresentationProps = {
 export const DestinationPresentation = ({ destination }: DestinationPresentationProps) => {
   const [wikiText, setWikiText] = useState<WikipediaData>();
   const [isExpanded, setIsExpanded] = useState(false);
-  const { weather, isLoading } = useCurrentWeather(destination.lat, destination.lon);
+  const { weather, isLoading, error } = useCurrentWeather(destination.lat, destination.lon);
   const experienceLabels = getExperienceLabels(destination.experiences);
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(destination.id)
@@ -53,6 +53,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           <div className={styles.countryTempWrapper}>
             <span className={styles.countrySpan}><MapPin />{destination.country}</span>
             {isLoading && <span>Laddar väder...</span>}
+            {error && <span>Kan ej ladda väderdata</span>}
             {weather && (
               <span className={styles.tempSpan}>
                 Aktuell temperatur:<img src={getWeatherIconUrl(weather.icon)} alt="Väderikon" className={styles.weatherIcon} />{Math.round(weather.temp)}°C

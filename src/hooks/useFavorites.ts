@@ -20,8 +20,12 @@ export const useFavorites = () => {
 
   // Save to localStorage when favorites changes
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(destinations));
-    window.dispatchEvent(new CustomEvent("favoritesUpdated"));
+    try {
+      localStorage.setItem("favorites", JSON.stringify(destinations));
+      window.dispatchEvent(new CustomEvent("favoritesUpdated"));
+    } catch (error) {
+      console.error("Failed to save favorites to storage:", error);
+    }
   }, [destinations]);
 
   const removeFavorite = (id: number) => {
