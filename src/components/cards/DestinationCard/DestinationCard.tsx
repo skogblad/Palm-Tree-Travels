@@ -32,7 +32,12 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
     <article className={styles.articleContainer}>
       <div className={styles.imageContainer}>
         <Link to={`/destination/${destination.id}`}>
-          <img src={img} alt={alt} />
+          <img 
+            src={img} 
+            alt={alt} 
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
+          />
         </Link>
         
         <button

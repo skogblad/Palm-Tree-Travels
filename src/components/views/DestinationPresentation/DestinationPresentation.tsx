@@ -98,7 +98,12 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           </div>
 
           <div className={styles.rightWrapper}>
-            <img src={destination.imageUrl} alt={destination.altText} />
+            <img 
+              src={destination.imageUrl} 
+              alt={destination.altText}
+              crossOrigin="anonymous"
+              referrerPolicy="no-referrer"
+            />
             <div className={styles.experienceTags}>
               {experienceLabels.map((exp) => (
                 <span key={exp.value} className={styles.tag}>
