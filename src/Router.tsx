@@ -4,7 +4,7 @@ import { Error } from "./pages/Error/Error";
 import { Home } from "./pages/Home";
 import { Favorites } from "./pages/Favorites";
 import { DestinationSearch } from "./pages/DestinationSearch";
-import { Destination } from "./pages/Destination";
+import { Destination } from "./pages/Destination/Destination";
 
 export const router = createBrowserRouter([
   {
