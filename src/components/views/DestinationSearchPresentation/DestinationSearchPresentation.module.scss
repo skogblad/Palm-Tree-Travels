@@ -214,9 +214,6 @@
 		}
 	}
 
-	
-
-
 	.subText2 {
 		grid-column: 1 / -1;
 		font-size: 1.2rem;
@@ -298,17 +295,20 @@
 		.resultsTitle {
 			font-size: 1.6rem;
 			margin-top: 0px;
+			margin-bottom: 15px;
 		}
 
-		.sortOptions {
+		.viewSortBtns {
+			gap: 50px;
 
-			.sortIcon,
-			.viewToggleIcon {
-				margin-right: 5px;
+			.sortOptions {
+				.sortIcon {
+					margin-right: 5px;
 
-				svg {
-					width: 25px;
-					height: 25px;
+					svg {
+						width: 25px;
+						height: 25px;
+					}
 				}
 			}
 		}
