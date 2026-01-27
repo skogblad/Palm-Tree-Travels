@@ -178,25 +178,28 @@
         .infoList {
           margin: 0;
           padding: 0 20px;
-          display: grid;
-          grid-template-columns: auto 1fr;
-          row-gap: 10px;
-          column-gap: 12px;
 
-          dt {
+          .pair {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 1.2rem;
-            font-weight: 400;
-          }
-        
-          dd {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 500;
-          }
-        }
+            margin-bottom: 10px;
+
+            dt {
+              font-size: 1.2rem;
+              font-weight: 400;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            }
+          
+            dd {
+              margin: 0;
+              font-size: 1.2rem;
+              font-weight: 500;
+            }
+          }        
+        }             
   
         hr {
           border: 0.5px solid rgba(39, 42, 43, 0.084);
@@ -456,9 +459,11 @@
           width: 100%;
 
           .infoList {
-            dt,
-            dd {
-              font-size: 1rem;
+            .pair {
+              dt,
+              dd {
+                font-size: 1rem;
+              }
             }
           }
     

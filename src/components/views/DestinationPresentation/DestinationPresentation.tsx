@@ -94,14 +94,20 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
             <section className={styles.infoBox}>
               <h3>Snabbfakta</h3>
               <dl className={styles.infoList}>
-                <dt><PlaneIcon aria-hidden="true" />Flygtid:</dt>
-                <dd className={styles.destinationInfo}>{destination.flightTime}</dd>
+                <div className={styles.pair}>
+                  <dt><PlaneIcon aria-hidden="true" />Flygtid:</dt>
+                  <dd className={styles.destinationInfo}>{destination.flightTime}</dd>
+                </div>
+                
+                <div className={styles.pair}>
+                  <dt><CloudSun aria-hidden="true" />Bästa restid:</dt>
+                  <dd className={styles.destinationInfo}>{destination.bestTravelTime}</dd>
+                </div>
 
-                <dt><CloudSun aria-hidden="true" />Bästa restid:</dt>
-                <dd className={styles.destinationInfo}>{destination.bestTravelTime}</dd>
-
-                <dt><CircleDollarSign aria-hidden="true" />Valuta:</dt>
-                <dd className={styles.destinationInfo}>{destination.currency}</dd>
+                <div className={styles.pair}>
+                  <dt><CircleDollarSign aria-hidden="true" />Valuta:</dt>
+                  <dd className={styles.destinationInfo}>{destination.currency}</dd>
+                </div>
               </dl>
 
               <hr />
