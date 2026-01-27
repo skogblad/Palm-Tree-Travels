@@ -7,8 +7,9 @@ import { Link } from "react-router";
 import { CircleDollarSign, CloudSun, Heart, MapPin, PlaneIcon } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
-import { getExperienceLabels } from "../../../utils/getExperienceLabels";
 import { useFavorites } from "../../../hooks/useFavorites";
+import { getLabels } from "../../../utils/getLabels";
+import { availableExperiences, availableVibes } from "../../../constants/curatedDestinations";
 
 type DestinationPresentationProps = {
   destination: CuratedDestination;
@@ -18,7 +19,8 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   const [wikiText, setWikiText] = useState<WikipediaData>();
   const [isExpanded, setIsExpanded] = useState(false);
   const { weather, isLoading, error } = useCurrentWeather(destination.lat, destination.lon);
-  const experienceLabels = getExperienceLabels(destination.experiences);
+  const experienceLabels = getLabels(destination.experiences, availableExperiences);
+  const vibesLabels = getLabels(destination.vibes, availableVibes);
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(destination.id)
 
@@ -51,7 +53,7 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           </button>
 
           <div className={styles.countryTempWrapper}>
-            <span className={styles.countrySpan}><MapPin />{destination.country}</span>
+            <span className={styles.countrySpan}><MapPin aria-hidden="true"/>{destination.country}</span>
             {isLoading && <span>Laddar väder...</span>}
             {error && <span>Kan ej ladda väderdata</span>}
             {weather && (
@@ -62,37 +64,6 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
           </div>
 
           <div className={styles.textWrapper}>
-            <div className={styles.infoBox}>
-              <h3>Snabbfakta</h3>
-              <div className={styles.flightInfo}>
-                <span><PlaneIcon aria-hidden="true" />Flygtid:</span>
-                <span className={styles.destinationInfo}>{destination.flightTime}</span>
-              </div>
-              
-              <div className={styles.timeInfo}>
-                <span><CloudSun aria-hidden="true" />Bästa restid:</span>
-                <span className={styles.destinationInfo}>{destination.bestTravelTime}</span>
-              </div>
-              
-              <div className={styles.currencyInfo}>
-                <span><CircleDollarSign aria-hidden="true" />Valuta:</span>
-                <span className={styles.destinationInfo}>{destination.currency}</span>
-              </div>
-              
-              <hr />
-
-              <div className={styles.experienceWrapper}>
-                <span className={styles.experienceTitle}>Upplevelser</span>
-                <div className={styles.experienceTags}>
-                  {experienceLabels.map((exp) => (
-                    <span key={exp.value} className={styles.tag}>
-                      {exp.label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             {firstParagraph && (
               <>
               <h3 className={styles.aboutDestinationTitle}>Om destinationen:</h3>
@@ -119,6 +90,42 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
                 {isExpanded ? "Visa mindre" : "Läs mer"}
               </button>
             )}
+
+            <section className={styles.infoBox}>
+              <h3>Snabbfakta</h3>
+              <dl className={styles.infoList}>
+                <dt><PlaneIcon aria-hidden="true" />Flygtid:</dt>
+                <dd className={styles.destinationInfo}>{destination.flightTime}</dd>
+
+                <dt><CloudSun aria-hidden="true" />Bästa restid:</dt>
+                <dd className={styles.destinationInfo}>{destination.bestTravelTime}</dd>
+
+                <dt><CircleDollarSign aria-hidden="true" />Valuta:</dt>
+                <dd className={styles.destinationInfo}>{destination.currency}</dd>
+              </dl>
+
+              <hr />
+
+              <div className={styles.tagWrapper}>
+                <h4 className={styles.experienceTitle}>Upplevelser</h4>
+                <ul className={styles.experienceTags}>
+                  {experienceLabels.map((exp) => (
+                    <li key={exp.value} className={styles.eTag}>
+                      {exp.label}
+                    </li>
+                  ))}
+                </ul>
+
+                <h4 className={styles.vibeTitle}>Känsla</h4>
+                <ul className={styles.vibeTags}>
+                  {vibesLabels.map((vib) => (
+                    <li key={vib.value} className={styles.vTag}>
+                      {vib.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
           </div>
 
           <div className={styles.rightWrapper}>
@@ -129,15 +136,17 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
               referrerPolicy="no-referrer"
             />
 
-            <div className={styles.tempContainer}>
-              <span className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</span>
-              {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (
-                <div key={month} className={styles.tempMonthly}>
-                  <span className={styles.month}>{month}: </span>
-                  <span className={styles.temp}>{temp}°C</span>
-                </div>
-              ))}
-            </div>
+            <table className={styles.tempContainer}>
+              <caption className={styles.monthlyTempTitle}>Genomsnittlig temperatur under året:</caption>
+              <tbody>
+                {Object.entries(destination.avgTempByMonth).map(([month, temp]) => (
+                  <tr key={month} className={styles.tempMonthly}>
+                    <th scope="row" className={styles.month}>{month}: </th>
+                    <td className={styles.temp}>{temp}°C</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </article>
 

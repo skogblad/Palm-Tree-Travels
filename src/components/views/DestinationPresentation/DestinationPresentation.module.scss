@@ -11,8 +11,6 @@
     margin-inline: 50px;
     margin-top: 30px;
     margin-bottom: 70px;
-    background-color: white;
-    box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
     padding-inline: 40px;
     padding-bottom: 30px;
     border-radius: 20px;
@@ -99,81 +97,9 @@
     }
 
     .textWrapper {
-      .infoBox {
-        background-color: rgba($superLightGreen, 0.3);
-        border-radius: 15px;
-        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.3);
-        padding-bottom: 30px;
-        padding-top: 10px;
-        color: $superDarkGreen;
-        text-align: left;
-
-        .flightInfo,
-        .timeInfo,
-        .currencyInfo {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-
-          span {
-            font-size: 1.2rem;
-          }
-
-          .destinationInfo {
-            font-weight: 500;
-          }
-        }
-
-        .flightInfo span:first-child,
-        .timeInfo span:first-child,
-        .currencyInfo span:first-child {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        h3,
-        span {
-          margin-left: 20px;
-        }
-  
-        h3 {
-          font-size: 1.5rem;
-        }
-  
-        hr {
-          border: 0.5px solid rgba(39, 42, 43, 0.084);
-          width: 200px;
-          margin-left: 20px;
-          
-          margin-top: 20px;
-        }
-  
-        .experienceWrapper {
-          margin-top: 20px;
-          
-          .experienceTitle {
-            font-weight: 500;
-            font-size: 1.2rem;
-          }
-
-          .experienceTags {
-            margin-top: 30px;
-            margin-left: 20px;
-    
-            .tag {
-              @include experience-tag;
-              font-size: 1rem;
-              margin-inline: 5px;
-            }
-          }
-        }
-      }
-
       .aboutDestinationTitle {
         font-size: 1.5rem;
         text-align: left;
-        margin-top: 40px;
         color: $superDarkGreen;
       }
 
@@ -226,51 +152,163 @@
           color: $superDarkGreen;
         }
       }
+
+      .infoBox {
+        background-color: rgba($superLightGreen, 0.3);
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.3);
+        margin-top: 50px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+        color: $superDarkGreen;
+        text-align: left;
+        width: 500px;
+
+
+        h3 {
+          font-size: 1.4rem;
+          margin-top: 0;
+        }
+
+        h3, 
+        span {
+          margin-left: 15px;
+        }
+        
+        .infoList {
+          margin: 0;
+          padding: 0 20px;
+          display: grid;
+          grid-template-columns: auto 1fr;
+          row-gap: 10px;
+          column-gap: 12px;
+
+          dt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
+        
+          dd {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+  
+        hr {
+          border: 0.5px solid rgba(39, 42, 43, 0.084);
+          width: 200px;
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+  
+        .tagWrapper {
+          margin-top: 20px;
+          
+          .experienceTitle,
+          .vibeTitle {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-left: 15px;
+          }
+
+          .experienceTags,
+          .vibeTags {
+            margin-top: 20px;
+            margin-left: 20px;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          .experienceTags {  
+            .eTag {
+              @include experience-tag;
+              font-size: 1rem;
+              margin-inline: 5px;
+            }
+          }
+
+          .vibeTitle {
+            margin-top: 30px;
+          }
+
+          .vibeTags { 
+            .vTag {
+              @include experience-tag;
+              font-size: 1rem;
+              margin-inline: 5px;
+              color: $darkestPink;
+              background: linear-gradient(90deg,
+                #f3d4fd 0%,
+                #f6d7f8 30%,
+                #f8ebfb 100%);
+            }
+          }
+        }
+      }
     }
 
     .rightWrapper {
       flex: 0 0 50%;
+      box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
+      border: solid 5px white;
+      border-radius: 15px;
+      background-color: rgba($mediumYellow, 0.7);
 
       img {
         width: 100%;
         height: auto;
         max-height: 600px;
         object-fit: cover;
-        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-        border-radius: 40px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
       }
 
       .tempContainer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        background-color: rgba($mediumYellow, 0.5);
-        margin-top: 55px;
-        margin-bottom: 40px;
-        padding-block: 30px;
-        padding-inline: 30px;
-        border-radius: 15px;
-        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-  
-        .monthlyTempTitle {
-          grid-column: 1 / -1;
+        width: 100%;
+        padding: 20px;
+        border-collapse: separate;
+        border-spacing: 15px;
+      
+        caption.monthlyTempTitle {
+          caption-side: top;
           font-size: 1.4rem;
           font-weight: 800;
           color: $superDarkGreen;
-          margin-bottom: 15px;
+          margin-top: 20px;
+          text-align: center;
         }
-  
-        .tempMonthly {
+      
+        tbody {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      
+        tr.tempMonthly {
+          display: block;
           background-color: rgba($darkYellow, 0.5);
+          border-radius: 10px;
           padding: 10px;
-          font-weight: 500;
           color: $superDarkBlue;
           font-size: 1.1rem;
-          border-radius: 10px;
-  
-          .temp {
-            font-weight: 700;
-          }
+          font-weight: 500;
+        }
+      
+        th.month,
+        td.temp {
+          display: inline-block;
+          font-weight: 500;
+          margin-right: 3px;
+        }
+      
+        td.temp {
+          font-weight: 700;
         }
       }
     }
@@ -286,17 +324,31 @@
 @media screen and (max-width: 1024px) {
   .pageWrapper {
     .destinationContainer {
-      column-gap: 30px;
+      column-gap: 40px;
+      margin-inline: 40px;
+      padding-inline: 0;
+      padding-bottom: 0;
 
-      .textWrapper {
+      .rightWrapper {
         .tempContainer {
-          padding-inline: 10px;
-          gap: 10px;
-          width: 440px;
-
-          .tempMonthly {
+          width: 380px;
+          tbody {
+            grid-template-columns: repeat(2, 1fr);
+          }
+      
+          caption.monthlyTempTitle {
+            margin-inline: 20px;
+            font-size: 1.3rem;
+          }
+      
+          tr.tempMonthly {
             font-size: 1rem;
-            padding: 5px;
+            padding: 7px;
+      
+            th.month,
+            td.temp {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -312,6 +364,9 @@
       padding-inline: 28px;
 
       .favoriteBtn {
+        top: 20px;
+        right: 20px;
+
         svg {
           width: 30px;
           height: 30px;
@@ -322,31 +377,28 @@
         order: 1;
       }
 
+      .textWrapper {
+        order: 3;
+
+        .aboutDestinationTitle {
+          margin-top: 50px;
+        }
+      }
+
       .rightWrapper {
         order: 2;
 
         img {
           max-height: 400px;
-          margin-bottom: 20px;
         }
-
-        .experienceTags {
-          display: none;
-        }
-      }
-
-      .textWrapper {
-        order: 3;
 
         .tempContainer {
-          justify-self: center;
-          padding-inline: 30px;
-          gap: 20px;
-          width: 600px;
+          width: 650px;
+          padding-inline: 5px;
 
-          .tempMonthly {
-            font-size: 1.1rem;
-            padding: 10px;
+          tbody {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
           }
         }
       }
@@ -361,17 +413,19 @@
 @media screen and (max-width: 425px) {
   .pageWrapper {
     .destinationContainer {
-      margin-inline: 20px;
-      padding-inline: 20px;
+      margin-inline: 30px;
+      padding-inline: 0;
       padding-bottom: 15px;
+      margin-top: 15px;
 
       h2 {
-        font-size: 3rem;
+        font-size: 2.7rem;
+        margin-top: 40px;
       }
 
       .favoriteBtn {
-        top: 25px;
-        right: 25px;
+        top: 5px;
+        right: 5px;
 
         svg {
           width: 20px;
@@ -383,12 +437,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-      }
-
-      .rightWrapper {
-        img {
-          max-height: 400px;
-        }
       }
 
       .textWrapper {
@@ -404,21 +452,64 @@
           font-size: 1rem;
         }
 
-        .tempContainer {
-          grid-template-columns: repeat(2, 1fr);
-          margin-inline: 0;
-          padding-inline: 10px;
-          gap: 10px;
-          width: 325px;
+        .infoBox {
+          width: 100%;
 
-          .monthlyTempTitle {
+          .infoList {
+            dt,
+            dd {
+              font-size: 1rem;
+            }
+          }
+    
+          h3 {
             font-size: 1.2rem;
-            margin-inline: 20px;
           }
 
-          .tempMonthly {
-            font-size: 1rem;
-            padding: 10px;
+          .tagWrapper {
+            .experienceTitle,
+            .vibeTitle {
+              font-size: 1.1rem;
+            }
+  
+            .experienceTags,
+            .vibeTags {
+              margin-left: 10px;
+            }
+  
+            .experienceTags {  
+              .eTag {
+                font-size: 0.9rem;
+                margin-inline: 2px;
+              }
+            }
+  
+            .vibeTags { 
+              .vTag {
+                font-size: 0.9rem;
+                margin-inline: 2px;
+              }
+            }
+          }
+        }
+      }
+
+      .rightWrapper {
+        img {
+          max-height: 400px;
+        }
+
+        .tempContainer {
+          width: 325px;
+          padding-inline: 0;
+          justify-self: center;
+
+          caption.monthlyTempTitle {
+            font-size: 1.2rem;
+          }
+
+          tbody {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
       }
