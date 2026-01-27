@@ -3,8 +3,9 @@ import styles from "./DestinationCard.module.scss"
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl"
 import { useFavorites } from "../../../hooks/useFavorites"
 import type { CuratedDestination } from "../../../models/curatedDestinations"
-import { getExperienceLabels } from "../../../utils/getExperienceLabels"
+import { getLabels } from "../../../utils/getLabels"
 import { Link } from "react-router"
+import { availableExperiences } from "../../../constants/curatedDestinations"
 
 type destinationCardProps = {
   img: string
@@ -26,7 +27,7 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
 
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(destination.id);
-  const experienceTags = experience ? getExperienceLabels(experience) : [];
+  const experienceTags = experience ? getLabels(experience, availableExperiences) : [];
 
   return (
     <article className={styles.articleContainer}>
