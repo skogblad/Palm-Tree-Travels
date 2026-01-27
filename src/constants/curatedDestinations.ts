@@ -356,7 +356,6 @@ export const curatedDestinations: CuratedDestination[] = [
   {
     id: 22,
     name: "Goa",
-    wikiName: "Goa, Indien",
     country: "Indien",
     lat: 15.50,
     lon: 73.83,
