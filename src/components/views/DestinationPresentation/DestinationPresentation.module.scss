@@ -284,7 +284,7 @@
     .rightWrapper {
       flex: 0 0 50%;
       box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
-      border: solid 5px white;
+      //border: solid 5px white;
       border-radius: 15px;
       background-color: rgba($mediumYellow, 0.7);
       display: flex;
@@ -356,6 +356,8 @@
       .rightWrapper {
         .tempContainer {
           width: 380px;
+          margin-inline: auto;
+
           tbody {
             grid-template-columns: repeat(2, 1fr);
           }
@@ -432,6 +434,11 @@
 
 @media screen and (max-width: 425px) {
   .pageWrapper {
+    .backLink {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
     .destinationContainer {
       margin-inline: 30px;
       padding-inline: 0;
@@ -440,16 +447,16 @@
 
       h2 {
         font-size: 2.7rem;
-        margin-top: 40px;
+        margin-top: 20px;
       }
 
       .favoriteBtn {
-        top: 5px;
-        right: 5px;
+        top: 0;
+        right: 0;
 
         svg {
-          width: 20px;
-          height: 20px;
+          width: 30px;
+          height: 30px;
         }
       }
 
@@ -525,7 +532,6 @@
           width: 325px;
           padding-inline: 0;
           justify-self: center;
-          margin-inline: auto;
 
           caption.monthlyTempTitle {
             font-size: 1.2rem;
