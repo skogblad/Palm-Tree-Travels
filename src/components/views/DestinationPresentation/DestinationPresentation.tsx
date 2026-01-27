@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { WikipediaData } from "../../../models/WikipediaData";
 import { getWikipediaData } from "../../../services/wikipediaService";
 import { Link } from "react-router";
-import { CircleDollarSign, CloudSun, Heart, MapPin, PlaneIcon } from "lucide-react";
+import { CircleDollarSign, CloudSun, Heart, MapPin, MoveLeft, PlaneIcon } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
 import { useFavorites } from "../../../hooks/useFavorites";
@@ -41,6 +41,8 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   return (
     <>
       <main className={styles.pageWrapper}>
+        <Link to={"/search-destination"} className={styles.backLink}><MoveLeft aria-hidden="true"/> Sökresultat</Link>
+
         <article key={destination.id} className={styles.destinationContainer}>
           <h2>{destination.name}</h2>
 
@@ -131,6 +133,15 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
                   ))}
                 </ul>
               </div>
+
+              <a 
+                href="https://www.flygresor.se/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.findFlight}
+              >
+                Hitta flygresa
+              </a>
             </section>
           </div>
 
@@ -155,8 +166,6 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
             </table>
           </div>
         </article>
-
-        <Link to={"/search-destination"} className={styles.backBtn}>Tillbaka till sökresultat</Link>
       </main>
     </>
   )

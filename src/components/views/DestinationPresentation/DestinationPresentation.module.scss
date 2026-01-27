@@ -2,15 +2,30 @@
 @import "/src/styles/mixins";
 
 .pageWrapper {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
+
+  .backLink {
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-left: 40px;
+    margin-top: 30px;
+    color: $h1;
+    font-size: 1rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 
   .destinationContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 70px;
     margin-inline: 50px;
-    margin-top: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 90px;
     padding-inline: 40px;
     padding-bottom: 30px;
     border-radius: 20px;
@@ -29,7 +44,7 @@
       position: absolute;
       top: 35px;
       right: 35px;
-      background: #ffffff;
+      background: rgb(247, 245, 245);
       border: none;
       border-radius: 50%;
       padding: 8px;
@@ -41,7 +56,7 @@
       z-index: 99;
 
       &:hover {
-        background: rgba(255, 255, 255, 1);
+        background: rgb(255, 255, 255);
       }
 
       svg {
@@ -216,11 +231,11 @@
             font-weight: 500;
             font-size: 1.2rem;
             margin-left: 15px;
+            margin-bottom: 20px;
           }
 
           .experienceTags,
           .vibeTags {
-            margin-top: 20px;
             margin-left: 20px;
             list-style: none;
             padding: 0;
@@ -253,6 +268,16 @@
             }
           }
         }
+
+        .findFlight {
+          @include button-base;
+          font-size: 1.25rem;
+          padding: 7px 17px;
+          display: flex;
+          justify-self: flex-start;
+          margin-left: 25px;
+          margin-top: 50px;
+        }
       }
     }
 
@@ -262,6 +287,8 @@
       border: solid 5px white;
       border-radius: 15px;
       background-color: rgba($mediumYellow, 0.7);
+      display: flex;
+      flex-direction: column;
 
       img {
         width: 100%;
@@ -273,7 +300,7 @@
       }
 
       .tempContainer {
-        width: 100%;
+        margin-block: auto;
         padding: 20px;
         border-collapse: separate;
         border-spacing: 15px;
@@ -315,12 +342,6 @@
         }
       }
     }
-  }
-
-  .backBtn {
-    @include button-base;
-    font-size: 1.4rem;
-    padding: 7px 15px;
   }
 }
 
@@ -405,10 +426,6 @@
           }
         }
       }
-    }
-
-    .backBtn {
-      font-size: 1.2rem;
     }
   }
 }
@@ -508,6 +525,7 @@
           width: 325px;
           padding-inline: 0;
           justify-self: center;
+          margin-inline: auto;
 
           caption.monthlyTempTitle {
             font-size: 1.2rem;
@@ -518,10 +536,6 @@
           }
         }
       }
-    }
-
-    .backBtn {
-      font-size: 1.2rem;
     }
   }
 }
