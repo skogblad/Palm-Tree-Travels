@@ -21,9 +21,10 @@ type destinationCardProps = {
   selectedMonth?: string | null
   totalScore?: number
   destination: CuratedDestination
+  from?: string; // Used to track where the user came from (e.g. "/search-destination").
 }
 
-export const DestinationCard = ({ img, alt, title, country, description, experience, showExperiences, temperature, weatherIcon, avgTempByMonth, selectedMonth, totalScore, destination }: destinationCardProps) => {
+export const DestinationCard = ({ img, alt, title, country, description, experience, showExperiences, temperature, weatherIcon, avgTempByMonth, selectedMonth, totalScore, destination, from }: destinationCardProps) => {
 
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(destination.id);
@@ -32,7 +33,7 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
   return (
     <article className={styles.articleContainer}>
       <div className={styles.imageContainer}>
-        <Link to={`/destination/${destination.id}`}>
+        <Link to={`/destination/${destination.id}`} state={from ? { from } : undefined}>
           <img 
             src={img} 
             alt={alt} 
@@ -51,7 +52,7 @@ export const DestinationCard = ({ img, alt, title, country, description, experie
         </button>
       </div>
 
-      <Link to={`/destination/${destination.id}`} className={styles.titleLink}>
+      <Link to={`/destination/${destination.id}`} className={styles.titleLink} state={from ? { from } : undefined}>
         <h3>{title}</h3>
       </Link>
 

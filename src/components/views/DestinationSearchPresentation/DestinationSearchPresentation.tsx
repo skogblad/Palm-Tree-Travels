@@ -169,6 +169,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
                 <DestinationCard
                   key={d.id}
                   destination={d}
+                  from="/search-destination"
                   img={d.imageUrl}
                   alt={d.altText}
                   weatherIcon={currentWeather[d.name]?.icon}

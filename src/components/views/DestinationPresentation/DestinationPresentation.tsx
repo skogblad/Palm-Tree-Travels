@@ -3,7 +3,7 @@ import type { CuratedDestination } from "../../../models/curatedDestinations"
 import { useEffect, useState } from "react";
 import type { WikipediaData } from "../../../models/WikipediaData";
 import { getWikipediaData } from "../../../services/wikipediaService";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { CircleDollarSign, CloudSun, Heart, MapPin, MoveLeft, PlaneIcon } from "lucide-react";
 import { useCurrentWeather } from "../../../hooks/useCurrentWeather";
 import { getWeatherIconUrl } from "../../../utils/getWeatherIconUrl";
@@ -23,6 +23,8 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   const vibesLabels = getLabels(destination.vibes, availableVibes);
   const { toggleFavorite, isFavorite } = useFavorites();
   const isFav = isFavorite(destination.id)
+  const location = useLocation();
+  const cameFromSearch = location.state?.from === "/search-destination";
 
   const paragraphs = wikiText?.description.split('\n') || [];
   const firstParagraph = paragraphs[0];
@@ -41,7 +43,9 @@ export const DestinationPresentation = ({ destination }: DestinationPresentation
   return (
     <>
       <main className={styles.pageWrapper}>
-        <Link to={"/search-destination"} className={styles.backLink}><MoveLeft aria-hidden="true"/> Sökresultat</Link>
+        {cameFromSearch && (
+          <Link to={"/search-destination"} className={styles.backLink}><MoveLeft aria-hidden="true"/> Sökresultat</Link>
+        )}
 
         <article key={destination.id} className={styles.destinationContainer}>
           <h2>{destination.name}</h2>
