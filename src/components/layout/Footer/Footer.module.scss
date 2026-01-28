@@ -10,11 +10,7 @@
 
   .logoSection {
     margin-left: 80px;
-    
-    p {
-      width: 380px;
-      font-size: 1rem;
-    }
+    margin-top: 40px;
 
     hr {
       display: none;
@@ -52,10 +48,6 @@
       grid-column: 1 / -1;
       margin: 0;
       justify-self: center;
-
-      p {
-        display: none;
-      }
 
       hr {
         display: block;
