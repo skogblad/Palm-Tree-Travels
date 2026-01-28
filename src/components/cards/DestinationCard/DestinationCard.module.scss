@@ -11,6 +11,11 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .imageContainer {
     position: relative;
@@ -54,8 +59,8 @@
 
       &.isFavorite {
         svg {
-          color: $superDarkYellow;
-          fill: $superDarkYellow;
+          color: $h1;
+          fill: $h1;
         }
       }
     }
