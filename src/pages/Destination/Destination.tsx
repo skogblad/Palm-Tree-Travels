@@ -11,7 +11,7 @@ export const Destination = () => {
     return (
       <section className={styles.errorSection}>
         <h2>Destinationen hittades inte</h2>
-        <p>Den destination du letade efter finns tyvärr i vårt system. Testa att göra om din sökning eller gå tillbaka till startsidan.</p>
+        <p>Den destination du letade efter finns tyvärr inte i vårt system. Testa att göra om din sökning eller gå tillbaka till startsidan.</p>
         <div className={styles.buttonWrapper}>
           <Link to={`/`} className={styles.backLink}>Till startsidan</Link>
           <Link to={`/search-destination`} className={styles.backLink}>Sök destination</Link>
