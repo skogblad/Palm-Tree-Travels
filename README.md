@@ -6,8 +6,6 @@ Users can freely explore destinations, save their favorites, and quickly gain in
 
 ## Features
 
-## Features
-
 - **Search by preferences** — Filter destinations by temperature, date, vibes and experiences
 - **Weather & Wikipedia API** — Current weather and short destination info for each place
 - **Favorites** — Save destinations to a list for later
