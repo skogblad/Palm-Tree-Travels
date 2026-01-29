@@ -1,4 +1,4 @@
-# Palm Tree Travels
+# Palm Tree Travels 🌴
 
 Palm Tree Travels is a web application designed to inspire users to discover warm, palm-worthy travel destinations without needing to choose a specific city or country upfront. Instead of starting with a place, the app focuses on what the user wants to experience — temperature, city vibes, or a particular atmosphere — and uses weather data and relevant destination information to guide personalized suggestions.
 
@@ -30,6 +30,16 @@ The application was tested with 4 users. Key findings:
 - Some confusion with results in correlation with the "best travel time"
 
 See [USER_TESTING.md](./USER_TESTING.md) for full results and reflections.
+
+## Accessibility
+
+Throughout the development of the webpage, accessibility has been considered and evaluated using Lighthouse and manual testing.
+
+- Semantic HTML
+- Keyboard-friendly navigation
+- Responsive design
+- Clear typography and accessible color contrast
+- Alt text for images and appropriate ARIA attributes for icons
 
 ## Screenshots
 
