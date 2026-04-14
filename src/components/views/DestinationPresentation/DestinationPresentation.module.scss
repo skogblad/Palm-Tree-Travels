@@ -2,7 +2,9 @@
 @import "/src/styles/mixins";
 
 .pageWrapper {
-  margin-bottom: 100px;
+  display: flow-root;
+  padding-bottom: 80px;
+  background: rgb(252, 251, 249);
 
   .backLink {
     display: flex;
@@ -11,8 +13,16 @@
     gap: 5px;
     margin-left: 40px;
     margin-top: 30px;
-    color: $h1;
+    font-family: "Roboto", system-ui, sans-serif;
     font-size: 1rem;
+    font-weight: 500;
+    color: $h1;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      color: $heroTeal;
+    }
 
     svg {
       width: 20px;
@@ -33,8 +43,11 @@
 
     h2 {
       grid-column: 1 / -1;
-      font-size: 5rem;
-      color: $darkBlue;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: $h1;
       margin-top: 30px;
       margin-bottom: 20px;
       justify-self: left;
@@ -44,7 +57,7 @@
       position: absolute;
       top: 35px;
       right: 35px;
-      background: rgb(247, 245, 245);
+      background: rgb(255, 255, 255);
       border: none;
       border-radius: 50%;
       padding: 8px;
@@ -69,8 +82,8 @@
         background: white;
 
         svg {
-          color: $h1;
-          fill: $h1
+          color: $heroTeal;
+          fill: $heroTeal;
         }
       }
     }
@@ -78,17 +91,21 @@
     .countryTempWrapper {
       grid-column: 1 / -1;
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      font-size: 1rem;
-      font-weight: 700;
+      font-family: "Roboto", system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
       justify-content: left;
       margin-bottom: 40px;
+      color: rgba($textPrimary, 0.72);
 
       .countrySpan {
         display: flex;
         align-items: center;
         background-color: $lightBlue;
         color: $superDarkBlue;
+        font-weight: 600;
         padding-inline: 20px;
         padding-block: 5px;
         border-radius: 40px;
@@ -102,6 +119,7 @@
 
       .tempSpan {
         @include current-weather-span;
+        font-family: "Roboto", system-ui, sans-serif;
         border-radius: 40px;
 
         .weatherIcon {
@@ -113,40 +131,47 @@
 
     .textWrapper {
       .aboutDestinationTitle {
-        font-size: 1.5rem;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        line-height: 1.3;
         text-align: left;
-        color: $superDarkGreen;
+        color: $h1;
       }
 
       .pOne,
       .pTwo {
-        color: $superDarkBlue;
+        font-family: "Roboto", system-ui, sans-serif;
         text-align: left;
+        line-height: 1.6;
       }
 
       .pOne {
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.125rem;
+        color: rgba($textPrimary, 0.88);
       }
 
       .pTwo {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+        color: rgba($textPrimary, 0.78);
       }
 
       .readMoreTag {
         display: block;
+        font-family: "Roboto", system-ui, sans-serif;
         font-size: 1rem;
         margin-bottom: 30px;
         text-align: left;
-        color: $superDarkBlue;
 
         a {
-          color: $superDarkBlue;
+          color: $heroTeal;
           font-weight: 600;
+          text-decoration: underline;
+          text-underline-offset: 3px;
 
           &:hover {
-            color: $superDarkGreen;
-            font-weight: 800;
+            color: color-mix(in srgb, $heroTeal 75%, #000);
           }
         }
       }
@@ -155,41 +180,46 @@
         display: flex;
         background: none;
         border: none;
-        color: $superDarkBlue;
-        font-size: 1.2rem;
+        font-family: "Roboto", system-ui, sans-serif;
+        color: $heroTeal;
+        font-size: 1.05rem;
         font-weight: 600;
         cursor: pointer;
         padding: 0;
         padding-top: 10px;
         text-decoration: underline;
+        text-underline-offset: 4px;
 
         &:hover {
-          color: $superDarkGreen;
+          color: color-mix(in srgb, $heroTeal 75%, #000);
         }
       }
 
       .infoBox {
-        background-color: rgba($superLightGreen, 0.3);
-        border-radius: 10px;
-        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.3);
+        background-color: rgba($superLightGreen, 0.35);
+        border-radius: 12px;
+        box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.25);
         margin-top: 50px;
         padding-bottom: 30px;
         padding-top: 20px;
-        color: $superDarkGreen;
+        color: $h1;
         text-align: left;
         width: 500px;
 
-
         h3 {
-          font-size: 1.4rem;
+          font-family: "Playfair Display", Georgia, serif;
+          font-size: 1.3rem;
+          font-weight: 600;
+          line-height: 1.25;
           margin-top: 0;
+          color: $h1;
         }
 
-        h3, 
+        h3,
         span {
           margin-left: 15px;
         }
-        
+
         .infoList {
           margin: 0;
           padding: 0 20px;
@@ -201,37 +231,43 @@
             margin-bottom: 10px;
 
             dt {
-              font-size: 1.2rem;
-              font-weight: 400;
+              font-family: "Roboto", system-ui, sans-serif;
+              font-size: 1.05rem;
+              font-weight: 500;
+              color: rgba($textPrimary, 0.72);
               display: flex;
               align-items: center;
               gap: 8px;
             }
-          
+
             dd {
+              font-family: "Roboto", system-ui, sans-serif;
               margin: 0;
-              font-size: 1.2rem;
+              font-size: 1.05rem;
               font-weight: 500;
+              color: $h1;
             }
-          }        
-        }             
-  
+          }
+        }
+
         hr {
           border: 0.5px solid rgba(39, 42, 43, 0.084);
           width: 200px;
           margin-left: 20px;
           margin-top: 20px;
         }
-  
+
         .tagWrapper {
           margin-top: 20px;
-          
+
           .experienceTitle,
           .vibeTitle {
-            font-weight: 500;
-            font-size: 1.2rem;
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 600;
+            font-size: 1.1rem;
             margin-left: 15px;
             margin-bottom: 20px;
+            color: $h1;
           }
 
           .experienceTags,
@@ -243,9 +279,10 @@
             flex-wrap: wrap;
           }
 
-          .experienceTags {  
+          .experienceTags {
             .eTag {
               @include experience-tag;
+              font-family: "Roboto", system-ui, sans-serif;
               font-size: 1rem;
               margin-inline: 5px;
             }
@@ -255,9 +292,10 @@
             margin-top: 30px;
           }
 
-          .vibeTags { 
+          .vibeTags {
             .vTag {
               @include experience-tag;
+              font-family: "Roboto", system-ui, sans-serif;
               font-size: 1rem;
               margin-inline: 5px;
               color: $darkestPink;
@@ -270,13 +308,29 @@
         }
 
         .findFlight {
-          @include button-base;
-          font-size: 1.25rem;
-          padding: 7px 17px;
-          display: flex;
-          justify-self: flex-start;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Roboto", system-ui, sans-serif;
+          font-size: 1rem;
+          font-weight: 600;
+          padding: 0.75rem 1.5rem;
           margin-left: 25px;
           margin-top: 50px;
+          border-radius: 999px;
+          border: 2px solid $heroTeal;
+          background-color: $heroTeal;
+          color: #fff;
+          text-decoration: none;
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+          transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+          &:hover {
+            color: #fff;
+            background-color: color-mix(in srgb, $heroTeal 82%, #000);
+            border-color: color-mix(in srgb, $heroTeal 82%, #000);
+            transform: translateY(-1px);
+          }
         }
       }
     }
@@ -307,38 +361,42 @@
       
         caption.monthlyTempTitle {
           caption-side: top;
-          font-size: 1.4rem;
-          font-weight: 800;
-          color: $superDarkGreen;
+          font-family: "Playfair Display", Georgia, serif;
+          font-size: 1.25rem;
+          font-weight: 600;
+          line-height: 1.3;
+          color: $h1;
           margin-top: 20px;
           text-align: center;
         }
-      
+
         tbody {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
-      
+
         tr.tempMonthly {
           display: block;
+          font-family: "Roboto", system-ui, sans-serif;
           background-color: rgba($darkYellow, 0.5);
           border-radius: 10px;
           padding: 10px;
-          color: $superDarkBlue;
-          font-size: 1.1rem;
+          color: rgba($textPrimary, 0.85);
+          font-size: 1.05rem;
           font-weight: 500;
         }
-      
+
         th.month,
         td.temp {
           display: inline-block;
           font-weight: 500;
           margin-right: 3px;
         }
-      
+
         td.temp {
-          font-weight: 700;
+          font-weight: 600;
+          color: $h1;
         }
       }
     }
@@ -446,7 +504,7 @@
       margin-top: 15px;
 
       h2 {
-        font-size: 2.7rem;
+        font-size: clamp(2rem, 8vw, 2.75rem);
         margin-top: 20px;
       }
 

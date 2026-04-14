@@ -1,44 +1,176 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
 
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(5.5rem, 12vw, 7rem) 1.5rem clamp(3rem, 8vw, 5rem);
+  background-color: #0a1a1f;
+  background-image:
+    linear-gradient($heroOverlay, $heroOverlay),
+    url("/hero-beach.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.heroInner {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.heroTagline {
+  margin: 1.25rem 0 0;
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.heroPrimary,
+.heroSecondary {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+}
+
+.heroPrimary {
+  color: #fff;
+  background-color: $heroTeal;
+  border: 2px solid $heroTeal;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    color: #fff;
+    background-color: color-mix(in srgb, $heroTeal 82%, #000);
+    border-color: color-mix(in srgb, $heroTeal 82%, #000);
+  }
+}
+
+.heroSecondary {
+  color: #fff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+  }
+}
+
 .howItWorksContainer {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 20px;
   justify-content: center;
-  margin-block: 50px;
-  padding-bottom: 70px;
-  background: linear-gradient(to bottom, transparent 0%, rgba($backgroundBlue, 40%));
+  margin-block: 0;
+  padding: clamp(2.75rem, 6vw, 4rem) 1.25rem 4.5rem;
+  background: rgb(252, 251, 249);
   font-size: 1rem;
 
+  &:focus {
+    outline: 2px solid $heroTeal;
+    outline-offset: 4px;
+  }
 
   h2 {
     grid-column: 1 / -1;
-    font-size: 2.5rem;
-    margin-bottom: 0;
-    font-weight: 600;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $h1;
+    margin: 0 0 0.75rem;
   }
 
   .subText {
     grid-column: 1 / -1;
-    font-size: 1.2rem;
-    width: 800px;
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 42rem;
+    width: 100%;
     justify-self: center;
-    margin-bottom: 50px;
+    margin: 0 0 2.75rem;
+    color: rgba($textPrimary, 0.72);
   }
 
   .cardsCarousel {
     display: contents;
   }
+}
 
-  a {
-    @include button-base;
-    font-size: 1.5rem;
-    padding: 8px 30px;
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-top: 60px;
-    margin-bottom: 40px;
+.howItWorksCta {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  background-color: $heroTeal;
+  border: 2px solid $heroTeal;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    background-color: color-mix(in srgb, $heroTeal 82%, #000);
+    border-color: color-mix(in srgb, $heroTeal 82%, #000);
+  }
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, $heroTeal 45%, #000);
+    outline-offset: 3px;
   }
 }
 
@@ -47,20 +179,30 @@
   grid-template-columns: repeat(3, auto);
   gap: 20px;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 0;
+  padding: clamp(2.75rem, 5vw, 3.5rem) 1.25rem 100px;
+  background: rgb(252, 247, 241);
 
   h2 {
     grid-column: 1 / -1;
-    font-size: 2.5rem;
-    margin-block: 0;
-    font-weight: 600;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $h1;
+    margin: 0 0 0.75rem;
   }
 
   .subText2 {
     grid-column: 1 / -1;
-    font-size: 1.2rem;
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 42rem;
+    width: 100%;
     justify-self: center;
-    margin-bottom: 40px;
+    margin: 0 0 2.5rem;
+    color: rgba($textPrimary, 0.72);
   }
 
   .cardsCarousel {
@@ -75,30 +217,28 @@
 
 @media screen and (max-width: 768px) {
   .howItWorksContainer {
-    margin-block: 40px;
-    padding-bottom: 50px;
+    margin-block: 0;
+    padding-bottom: 3rem;
 
     h2 {
       font-size: 2.1rem;
     }
 
     .subText {
-      width: 600px;
-      margin-bottom: 30px;
-      margin-top: 0;
+      max-width: 36rem;
+      margin-bottom: 2rem;
     }
   }
 
   .featuredDestinationContainer {
-    margin-top: 50px;
-
     h2 {
       font-size: 2.1rem;
     }
 
     .subText2 {
+      max-width: 36rem;
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -116,16 +256,15 @@
 @media screen and (max-width: 425px) {
   .howItWorksContainer {
     grid-template-columns: 1fr;
-    margin-bottom: 35px;
-    padding-bottom: 55px;
+    margin-bottom: 0;
+    padding-bottom: 3rem;
 
     h2 {
       font-size: 1.7rem;
     }
 
     .subText {
-      width: 380px;
-      margin-top: 0;
+      max-width: 100%;
     }
   }
 
@@ -137,7 +276,7 @@
     }
 
     .subText2 {
-      width: 380px;
+      max-width: 100%;
       margin-top: 0;
     }
   }
@@ -150,8 +289,7 @@
     }
 
     .subText {
-      width: 280px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
   }
 
@@ -161,8 +299,7 @@
     }
 
     .subText2 {
-      width: 280px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
   }
 }

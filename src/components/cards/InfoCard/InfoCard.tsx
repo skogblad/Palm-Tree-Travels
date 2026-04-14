@@ -10,7 +10,6 @@ type InfoCardProps = {
 }
 
 export const InfoCard = ({ title, infoText, Icon, iconWrapper, iconClassName }: InfoCardProps) => {
-  
   return (
     <article className={styles.articleContainer}>
       <span className={iconWrapper}>

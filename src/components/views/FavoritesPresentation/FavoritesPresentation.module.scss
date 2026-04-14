@@ -3,7 +3,8 @@
 
 .container {
   width: 100%;
-  padding: 50px 20px;
+  padding: 50px 20px 80px;
+  background: rgb(252, 251, 249);
 }
 
 .title {
@@ -18,7 +19,6 @@
   grid-template-columns: repeat(3, auto);
   gap: 20px;
   justify-content: center;
-  margin-bottom: 100px;
 
   a {
     text-decoration: none;
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 768px) {
   .container {
-    padding: 30px 15px;
+    padding: 30px 15px 80px;
   }
 
   .title {

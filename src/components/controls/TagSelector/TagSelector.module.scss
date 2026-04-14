@@ -11,9 +11,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: $textPrimary;
+    line-height: 1.3;
+    color: $h1;
   }
 
   .filterIcon {
@@ -30,21 +32,21 @@
     background: rgb(255, 255, 255);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: solid 3px $footerBlue;
-    
+    border: solid 2px rgba($heroTealField, 0.28);
+
     &::-webkit-scrollbar {
       width: 12px;
     }
-    
+
     &::-webkit-scrollbar-track {
       background: #f1f1f1;
       border-radius: 4px;
     }
-    
+
     &::-webkit-scrollbar-thumb {
       background: #c0c0c0;
       border-radius: 4px;
-      
+
       &:hover {
         background: #a0a0a0;
       }
@@ -53,39 +55,44 @@
 
   .tag {
     padding: 8px 14px;
-    border: 1px solid #c0cfd9;
+    border: 1px solid rgba($h1, 0.2);
     border-radius: 20px;
-    background: $superLightBlue;
-    color: $textPrimary;
+    background: rgb(252, 251, 249);
+    color: rgba($textPrimary, 0.88);
+    font-family: "Roboto", system-ui, sans-serif;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     white-space: nowrap;
-    
+
     &:hover {
-      background: linear-gradient(to right, $tagLight, $tagDark);
-      border-color: $mediumGreen;
+      background: rgba($heroTealField, 0.12);
+      border-color: rgba($heroTealField, 0.5);
       transform: scale(1.02);
     }
-    
+
     &:focus {
-      outline: 2px solid $lightGreen;
+      outline: 2px solid rgba($heroTealField, 0.45);
+      outline-offset: 2px;
     }
-    
+
     &:active {
       transform: scale(0.98);
     }
   }
 
   .tagSelected {
-    background: linear-gradient(90deg, $tagLight 0%, $tagMedium 30%, $tagDark 100%);
-    color: $superDarkGreen;
-    box-shadow: 0 4px 6px rgba(128, 128, 128, 0.3);
-    transform: scale(1.05);
-    
+    background: $heroTealField;
+    color: #fff;
+    border-color: $heroTealField;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transform: scale(1.02);
+
     &:hover {
-      transform: scale(1.07);
+      background: color-mix(in srgb, $heroTealField 85%, #000);
+      border-color: color-mix(in srgb, $heroTealField 85%, #000);
+      transform: scale(1.04);
     }
   }
 }
@@ -93,8 +100,7 @@
 @media screen and (max-width: 768px) {
   .filterGroup {
     .tag {
-    padding: 6px 10px;
+      padding: 6px 10px;
     }
   }
 }
-

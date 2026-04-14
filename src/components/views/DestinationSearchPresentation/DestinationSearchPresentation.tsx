@@ -187,7 +187,7 @@ export const DestinationSearchPresentation = ({ tempRange, selectedVibes, select
               <MapView destinations={destinations} />
             )
           ) : (
-            <p>Inga resultat hittades</p>
+            <p className={styles.emptyResults}>Inga resultat hittades</p>
           )}
         </section>
       )}

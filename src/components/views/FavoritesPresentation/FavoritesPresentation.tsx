@@ -10,7 +10,7 @@ type FavoritesPresentationProps = {
 export const FavoritesPresentation = ({ favorites }: FavoritesPresentationProps) => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Sparade favorioter</h2>
+      <h2 className={styles.title}>Sparade favoriter</h2>
 
       {favorites.length > 0 ? (
         <div className={styles.favoritesWrapper}>

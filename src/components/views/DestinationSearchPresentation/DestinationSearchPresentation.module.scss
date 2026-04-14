@@ -1,5 +1,4 @@
 @import "/src/styles/variables";
-@import "/src/styles/mixins";
 
 .searchPage {
 	width: 100%;
@@ -61,7 +60,10 @@
 
 		.titleH2 {
 			grid-column: 1 / -1;
-			font-size: 2.5rem;
+			font-family: "Playfair Display", Georgia, serif;
+			font-size: clamp(2rem, 3.5vw, 2.75rem);
+			font-weight: 700;
+			line-height: 1.2;
 			margin: 0;
 			margin-bottom: -50px;
 			color: $h1;
@@ -76,8 +78,11 @@
 		}
 
 		.tempWrapper {
-			font-size: 1.2rem;
+			font-family: "Roboto", system-ui, sans-serif;
+			font-size: 1.125rem;
 			font-weight: 500;
+			line-height: 1.5;
+			color: rgba($textPrimary, 0.88);
 			text-align: left;
 
 			.root {
@@ -96,8 +101,8 @@
 			}
 
 			.track {
-				background-color: $lightPink;
-				border: solid 2px $lightYellow;
+				background-color: rgba($heroTealField, 0.22);
+				border: solid 2px rgba($heroTealField, 0.4);
 				position: relative;
 				flex-grow: 1;
 				border-radius: 9999px;
@@ -106,7 +111,7 @@
 
 			.range {
 				position: absolute;
-				background-color: $darkPink;
+				background-color: $heroTealField;
 				border-radius: 9999px;
 				height: 100%;
 			}
@@ -115,19 +120,19 @@
 				display: block;
 				width: 30px;
 				height: 30px;
-				background-color: $darkPink;
-				border: solid 2px $mediumYellow;
-				box-shadow: 0 2px 5px rgb(96, 95, 95);
+				background-color: $heroTealField;
+				border: solid 2px rgba(255, 255, 255, 0.9);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 				border-radius: 50px;
 				cursor: pointer;
 
 				&:hover {
-					background-color: $superDarkPink;
+					background-color: color-mix(in srgb, $heroTealField 82%, #000);
 					transform: scale(1.05);
 				}
 
 				&:focus {
-					box-shadow: 0 0 0 3px $mediumPink;
+					box-shadow: 0 0 0 3px rgba($heroTealField, 0.45);
 				}
 			}
 		}
@@ -149,12 +154,37 @@
 
 		.resetBtn,
 		.submitBtn {
-			@include button-base;
-			font-size: 1.3rem;
-			border: none;
-			padding-inline: 15px;
-			padding-block: 5px;
+			font-family: "Roboto", system-ui, sans-serif;
+			font-size: 1rem;
+			font-weight: 600;
+			padding: 0.8rem 1.75rem;
+			border-radius: 999px;
 			cursor: pointer;
+			transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+		}
+
+		.submitBtn {
+			border: 2px solid $heroTeal;
+			background-color: $heroTeal;
+			color: #fff;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+			&:hover {
+				background-color: color-mix(in srgb, $heroTeal 82%, #000);
+				border-color: color-mix(in srgb, $heroTeal 82%, #000);
+				transform: translateY(-1px);
+			}
+		}
+
+		.resetBtn {
+			border: 2px solid $heroTeal;
+			background: transparent;
+			color: $heroTeal;
+
+			&:hover {
+				background: rgba($heroTeal, 0.1);
+				transform: translateY(-1px);
+			}
 		}
 	}
 }
@@ -168,8 +198,22 @@
 
 	.resultsTitle {
 		grid-column: 1 / -1;
-		font-size: 1.8rem;
+		font-family: "Playfair Display", Georgia, serif;
+		font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+		font-weight: 700;
+		line-height: 1.25;
+		color: $h1;
 		margin-top: 50px;
+	}
+
+	.emptyResults {
+		grid-column: 1 / -1;
+		font-family: "Roboto", system-ui, sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.55;
+		color: rgba($textPrimary, 0.72);
+		justify-self: center;
+		margin: 0;
 	}
 
 	.viewSortBtns {
@@ -183,14 +227,24 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 1.3rem;
-			@include button-base;
-			border: none;
-			color: $superDarkGreen;
-			background-color: $superLightYellow;
-			padding: 7px 15px;
-			gap: 5px;
+			font-family: "Roboto", system-ui, sans-serif;
+			font-size: 1rem;
+			font-weight: 600;
+			border: 2px solid $heroTeal;
+			background-color: $heroTeal;
+			color: #fff;
+			padding: 0.55rem 1.15rem;
+			gap: 0.4rem;
+			border-radius: 999px;
 			cursor: pointer;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+			transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+			&:hover {
+				background-color: color-mix(in srgb, $heroTeal 82%, #000);
+				border-color: color-mix(in srgb, $heroTeal 82%, #000);
+				transform: translateY(-1px);
+			}
 
 			svg {
 				width: 22px;
@@ -204,9 +258,23 @@
 			gap: 10px;
 
 			.sortIcon {
-				@include button-base;
-				border: none;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 44px;
+				height: 44px;
+				border: 2px solid rgba($h1, 0.25);
+				border-radius: 12px;
+				background: #fff;
+				color: $h1;
 				cursor: pointer;
+				transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+				&:hover {
+					border-color: $heroTeal;
+					color: $heroTeal;
+					background: rgba($heroTeal, 0.06);
+				}
 
 				svg {
 					width: 30px;
@@ -218,7 +286,10 @@
 
 	.subText2 {
 		grid-column: 1 / -1;
-		font-size: 1.2rem;
+		font-family: "Roboto", system-ui, sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.6;
+		color: rgba($textPrimary, 0.72);
 		justify-self: center;
 	}
 

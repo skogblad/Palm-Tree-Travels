@@ -1,66 +1,114 @@
 @import "/src/styles/variables";
 
+$footerDark: #1a252c;
+$footerTextMuted: rgba(255, 255, 255, 0.72);
+
 .footerContainer {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 150px;
-  background-color: $footerBlue;
-  padding-block: 30px;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: clamp(2rem, 8vw, 6rem);
+  justify-content: space-between;
+  background-color: $footerDark;
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 6vw, 5rem) clamp(2.25rem, 4vw, 3rem);
   text-align: left;
+  box-sizing: border-box;
+}
 
-  .logoSection {
-    margin-left: 80px;
-    margin-top: 40px;
+.brandColumn {
+  max-width: 26rem;
+}
 
-    hr {
-      display: none;
-    }
-  }
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
 
-  h2 {
-    font-size: 1.4rem;
-    margin-top: 0;
+.brandIcon {
+  width: 1.65rem;
+  height: 1.65rem;
+  flex-shrink: 0;
+  color: $palmTreeGreen;
+  stroke-width: 2;
+}
+
+.brandTitle {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.tagline {
+  margin: 0;
+  font-family: "Roboto", system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: $footerTextMuted;
+}
+
+.navContainer {
+  text-align: right;
+
+  .linksHeading {
+    margin: 0 0 0.85rem;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
   }
 
   a {
     display: block;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: black;
+    margin-bottom: 0.55rem;
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: $footerTextMuted;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.92);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerContainer {
+    gap: 2.25rem;
   }
 
-  @media screen and (max-width: 768px) {
-    gap: 80px;
-    
-    .logoSection {
-      margin-left: 50px;
-    }
+  .navContainer .linksHeading {
+    font-size: 1.15rem;
+  }
+}
 
-    h2 {
-      font-size: 1.2rem;
-    }
+@media screen and (max-width: 600px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  @media screen and (max-width: 425px) {
-    gap: 20px;
-
-    .logoSection {
-      grid-column: 1 / -1;
-      margin: 0;
-      justify-self: center;
-
-      hr {
-        display: block;
-        border: 0.5px solid rgba(39, 42, 43, 0.084);
-        margin-top: 10px;
-        width: 80vw;
-        margin-left: calc(-40vw + 50%);
-      }
-    }
-      
-    .navContainer {
-      margin-left: 30px;
-      margin-top: 0;
-    }
+  .navContainer {
+    text-align: left;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 }

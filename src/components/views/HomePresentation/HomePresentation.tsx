@@ -1,3 +1,4 @@
+import type React from "react"
 import { Palmtree, Sparkles, ThermometerSun } from "lucide-react"
 import { InfoCard } from "../../cards/InfoCard/InfoCard"
 import styles from "./HomePresentation.module.scss"
@@ -8,10 +9,46 @@ import { curatedDestinations } from "../../../constants/curatedDestinations"
 import { NavLink } from "react-router"
 
 export const HomePresentation = () => {
+  const goToHowItWorks = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const section = document.getElementById("how-it-works")
+    if (!section) return
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" })
+    const moveFocus = () => section.focus({ preventScroll: true })
+    if (reducedMotion) {
+      moveFocus()
+    } else {
+      window.setTimeout(moveFocus, 450)
+    }
+  }
+
   return (
     <>
-      <section className={styles.howItWorksContainer} id="how-it-works">
-        <h2>Hitta enkelt din drömresa</h2>
+      <section className={styles.hero} aria-label="Välkommen">
+        <div className={styles.heroInner}>
+          <h1 className={styles.heroTitle}>Palm Tree Travels</h1>
+          <p className={styles.heroTagline}>
+            Upptäck varma, inspirerande destinationer baserade på upplevelser och känsla
+          </p>
+          <div className={styles.heroActions}>
+            <NavLink to="/search-destination" className={styles.heroPrimary}>
+              Sök destination
+            </NavLink>
+            <a href="#how-it-works" className={styles.heroSecondary} onClick={goToHowItWorks}>
+              Mer info
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={styles.howItWorksContainer}
+        id="how-it-works"
+        tabIndex={-1}
+        aria-labelledby="how-it-works-heading"
+      >
+        <h2 id="how-it-works-heading">Hitta enkelt din drömresa</h2>
         <p className={styles.subText}>Oavsett om du jagar evig sommar eller söker ett tropiskt paradis hittar Palm Tree Travels strandnära destinationer som matchar din känsla och utvalda preferenser.</p>
 
         <CardCarousel className={styles.cardsCarousel}>
@@ -40,7 +77,9 @@ export const HomePresentation = () => {
           />
         </CardCarousel>
 
-        <NavLink to={"/search-destination"}>Upptäck nu</NavLink>
+        <NavLink to="/search-destination" className={styles.howItWorksCta}>
+          Upptäck nu
+        </NavLink>
       </section>
 
       <section className={styles.featuredDestinationContainer}>

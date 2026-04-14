@@ -1,54 +1,43 @@
 import { Link, NavLink, useLocation } from "react-router"
 import styles from "./Navigation.module.scss"
-import { Heart, Search } from "lucide-react";
-import type React from "react";
+import { Heart, Palmtree, Search } from "lucide-react";
 
 export const Navigation = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-
-  const linkScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById("how-it-works");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  const isLightNavBar =
+    location.pathname === "/search-destination" ||
+    location.pathname === "/favorites" ||
+    location.pathname.startsWith("/destination/");
 
   return (
-    <nav className={`${styles.navigationContainer} ${isHomePage ? styles.navHomeContainer : ""}`} aria-label="Huvudnavigation">
-      <Link to={"/"}>
-        <h1>Palm Tree Travels</h1>
+    <nav
+      className={`${styles.navigationContainer} ${isHomePage ? styles.navHomeContainer : ""} ${isLightNavBar ? styles.navSearchContainer : ""}`}
+      aria-label="Huvudnavigation"
+    >
+      <Link to={"/"} className={styles.brand}>
+        <Palmtree className={styles.brandIcon} aria-hidden />
+        <span className={styles.brandText}>Palm Tree Travels</span>
       </Link>
 
-      <p>Upptäck varma, inspirerande destinationer baserade på upplevelser och känsla</p>
-
-      <ul>
+      <ul className={styles.navList}>
         <li>
-          <NavLink to={"/search-destination"} aria-label="Sök destination">
-            {isHomePage ? "Sök destination" : <Search aria-hidden="true" />}
+          <NavLink
+            to="/search-destination"
+            className={styles.textIconLink}
+            aria-label="Sök destination"
+          >
+            <Search className={styles.navItemIcon} aria-hidden />
+            <span>Upptäck</span>
           </NavLink>
         </li>
-
-        {isHomePage && (
-          <li>
-            <a
-              href="#how-it-works"
-              onClick={linkScroll}
-            >
-              Mer info
-            </a>
-          </li>
-        )}
-
-        {!isHomePage && (
-          <li>
-            <NavLink to={"/favorites"} aria-label="Favoriter">
-              <Heart aria-hidden="true" />
-            </NavLink>
-          </li>
-        )}
+        <li>
+          <NavLink to="/favorites" className={styles.textIconLink}>
+            <Heart className={styles.navItemIcon} aria-hidden />
+            <span>Favoriter</span>
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
-}
+};

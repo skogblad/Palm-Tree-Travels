@@ -8,19 +8,25 @@
   width: 320px;
   box-shadow: 3px 3px 10px rgba(135, 135, 135, 0.5);
 
-  h3, p {
+  h3,
+  p {
     margin-inline: 20px;
   }
 
   h3 {
     margin-block: 35px;
+    font-family: "Playfair Display", Georgia, serif;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: $h1;
   }
 
   p {
     margin-bottom: 30px;
+    font-family: "Roboto", system-ui, sans-serif;
     font-size: 1.1rem;
+    line-height: 1.5;
+    color: rgba($textPrimary, 0.78);
   }
 
   .iconWrapper {
