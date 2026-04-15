@@ -4,6 +4,8 @@ Palm Tree Travels is a web application designed to inspire users to discover war
 
 Users can freely explore destinations, save their favorites, and quickly gain insights into what each place has to offer. Palm Tree Travels is built to be an intuitive and inspiring tool for anyone looking to discover their next warm getaway in an easy and engaging way.
 
+Discover here: https://palm-tree-travels.netlify.app/
+
 ## Features
 
 - **Search by preferences** — Filter destinations by temperature, date, vibes and experiences
@@ -45,22 +47,22 @@ Throughout the development of the webpage, accessibility has been considered and
 
 #### Front page:
 
-![front_page](/src/assets/palm-tree-travels_frontpage.webp)
+![front_page](/src/assets/palm-tree-travels-fp.webp)
 
 <details>
 <summary><strong>See more</strong> <i>(3 images)</i></summary>
 
 ##### Search page:
 
-![search_page](/src/assets/palm-tree-travels_search-destination.webp)
+![search_page](/src/assets/palm-tree-travels-search.webp)
 
 #### Destination page:
 
-![destination_page](/src/assets/palm-tree-travels_destination_19.webp)
+![destination_page](/src/assets/palm-tree-travels_destination.webp)
 
 #### Favorite page:
 
-![favorite_page](/src/assets/palm-tree-travels_favorites.webp)
+![favorite_page](/src/assets/palm-tree-travels_favorite.webp)
 
 </details>
 
